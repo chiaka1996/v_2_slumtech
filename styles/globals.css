@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* iframe.skiptranslate { display: "none !important"; } */
+.VIpgJd-ZVi9od-14eHX-hSRGPd{
+  display: "none !important";
+}
+
+.programSection{
+  background: linear-gradient(180deg, #E8107D 0%, #FD213E 100%);
+}
+
+.program_grid{
+  border: 1px solid;
+  border-image: linear-gradient(to bottom, rgba(245, 245, 245, 0) 0%, #F5F5F5 50%, rgba(245, 245, 245, 0)) 1 100%;
+}
+
+.indexAbout{
+  border: 2px solid;
+  border-top: 0;
+  border-image-source: linear-gradient(73.97deg, #FD213E 5.16%, #02AED6 94.84%, #FD213E 5.16%,#02AED6 94.84%) 1;
+}
+
+.upcomingEvent{
+  /* background-color:  #d8bbbe; */
+  /* background-color: linear-gradient(180deg, rgba(253, 33, 62, 0.01) 0%, #FFFFFF 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)) 100%; */
+
+}
+
+/* home banner */
+.bannerOverlay{
+  background: linear-gradient(180deg, rgba(232, 16, 125, 0) 0%, #044930 96.5%);
+}
+  

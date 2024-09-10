@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.navContainer{
+   font-family: "Public Sans";
+  }
+  
+  .hamburger{
+    display: none;
+  }
+
+  .activeLink{
+    position: relative;
+    background-color: #ffccd3;
+    padding: 1% 1%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  .navLink{
+    position: relative;
+    padding: 1% 1%;
+    cursor: pointer;
+  }
+
+  .navLink:hover{
+    /* padding: 0 2% 3% 2%; */
+    border-bottom: 1px solid #1A1A1A;
+    text-align: center;
+  }
+
+  .navLink:hover::after{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 3px;
+    background-color: #1A1A1A;
+    /* border-radius: 0.1875rem; */
+    bottom: 0;
+    right: 0;
+  }
+
+  .navLink:hover::before{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 3px;
+    background-color: #1A1A1A;
+    /* border-radius: 0.1875rem; */
+    bottom: 0;
+    left: 0;
+  }
+
+  @media screen and (max-width: 1024px){
+    .hamburger{
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 20px;
+    }
+  }
+  
