@@ -139,14 +139,6 @@ export default function Home() {
     return () => clearInterval(interval)
   },[programSwitch])
 
-  function googleTranslateElementInit() {
-    new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-  }
-
-  useEffect(() => {
-    googleTranslateElementInit()
-  })
-
   return (
    <main className="font-primary text-primary">
     <Navigation />
