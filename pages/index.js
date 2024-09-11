@@ -226,7 +226,7 @@ export default function Home() {
 
     {/* upcoming events */}
     <section className="w-[65%] max-large:w-[90%] mx-auto mt-[5rem] max-large:mt-[3rem] rounded-t-[12px]">
-      <div className="text-h4 font-h2 bg-btn_bg text-center py-[0.5em] rounded-t-[12px]">Upcoming Events</div>
+      <div className="text-h4 text-index font-h2 bg-btn_bg text-center py-[0.5em] rounded-t-[12px]">Upcoming Events</div>
       <div className="upcomingEvent p-[1.5rem] flex flex-row max-large:flex-col items-center justify-between">
       <div className="w-[25%] max-large:w-full  min-h-[15rem]">
       <div className="relative w-full h-[10rem] mx-auto">
@@ -265,7 +265,7 @@ export default function Home() {
       <button className="px-6 py-3 bg-btn_bg rounded-[12px]">
         <div  className="relative min-w-[30px] min-h-[30px] max-large:h-[30px]">
         <Image 
-        src="https://img.icons8.com/ios/50/fff/circled-right-2.png" 
+        src="https://img.icons8.com/ios/50/FCFCFD/circled-right-2.png" 
         fill
         alt="right-btn"
         /> 

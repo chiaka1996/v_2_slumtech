@@ -5,15 +5,8 @@ import {Navigation, Sidebar, Newsletter, Footer} from "../../components"
 import Head from 'next/head'
 
 export const Card = ({title, paragraph, link, img}) => {
-    function googleTranslateElementInit() {
-        new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-      }
-    
-      useEffect(() => {
-        googleTranslateElementInit()
-      },[])
     return(
-        <div className="relative  max-large:pb-[4rem] max-large:mb-[0.5rem]">
+        <div className="relative max-large:pb-[4rem] max-large:mb-[0.5rem] min-h-[38rem] max-large:min-h-[32rem]">
             <div  className="relative w-full min-h-[17.5rem] max-large:min-h-[15rem]">
                 <Image 
                 src={img}
@@ -32,7 +25,7 @@ export const Card = ({title, paragraph, link, img}) => {
                 <button className="px-3 max-large:px-4 py-3 bg-btn_bg rounded-[12px] absolute bottom-[0.5rem] right-0 no-underline">
                 <div  className="relative min-w-[20px] min-h-[20px] max-large:min-h-[20px]">
                 <Image 
-                src="https://img.icons8.com/ios/20/000000/circled-right-2.png" 
+                src="https://img.icons8.com/ios/20/FCFCFD/circled-right-2.png" 
                 fill
                 alt="event"
                 /> 
@@ -112,7 +105,7 @@ export default function Media() {
         <button className="px-6 py-3 bg-btn_bg rounded-[12px]">
         <div  className="relative min-w-[30px] min-h-[30px] max-large:h-[30px]">
         <Image 
-        src="https://img.icons8.com/ios/50/000000/circled-right-2.png" 
+        src="https://img.icons8.com/ios/50/FCFCFD/circled-right-2.png" 
         fill
         alt="event"
         /> 

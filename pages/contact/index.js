@@ -121,7 +121,7 @@ const submitBtn = async (e) => {
         fill
         alt="banner"
         />   
-         <div className="text-card1 text-h1 font-h2 relative z-[10] min-h-[30rem] flex flex-row justify-center items-center">
+         <div className="text-card1 text-h1 font-h2 relative z-[10] min-h-[30rem]  max-large:min-h-[15rem] flex flex-row justify-center items-center">
             CONTACT US
         </div> 
         </div>
