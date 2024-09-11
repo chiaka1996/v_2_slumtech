@@ -26,14 +26,35 @@ const Footer = () => {
         />
         </div>
         </div>
-
+        <Link href="/donation" className='no-underline'>
         <button className='px-5 py-3 text-btn_color bg-btn_bg rounded-[12px]'>Donate</button>
+        </Link>
         <div className='w-full text-center my-5 flex flex-row justify-center flex-wrap'>
-            <div className=''>About us</div>
-            <div className='ml-[3em]  max-large:ml-[1em]'>Events and News</div>
-            <div className='ml-[3em]  max-large:ml-[1em]'>Programs</div>
-            <div className='ml-[3em]  max-large:ml-[1em]'>Get Involved</div>
-            <div className='ml-[3em]  max-large:ml-[1em]'>Contact</div>
+            <div className=''>
+            <Link href="/about" className='no-underline'>
+            About us
+            </Link>
+            </div>
+            <div className='ml-[3em]  max-large:ml-[1em]'>
+            <Link href="/media" className='no-underline'>
+            Events and News
+            </Link>
+            </div>
+            <div className='ml-[3em]  max-large:ml-[1em]'>
+            <Link href="/programs" className='no-underline'>
+            Programs
+            </Link>
+            </div>
+            <div className='ml-[3em]  max-large:ml-[1em]'>
+            <Link href="/ourteam" className='no-underline'>
+            Get Involved
+            </Link>
+            </div>
+            <div className='ml-[3em]  max-large:ml-[1em]'>
+            <Link href="/contact" className='no-underline'>
+            Contact
+              </Link>  
+              </div>
             <div className='ml-[3em]  max-large:ml-[1em]'>FAQs</div>
         </div>
 

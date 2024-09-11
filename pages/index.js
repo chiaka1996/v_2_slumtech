@@ -156,7 +156,6 @@ export default function Home() {
         <p className="font-h2 text-[2.5rem] max-large:text-[2.1rem] ">Welcome to SlumTech Foundation</p>
         <p className="font-normal text-[1.5rem] max-large:text-[1.1rem]">Empowering Communities Through Technology!</p>
         </div>
-
       </div>
     </section>
     
@@ -171,9 +170,11 @@ export default function Home() {
       programs and initiatives, we provide access to technology resources, education, and training to help build a 
       brighter future for all.
       </p>
+      <Link href="/about" className='no-underline'>
       <button className="px-[2em] py-[1em] bg-btn_bg rounded-[12px] text-index text-[14px] font-h2">Learn more</button>
+      </Link>
       </div>
-      <div className="relative min-w-[45%] max-large:w-full min-h-[26rem] max-large:h-[20rem]">
+      <div className="relative min-w-[45%] max-large:w-full min-h-[26rem] max-large:min-h-[20rem]">
       <Image 
       src="/images/home1.png" 
       fill
@@ -240,7 +241,9 @@ export default function Home() {
       2025 Event:<br/>
       Tech for Change: Empowering Communities Worldwide.
       </p>
+      <Link href="/media/post2" className='no-underline'>
       <button className="px-[1em] py-[0.5em] bg-btn_bg rounded-[12px] text-index text-[14px] font-h2">Read more</button>
+      </Link>
       </div>      
       </div>
     </section>
@@ -262,6 +265,7 @@ export default function Home() {
       Your support, no matter how big or small, 
       will make a meaningful impact on the lives of those we aim to serve.
       </div>
+      <Link href="/register" className='no-underline'>
       <button className="px-6 py-3 bg-btn_bg rounded-[12px]">
         <div  className="relative min-w-[30px] min-h-[30px] max-large:h-[30px]">
         <Image 
@@ -271,6 +275,7 @@ export default function Home() {
         /> 
         </div>
     </button>
+    </Link>
       </div>
     </section>
 
@@ -318,7 +323,6 @@ export default function Home() {
       </div>            
       </div>
     </section>
-
     <Newsletter />
     <Footer />
     </main>

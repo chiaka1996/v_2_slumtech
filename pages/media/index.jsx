@@ -102,6 +102,7 @@ export default function Media() {
         </p>
 
         <div className="w-full text-right mt-[2rem] max-large:mt-[1rem]">
+        <Link href="/blog/post1" className='no-underline'>
         <button className="px-6 py-3 bg-btn_bg rounded-[12px]">
         <div  className="relative min-w-[30px] min-h-[30px] max-large:h-[30px]">
         <Image 
@@ -111,6 +112,7 @@ export default function Media() {
         /> 
         </div>
     </button>
+    </Link>
     </div> 
     </div>
     </section>
