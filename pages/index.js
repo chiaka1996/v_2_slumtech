@@ -111,7 +111,7 @@ export const ProgramCard2 = () => {
 
 
 export default function Home() {
-  const bannerImages = ["/images/homebanner3.jfif", "/images/homebanner2.jfif", "/images/homebanner1.jfif"]
+  const bannerImages = ["/images/card2.png", "/images/card7.png", "/images/donation2.png"]
   const [imgCount, setImageCount] = useState(0);
 
   useEffect(() => {
