@@ -42,8 +42,7 @@ module.exports = {
       h4: "500",
       tertiary: "900",
       // old weight
-      label: "500",
-      
+      label: "500",  
   },
   fontSize: {
     normal: "1em", //16px

@@ -10,8 +10,10 @@ const ContactUs = () => {
   const [toggleModal, setToggleModal] = useState(false)
   const [loading, setLoading] = useState(false)
   const [data, setData] =  useState({
-      name: "",
+      firstname: "",
+      lastname: "",
       email: "",
+      phone: "",
       message: ""
   })
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi;
@@ -34,9 +36,9 @@ const submitBtn = async (e) => {
   try{
       e.preventDefault()
       setLoading(true)
-  const {name, email, message} = data;
+  const {firstname, lastname, phone, email, message} = data;
 
-  if(!name || !email || !message) {
+  if(!firstname || !lastname || !phone || !email || !message) {
       setLoading(false)
       return  toast.error("please fill all required fields.", {
           position: "top-right",
@@ -44,7 +46,7 @@ const submitBtn = async (e) => {
           });
   }
 
-  if(name.length < 2){
+  if(firstname.length < 2 || lastname.length < 2){
       setLoading(false)
       return  toast.error("name should be a minimum of 2 characters", {
           position: "top-right",
@@ -60,7 +62,7 @@ const submitBtn = async (e) => {
           });
   }
 
-  const httpRequest = await fetch('../api/messages',{
+  const httpRequest = await fetch('../api/contact',{
       method: "POST",
       body: JSON.stringify(data),
       headers:{
@@ -73,9 +75,15 @@ const submitBtn = async (e) => {
   if(response.status){
       setLoading(false)
       setToggleModal(true)
+      toast.success(`${response.message}`, {
+        position: "top-right",
+        theme: "colored",
+        });
 
       setData({
-          name: "",
+          firstname: "",
+          lastname: "",
+          phone: "",
           email: "",
          message: ""
       })
@@ -111,10 +119,10 @@ const submitBtn = async (e) => {
         <Navigation />
         <Sidebar /> 
         <ToastContainer />
-        <SubmitModal 
+        {/* <SubmitModal 
         toggle={toggleModal} 
         toggleState={toggleState}
-        />
+        /> */}
          <div  className="relative w-full min-h-[30rem] max-large:min-h-[15rem] mt-[10em] max-large:mt-[7rem]">
         <Image 
         src="/images/contactbanner.png"
@@ -135,21 +143,21 @@ const submitBtn = async (e) => {
         <input 
             type="text"
             placeholder="First Name"
-            name="firstName"
-            value=''
+            name="firstname"
+            value={data.firstname}
             className=" rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
-            // onChange={onChangeInput}
+            onChange={onChangeInput}
             />
 
         <input 
             type="text"
             placeholder="Last Name"
-            name="lastName"
-            value=''
+            name="lastname"
+            value={data.lastname}
             className="rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
-            // onChange={onChangeInput}
+            onChange={onChangeInput}
             />
         </div>
 
@@ -158,36 +166,42 @@ const submitBtn = async (e) => {
             type="text"
             placeholder="Email Address"
             name="email"
-            value=''
+            value={data.email}
             className=" rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
-            // onChange={onChangeInput}
+            onChange={onChangeInput}
             />
 
         <input 
             type="text"
             placeholder="Phone no"
             name="phone"
-            value=''
+            value={data.phone}
             className="rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
-            // onChange={onChangeInput}
+            onChange={onChangeInput}
             />
         </div>
 
-        <div className="w-full my-[1.5em]">
-        <input 
-            type="text"
-            placeholder="Address"
-            name="email"
-            value=''
-            className=" rounded-[0.5rem] pl-[1.2em] outline-none border border-index
-            w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
-            // onChange={onChangeInput}
-            />
+        <div className="my-[1.5em]">
+         <textarea
+            placeholder="Message" 
+            name="message"
+            value={data.message}
+            onChange={onChangeInput}
+            className="rounded-[0.5rem] px-[1.2em] py-[0.5em] outline-none 
+            border border-btn_bg w-[100%] h-[7.5rem] text-primary font-normal 
+            text-[18px] xlarge:text-normal placeholder-primary"
+            >
+            </textarea>
         </div>
-
-        <button className="font-h2 p-[1em] text-btn_bg bg-h1 rounded-[12px] text-[1em] bg-card1">Send</button>
+        <button 
+        className="font-h2 p-[1em] text-btn_bg bg-h1 rounded-[12px] text-[1em] bg-card1"
+        onClick={submitBtn}
+        disabled={loading}
+        >
+        {loading ? "sending..." : "Send"}
+        </button>
     </form>
 
     <div className="flex justify-left items-center mt-[3rem] max-large:mt-[2rem] pl-[3rem] max-large:pl-0">

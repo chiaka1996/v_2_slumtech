@@ -1,12 +1,21 @@
 import  {Schema, model, models} from 'mongoose';
 
 const messageSchema = new Schema({
-    name: {
+    firstname: {
+        type: String,
+        required: true
+    },
+    lastname: {
         type: String,
         required: true
     },
 
     email: {
+        type: String,
+        required: true
+    },
+
+    phone: {
         type: String,
         required: true
     },
