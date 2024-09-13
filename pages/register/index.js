@@ -19,13 +19,15 @@ const Register = () => {
   const [toggleModal, setToggleModal] = useState(false)
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState({
-      schoolName: "",
+      firstname: "",
+      lastname: "",
       email: "",
-      registrationNumber: "",
       phone: "",
       address: "",
-      country: selected,
-      studentsNumber: ""
+      skills: "",
+      interest: "",
+      availability: "",
+      whyVolunteer: ""
   })
   
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi;
@@ -48,9 +50,9 @@ const submitBtn = async (e) => {
   try{
       e.preventDefault()
       setLoading(true)
-  const {schoolName, email, phone, registrationNumber, address, country, studentsNumber} = data;
+  const {firstname, lastname, email, phone, address, skills, interest, availability, whyVolunteer} = data;
 
-  if(!schoolName || !email || !registrationNumber || !phone || !address || !selected || !studentsNumber) {
+  if(!firstname || !lastname || !email || !phone || !address || !skills || !interest || !availability || !whyVolunteer) {
       setLoading(false)
       return toast.error("please fill all required fields.", {
           position: "top-right",
@@ -58,7 +60,7 @@ const submitBtn = async (e) => {
           });
   }
 
-  if(schoolName.length < 2){
+  if(firstname.length < 2 || lastname.length < 2){
       setLoading(false)
       return toast.error("name should be a minimum of 2 characters", {
           position: "top-right",
@@ -74,19 +76,9 @@ const submitBtn = async (e) => {
           });
   }
 
-  const postData = {
-    schoolName,
-    email,
-    registrationNumber,
-    phone,
-    address,
-    country: selected,
-    studentsNumber
-  }
-
-  const httpRequest = await fetch('../api/registerSchool',{
+  const httpRequest = await fetch('../api/register',{
       method: "POST",
-      body: JSON.stringify(postData),
+      body: JSON.stringify(data),
       headers:{
           "Content-type": "application/json; charset=UTF-8"
       }
@@ -95,16 +87,22 @@ const submitBtn = async (e) => {
   const response = await httpRequest.json();
 
   if(response.status){
-      setToggleModal(true)
       setLoading(false)
+      toast.success(<div>{response.message}</div>, {
+        position: "top-right",
+        theme: "colored",
+        });
+
       setData({
-        schoolName: "",
-        email: "",
-        registrationNumber: "",
-        phone: "",
-        address: "",
-        country: "",
-        studentsNumber: ""
+        firstname: "", 
+        lastname: "",
+        email: "", 
+        phone: "", 
+        address: "", 
+        skills: "", 
+        interest: "", 
+        availability: "", 
+        whyVolunteer: ""
       })
   }
   else{
@@ -138,10 +136,10 @@ const submitBtn = async (e) => {
         <Navigation />
         <Sidebar /> 
         <ToastContainer />
-        <SubmitModal 
+        {/* <SubmitModal 
         toggle={toggleModal} 
         toggleState={toggleState}
-        />
+        /> */}
     <div className="relative text-center mt-[10em] max-large:mt-[7em] w-[80%] mx-auto max-large:w-[90%]">
         <Link href='/about' className='no-underline'>
         <div className="text-secondary max-large:text-normal font-normal text-[#000] flex flex-row items-center absolute top-0 max-large:top-[0.5rem] left-0">
@@ -207,7 +205,7 @@ const submitBtn = async (e) => {
               type="text"
               placeholder="First Name"
               value={data.firstname}
-              name="firstName"
+              name="firstname"
               onChangeInput={onChangeInput}
               />
 
@@ -215,7 +213,7 @@ const submitBtn = async (e) => {
             type="text"
             placeholder="Last Name"
             value={data.lastname}
-            name="lastName"
+            name="lastname"
             onChangeInput={onChangeInput}
             />
               </div>
@@ -223,10 +221,10 @@ const submitBtn = async (e) => {
               {/* grid2 */}
               <div className="grid grid-cols-2 gap-7">
               <InputComponent
-              type="text"
+              type="email"
               placeholder="Email Address"
               value={data.email}
-              name="name"
+              name="email"
               onChangeInput={onChangeInput}
               />
 
@@ -252,8 +250,8 @@ const submitBtn = async (e) => {
               <div className="mt-4">
               <TextAreaComponent
               placeholder="Skills (List any relevant skills or expertise you have and separate each skill with a comma)"
-              name="skill"
-              value={data.skill}
+              name="skills"
+              value={data.skills}
               onChangeInput={onChangeInput}
              />
               </div>
@@ -270,7 +268,7 @@ const submitBtn = async (e) => {
               <div className="mt-2">
               <TextAreaComponent
               placeholder="Availability (When are you available to volunteer?)"
-              name="availabilty"
+              name="availability"
               value={data.availability}
               onChangeInput={onChangeInput}
              />
@@ -279,12 +277,18 @@ const submitBtn = async (e) => {
               <div className="my-2">
               <TextAreaComponent
               placeholder="Why do you want to volunteer with us? (Briefly share your motivation)"
-              name="whyVolunterr"
+              name="whyVolunteer"
               value={data.whyVolunteer}
               onChangeInput={onChangeInput}
              />
               </div>
-              <button className="bg-btn_bg text-btn_color rounded-[12px] px-12 py-3">Submit</button>
+              <button 
+              className="bg-btn_bg text-btn_color rounded-[12px] px-12 py-3"  
+              onClick={submitBtn}
+              disabled={loading}
+              >
+             {loading ? "Submiting..." : "Submit"}
+              </button>
             </form>
 
           </section>

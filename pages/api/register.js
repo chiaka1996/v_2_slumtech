@@ -1,14 +1,14 @@
 import ConnectMongo from '../../utilis/MongoDb/connectDb';
-import modelSchool from '../../Model/register_school';
+import modelRegister from '../../Model/register';
 
-const RegisterSchool = async (req, res) => {
+const Register = async (req, res) => {
     try{
         await ConnectMongo()
-        const {schoolName, email, registrationNumber, phone, address, country, studentsNumber} = req.body;
+        const {firstname, lastname, email, phone, address, skills, interest, availability, whyVolunteer} = req.body;
 
         const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi;
 
-        if(!schoolName || !email || !registrationNumber || !address || !country || !studentsNumber || !phone){
+        if(!firstname || !lastname || !email || !phone || !address || !skills || !interest || !availability || !whyVolunteer){
             return res.status(400).json({
                 message: "please fill all fields",
                 status: false,
@@ -16,7 +16,7 @@ const RegisterSchool = async (req, res) => {
             })
         }
 
-        if(schoolName.length < 2){
+        if(firstname.length < 2 || lastname.length < 2){
             return res.status(400).json({
                 message: "name should be a minnimum of 2 characters",
                 status: false,
@@ -32,17 +32,19 @@ const RegisterSchool = async (req, res) => {
             })
         }
 
-        const saveSchool = new modelSchool({
-            schoolName,
+        const saveVolunteer = new modelRegister({
+            firstname,
+            lastname,
             email,
-            registrationNumber,
             phone,
             address,
-            country,
-            studentsNumber
+            skills,
+            interest,
+            availability,
+            whyVolunteer
         })
 
-        const response = await saveSchool.save()
+        const response = await saveVolunteer.save()
 
         if(response){
             return res.status(200).json({
@@ -64,4 +66,4 @@ const RegisterSchool = async (req, res) => {
     }
 }
 
-export default RegisterSchool;
+export default Register;
