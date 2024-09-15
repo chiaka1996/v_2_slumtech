@@ -48,7 +48,6 @@ const RegisterIndividual = () => {
         setPreview1(URL.createObjectURL(file))
 
         console.log(file)
-       
         if(file && file.type.substr(0,5) === "image"){        
             setSchoolCert(file)    
         }

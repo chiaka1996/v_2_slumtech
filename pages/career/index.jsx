@@ -37,11 +37,12 @@ export default function Career() {
     <div className="bg-[#02AED633] rounded-[10px] px-[5em] max-large:px-[1em] py-[2em] mt-[3em] max-large:mt-[2em] w-[80%] max-large:w-[90%] mx-auto flex flex-row flex-wrap items-center justify-between">
         <span>Country Director/Representative at SlumTech Foundation</span>
         <span>Full Time</span>
+        <Link href="/career/vacancy1" className='no-underline'>
         <button className="bg-btn_bg rounded-[12px] text-card1 text-[1em] min-h-[3.2em] px-[1em]">
         Apply Now 
         <span className="ml-5">&#129174;</span>
         </button>
-
+        </Link>
     </div>
 
     <div className="flex justify-center items-center mt-[1rem]">

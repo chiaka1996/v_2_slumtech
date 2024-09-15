@@ -1,13 +1,134 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from 'next/link';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {Navigation, Sidebar, Newsletter, Footer} from "../../components"
 import Head from 'next/head'
 
 export default function Vacancy1() {
-    const onChangeInput = () => {
-        return console.log("hellos")
+    const [loading, setLoading] = useState(false)
+    const [filename, setFilename] = useState(null);
+    const [cv, setCV] = useState(null)
+    const [data, setData] = useState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        address: "",
+        position: "",
+        yearsOfExperience: "",
+        coverLetter: ""
+    })
+
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi;
+
+    const onChangeInput = (e) => {
+        const value = e.target.value;
+        const name = e.target.name;
+        setData({
+            ...data, 
+            [name] : value
+        })
     }
+
+    console.log(data)
+
+    const handleFile = (e) => {
+        let file = e.target.files[0];
+        // setPreview(URL.createObjectURL(file))
+        setFilename(file.name)
+        if(file && file.type.substr(0) === "application/pdf"){        
+            setCV(file)    
+        }
+    }
+
+    const submitBtn = async (e) => {
+        try{
+            e.preventDefault()
+            setLoading(true)
+            const {firstname, lastname, email, phone, address, position, yearsOfExperience, coverLetter} = data;
+            if(!firstname || !cv || !lastname || !email || !phone || !address || !position || !yearsOfExperience || !coverLetter){
+                setLoading(false)
+                return  toast.error("please fill all required fields.", {
+                position: "top-right",
+                theme: "colored",
+                });
+                }
+
+                
+            if(firstname.length < 2 || lastname.length < 2){
+                setLoading(false)
+                return  toast.error("name should be a minimum of 2 characters", {
+                    position: "top-right",
+                    theme: "colored",
+                    });
+            }
+
+            if(!emailRegex.test(email)){
+                setLoading(false)
+                return  toast.error("invalid email", {
+                    position: "top-right",
+                    theme: "colored",
+                    });
+            }
+
+            let formdata = new FormData();
+              formdata.append('firstname', firstname)
+              formdata.append('lastname', lastname)
+              formdata.append('email', email)
+              formdata.append('phone', phone)
+              formdata.append('address', address)
+              formdata.append('position', position)
+              formdata.append('yearsOfExperience', yearsOfExperience)
+              formdata.append('coverLetter', coverLetter)
+              formdata.append('cv', cv)
+    
+            //add CV to the database
+            const addCV = await fetch('../api/vacancy', {
+                method: 'POST',
+                body: formdata,
+
+            })
+    
+                let response = await addCV.json()   
+                if(response.status){
+                    setLoading(false)
+                    toast.success(`${response.message}`, {
+                        position: "top-right",
+                        theme: "colored",
+                      });
+
+                    setData({
+                        firstname: "",
+                        lastname: "",
+                        email: "",
+                        phone: "",
+                        address: "",
+                        position: "",
+                        yearsOfExperience: "",
+                        coverLetter: ""
+                    })
+                    setCV(null)
+                    setFilename("")       
+                }  
+                else{
+                    setLoading(false)
+                    toast.error(`${response.message}`, {
+                        position: "top-right",
+                        theme: "colored",
+                      });
+                }
+         }
+        catch(error){
+            setLoading(false)
+            toast.error(<div>{error.message}</div>, {
+            position: "top-right",
+            theme: "colored",
+        });
+        }
+    }
+
   return (
    <main className="text-primary">
     <Head>
@@ -20,6 +141,7 @@ export default function Vacancy1() {
     />
     <meta name="keywords" content="nonprofit, foundation, slum, technology, africa" />
     </Head>
+    <ToastContainer />
     <Navigation />
     <Sidebar /> 
 
@@ -151,8 +273,8 @@ export default function Vacancy1() {
         <input 
             type="text"
             placeholder="First Name"
-            name="firstName"
-            value=''
+            name="firstname"
+            value={data.firstname}
             className=" rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
             onChange={onChangeInput}
@@ -161,8 +283,8 @@ export default function Vacancy1() {
         <input 
             type="text"
             placeholder="Last Name"
-            name="lastName"
-            value=''
+            name="lastname"
+            value={data.lastname}
             className="rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
             onChange={onChangeInput}
@@ -175,7 +297,7 @@ export default function Vacancy1() {
             type="emaill"
             placeholder="Email Address"
             name="email"
-            value=''
+            value={data.email}
             className=" rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
             onChange={onChangeInput}
@@ -185,7 +307,7 @@ export default function Vacancy1() {
             type="text"
             placeholder="Phone no"
             name="phone"
-            value=''
+            value={data.phone}
             className="rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
             onChange={onChangeInput}
@@ -198,7 +320,7 @@ export default function Vacancy1() {
             type="text"
             placeholder="Address"
             name="address"
-            value=''
+            value={data.address}
             className="rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
             onChange={onChangeInput}
@@ -211,7 +333,7 @@ export default function Vacancy1() {
             type="text"
             placeholder="Position"
             name="position"
-            value=''
+            value={data.position}
             className=" rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
             onChange={onChangeInput}
@@ -220,8 +342,8 @@ export default function Vacancy1() {
         <input 
             type="number"
             placeholder="Years Of Experience"
-            name="experience"
-            value=''
+            name="yearsOfExperience"
+            value={data.yearsOfExperience}
             className="rounded-[0.5rem] pl-[1.2em] outline-none border border-index
             w-[100%] h-[3rem] text-primary font-normal text-[18px] placeholder-primary"
             onChange={onChangeInput}
@@ -232,13 +354,13 @@ export default function Vacancy1() {
         <div className="mt-[1.5em]">
         <label htmlFor="cv"  className="block flex items-center rounded-[0.5rem] pl-[1.2em]
             w-full bg-index h-[3rem] text-primary font-normal text-[18px]">
-        CV/Resume
+       {filename ? filename : 'CV/Resume'}
         </label>
         <input 
         type="file"
         id="cv" 
-        // onInput = {handleFile2}
-        // accept='images/*'
+        onInput = {handleFile}
+        accept='application/pdf'
        className="hidden"
         />
         </div>
@@ -248,7 +370,7 @@ export default function Vacancy1() {
          <textarea
             placeholder="cover letter" 
             name="coverLetter"
-            value=""
+            value={data.coverLetter}
             onChange={onChangeInput}
             className="rounded-[0.5rem] px-[1.2em] py-[0.5em] outline-none 
             border border-btn_bg w-[100%] h-[7.5rem] text-primary font-normal 
@@ -257,7 +379,13 @@ export default function Vacancy1() {
             </textarea>
         </div>
       
-    <button className="px-[1rem] py-[0.7rem] text-normal font-h2 text-btn_bg rounded-[12px] border border-btn_color bg-btn_color">Send</button>
+    <button 
+    className="px-[1rem] py-[0.7rem] text-normal font-h2 text-btn_bg rounded-[12px] border border-btn_color bg-btn_color"
+    disabled={loading}
+    onClick={submitBtn}
+    >
+    {loading ? "Submiting..." : "Submit"}
+    </button>
     </form>
     </section>
     <Newsletter />
