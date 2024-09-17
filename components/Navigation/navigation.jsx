@@ -10,13 +10,13 @@ const Navigation = () => {
   const { bar, openBar, closeBar} = BarState();
   const router = useRouter();
 
-  // function googleTranslateElementInit() {
-  //   new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-  // }
+  function googleTranslateElementInit() {
+    new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }
 
-  // useEffect(() => {
-  //   googleTranslateElementInit()
-  // })
+  useEffect(() => {
+    googleTranslateElementInit()
+  })
 
     return(
       <nav className="font-primary bg-[#fff] z-[500] py-2 2xl:py-6 px-normal xlarge:px-xnormal max-large:px-[5%] flex flex-row justify-between items-center fixed top-0 left-0 w-full">
@@ -96,7 +96,7 @@ const Navigation = () => {
             </Link>
             </div>
 
-            {/* <div id="google_translate_element" className=''></div> */}
+            <div id="google_translate_element" className=''></div>
 
               <button onClick={() => router.push('/ourteam')} className='bg-btn_bg text-normal px-[1rem] py-2 2xl:py-3 text-btn_color rounded-[12px] font-header'>GET INVOLVED</button>
           
