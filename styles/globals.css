@@ -11,6 +11,10 @@
   display: none !important;
 } */
 
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
 .programSection{
   background: linear-gradient(180deg, #E8107D 0%, #FD213E 100%);
 }

@@ -1,5 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import gsap from 'gsap'; 
+import { useGSAP} from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Image from "next/image";
 import Link from "next/link";
 import {Navigation, Sidebar, Footer, Newsletter} from "../components"
@@ -109,8 +112,62 @@ export const ProgramCard2 = () => {
   )
 }
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Home() {
+  const container = useRef();
+  useGSAP(
+    () => {
+        // gsap code here...
+        // gsap.to('.programCircle1', { 
+        //   scrollTrigger:{
+        //     trigger: ".programCircle1",
+        //     start: "top center",
+        //     toggleActions: "restart none none none",
+        //   },
+        //   y: 500,
+        //   duration: 3
+        // });
+        gsap.fromTo(".programCircle1", 
+          { y: -50 }, // Starting properties
+          { 
+            y: 0,   // Ending properties
+            duration: 1, 
+            scrollTrigger: {
+              trigger: ".programHouse",
+              start: "top center", 
+            }
+          }
+        );
+
+        gsap.fromTo(".programCircle2", 
+          { y: -50 }, // Starting properties
+          { 
+            y: 0,   // Ending properties
+            duration: 1, 
+            scrollTrigger: {
+              trigger: ".programHouse",
+              start: "center center",
+            }
+          }
+        );
+
+        gsap.fromTo(".programText", 
+          { y: 200 }, // Starting properties
+          { 
+            y: 0,   // Ending properties
+            duration: 1, 
+            scrollTrigger: {
+              trigger: ".programHouse",
+              start: "top center", 
+            }
+          }
+        );
+    },
+    { scope: container }
+);
   const bannerImages = ["/images/banner1.png", "/images/banner2.png", "/images/banner3.png"]
   const [imgCount, setImageCount] = useState(0);
 
@@ -140,7 +197,7 @@ export default function Home() {
   },[programSwitch])
 
   return (
-   <main className="font-primary text-primary">
+   <main className="font-primary text-primary"ref={container} >
     <Navigation />
     <Sidebar /> 
     {/* banner */}
@@ -185,7 +242,7 @@ export default function Home() {
     </section>
 
     <section className="relative mt-[5rem] max-large:mt-[3rem] w-[50%] max-large:w-[90%] mx-auto text-center z-[100]">
-    <div className="relative max-w-[13rem] h-[10rem] max-large:h-[10rem] mx-auto z-[100]">
+    <div className="box relative max-w-[13rem] h-[10rem] max-large:h-[10rem] mx-auto z-[100]">
       <Image 
       src="/images/boylaptop.png" 
       fill
@@ -200,14 +257,14 @@ export default function Home() {
     </section>
 
     {/* our programs */}
-    <section className="relative programSection text-btn_color px-[15%] max-large:px-[5%]  py-2 mt-[5em] mb-[3em]">
+    <section className="programHouse relative programSection text-btn_color px-[15%] max-large:px-[5%]  py-2 mt-[5em] mb-[3em]">
       {/* semi circle */}
-      <div className="absolute w-[38rem] max-large:w-[20rem] h-[38rem] max-large:h-[20rem] rounded-full bg-[#fff] left-[3rem] max-large:left-[-1rem] top-[-25rem] max-large:top-[-7rem] z-10"></div>
-      <div className="max-large:hidden absolute w-[38rem] h-[38rem] rounded-full bg-[#fff] left-[-30rem] top-[-25rem] z-10"></div>
+      <div className="programCircle1 absolute w-[38rem] max-large:w-[20rem] h-[38rem] max-large:h-[20rem] rounded-full bg-[#fff] left-[3rem] max-large:left-[-1rem] top-[-25rem] max-large:top-[-7rem] z-10"></div>
+      <div className="programCircle2 max-large:hidden absolute w-[38rem] h-[38rem] rounded-full bg-[#fff] left-[-30rem] top-[-25rem] z-10"></div>
     
-    <div className="flex flex-row max-large:flex-col flex-wrap w-full justify-between z-[100]">
+    <div className="programText !z-[300] relative flex flex-row max-large:flex-col flex-wrap w-full justify-between z-[100]">
     <div className="w-[45%] max-large:w-full mt-[5em] mb-[5em] max-large:mb-[1.5em] z-[100]">
-      <header className="text-btn_bg font-h2 text-h4 z-[100]">Our Programs</header>
+      <header className="relative text-btn_bg font-h2 text-h4 !z-[300]">Our Programs</header>
     <p className="font-normal text-secondary mt-[5em] mb-[1em]">
     One of the key pillars of SlumTech Foundation is its focus on technology education. 
     The foundation offers training in coding, digital skills, and entrepreneurship, 
