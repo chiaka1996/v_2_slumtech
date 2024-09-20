@@ -197,7 +197,7 @@ export default function Home() {
   },[programSwitch])
 
   return (
-   <main className="font-primary text-primary"ref={container} >
+   <main className="font-primary text-primary" ref={container}>
     <Navigation />
     <Sidebar /> 
     {/* banner */}

@@ -1,11 +1,116 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from 'next/link';
+import gsap from 'gsap'; 
+import { useGSAP} from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import {Navigation, Sidebar, Newsletter, Footer, ProgramCard} from "../../components"
 import Head from 'next/head'
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Programs() {
+    const container = useRef();
+    useGSAP(
+        () => {
+            // gsap code here...
+            // gsap.to('.programCircle1', { 
+            //   scrollTrigger:{
+            //     trigger: ".programCircle1",
+            //     start: "top center",
+            //     toggleActions: "restart none none none",
+            //   },
+            //   y: 500,
+            //   duration: 3
+            // });
+            gsap.fromTo(".program-1", 
+              { y: 70 }, // Starting properties
+              { 
+                y: 0,   // Ending properties
+                duration: 1, 
+                scrollTrigger: {
+                  trigger: ".program-1",
+                //   start: "top top", 
+                }
+              }
+            );
+      
+            gsap.fromTo(".program-2", 
+              { y: 70 }, // Starting properties
+              { 
+                y: 0,   // Ending properties
+                duration: 1, 
+                scrollTrigger: {
+                  trigger: ".program-2",
+                //   start: "top top",
+                }
+              }
+            );
+      
+            gsap.fromTo(".program-3", 
+              { y: 70 }, // Starting properties
+              { 
+                y: 0,   // Ending properties
+                duration: 1, 
+                scrollTrigger: {
+                  trigger: ".program-3",
+                //   start: "top top", 
+                }
+              }
+            );
+
+            gsap.fromTo(".program-4", 
+                { y: 70 }, // Starting properties
+                { 
+                  y: 0,   // Ending properties
+                  duration: 1, 
+                  scrollTrigger: {
+                    trigger: ".program-4",
+                    // start: "top top", 
+                  }
+                }
+              );
+
+              gsap.fromTo(".program-5", 
+                { y: 70 }, // Starting properties
+                { 
+                  y: 0,   // Ending properties
+                  duration: 1, 
+                  scrollTrigger: {
+                    trigger: ".program-5",
+                    // start: "top top", 
+                  }
+                }
+              );
+
+              gsap.fromTo(".program-6", 
+                { y: 70 }, // Starting properties
+                { 
+                  y: 0,   // Ending properties
+                  duration: 1, 
+                  scrollTrigger: {
+                    trigger: ".program-6",
+                    // start: "top top", 
+                  }
+                }
+              );
+
+              gsap.fromTo(".program-7", 
+                { y: 70 }, // Starting properties
+                { 
+                  y: 0,   // Ending properties
+                  duration: 1, 
+                  scrollTrigger: {
+                    trigger: ".program-7",
+                    // start: "top top", 
+                  }
+                }
+              );
+
+        },
+        { scope: container }
+      );
     const programList = [
         {
             img: "/images/card1.png",
@@ -65,7 +170,7 @@ export default function Programs() {
         }
     ]
   return (
-   <main className="text-primary">
+   <main className="text-primary" ref={container}>
     <Head>
     <title>Slumtech Programs page </title>
     <meta
@@ -90,7 +195,7 @@ export default function Programs() {
 
         <div className="mt-[3em] grid grid-cols-2 max-large:grid-cols-1 gap-[5em] max-large:gap-[2em]">
             {
-                programList.map((program, i) => <div key={i}>
+                programList.map((program, i) => <div className={`program-${i+1}`} key={i}>
                     <ProgramCard
                     img={program.img}
                     title={program.title}
