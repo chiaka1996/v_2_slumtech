@@ -29,13 +29,6 @@ export const Card = ({title, paragraph, link, img}) => {
             </p>   
                 <Link href={link}>
                 <button className="px-3 max-large:px-4 py-3 bg-btn_bg rounded-[12px] absolute bottom-[0.5rem] right-0 no-underline">
-                {/* <div  className="relative min-w-[20px] min-h-[20px] max-large:min-h-[20px]">
-                <Image 
-                src="https://img.icons8.com/ios/20/FCFCFD/circled-right-2.png" 
-                fill
-                alt="event"
-                /> 
-                </div> */}
                  <Image 
                 src='/icons/white_arrow.svg'
                 width="24"
@@ -223,11 +216,12 @@ gsap.to(".carouselBanner",
     {/* css is in home.css in style folder */}
     <section className="mt-[8rem] w-full bg-[#f3f4f6] py-[10rem]">
         <div className="carouselBanner flex flex-row items-center h-[396px]">
+        <Link href='/career' className='no-underline'>
         <div 
           onMouseEnter={handleMouseEnter1}
           onMouseLeave={handleMouseLeave1}
         className="relative min-w-[267px] h-[342px] mr-[1rem] hover:z-50 hover:scale-125 shadow-[2px_5px_5px_2px_#0000004D] rounded-[10px]">
-            <Image src='/images/event2.png'
+            <Image src='/images/media5.png'
             fill
             className="" alt="banner" />
             <div className="relative ml-[10%] mt-[1rem] font-h4 text-[17px] text-index">JUNE 2</div>
@@ -243,15 +237,16 @@ gsap.to(".carouselBanner",
                 height="24"
                 className="" 
                 alt="banner" />
-            </div>
-            
+            </div>       
         </div>
+        </Link>
 
+        <Link href='/media/post2' className='no-underline'>
         <div 
          onMouseEnter={handleMouseEnter2}
          onMouseLeave={handleMouseLeave2}
         className="relative min-w-[308px] h-[395px] mr-[1rem] hover:z-50 hover:scale-125 shadow-[2px_5px_5px_2px_#0000004D] rounded-[10px]">
-            <Image src='/images/event2.png'
+            <Image src='/images/media6.png'
             fill
             className="" alt="banner" />
 
@@ -271,12 +266,14 @@ gsap.to(".carouselBanner",
                 alt="banner" />
             </div>
         </div>
+        </Link>
 
+        <Link href='/media/post1' className='no-underline'>
         <div 
          onMouseEnter={handleMouseEnter3}
          onMouseLeave={handleMouseLeave3}
         className="relative min-w-[308px] h-[395px] mr-[1rem] hover:z-50 hover:scale-125 shadow-[2px_5px_5px_2px_#0000004D] rounded-[10px]">
-            <Image src='/images/event2.png'
+            <Image src='/images/media4.png'
             fill
             className="" alt="banner" />
              <div className="absolute bottom-8 left-[10%] w-[80%] flex items-end justify-between font-h4 text-h3">
@@ -294,12 +291,14 @@ gsap.to(".carouselBanner",
                 alt="banner" />
             </div>
         </div>
+        </Link>
 
+        <Link href='/blog/post1' className='no-underline'>
         <div
          onMouseEnter={handleMouseEnter4}
          onMouseLeave={handleMouseLeave4}
         className="relative min-w-[319px] h-[406px] mr-[1rem] hover:z-50 hover:scale-125 shadow-[2px_5px_5px_2px_#0000004D] rounded-[10px]">
-            <Image src='/images/event2.png'
+            <Image src='/images/media_banner2.png'
             fill
             className="" alt="banner" />
             <div className="relative ml-[10%] mt-[1rem] font-h4 text-[17px] text-index">AUGUST 14</div>
@@ -318,12 +317,14 @@ gsap.to(".carouselBanner",
                 alt="banner" />
             </div>
         </div>
+        </Link>
 
+        <Link href='/blog/post2' className='no-underline'>
         <div 
          onMouseEnter={handleMouseEnter5}
          onMouseLeave={handleMouseLeave5}
         className="relative min-w-[308px]  h-[395px] mr-[1rem] hover:z-50 hover:scale-125 shadow-[2px_5px_5px_2px_#0000004D] rounded-[10px]">
-            <Image src='/images/event2.png'
+            <Image src='/images/media_banner1.png'
             fill
             className="" alt="banner" />
             <div className="relative ml-[10%] mt-[1rem] font-h4 text-[17px] text-index">AUGUST 18</div>
@@ -344,12 +345,14 @@ gsap.to(".carouselBanner",
                 alt="banner" />
             </div>
         </div>
+        </Link>
 
+        <Link href='/register' className='no-underline'>
         <div 
          onMouseEnter={handleMouseEnter6}
          onMouseLeave={handleMouseLeave6}
           className="relative min-w-[267px] h-[342px] hover:z-50 hover:scale-125 shadow-[2px_5px_5px_2px_#0000004D] rounded-[10px]">
-            <Image src='/images/event2.png'
+            <Image src='/images/media3.png'
             fill
             className="" alt="banner" />
             <div className="relative ml-[10%] mt-[1rem] font-h4 text-[17px] text-index">JUNE 3</div>
@@ -367,6 +370,7 @@ gsap.to(".carouselBanner",
                 alt="banner" />
             </div>
         </div>
+        </Link>
         </div>
     </section>
 

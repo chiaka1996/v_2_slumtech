@@ -9,7 +9,7 @@ const MediaPost2 = () => {
     return (
         <main className="relative overflow-hidden text-primary">
            <Head>
-          <title>SlumTech Foundation Joins US Chamber of Commerce</title>
+          <title> Tech for Change: Empowering Communities Worldwide.</title>
           <meta
             name="description"
             content="Embracing Digital Transformation: Unlocking the Potential of Slum Communities,"
