@@ -6,6 +6,21 @@
     display: block;
 }
 
+/* media carousel banner */
+/* .carouselBanner{
+    min-width: 2100px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-color: transparent transparent;
+}
+
+.carouselBanner::-webkit-scrollbar{
+    height: 1px;
+} */
+
+/* media banner ends here */
+
 /* @media only screen and (max-width: 900px) {
     .whatWedo{
         background-image:

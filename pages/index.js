@@ -8,6 +8,9 @@ import Link from "next/link";
 import {Navigation, Sidebar, Footer, Newsletter} from "../components"
 import style from "./blog/index.module.css"
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+
 export const ProgramCard1 = () => {
   return (
     <div className="grid grid-cols-2 w-[45%] max-large:w-full">
@@ -112,24 +115,11 @@ export const ProgramCard2 = () => {
   )
 }
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
-
 export default function Home() {
   const container = useRef();
   useGSAP(
     () => {
         // gsap code here...
-        // gsap.to('.programCircle1', { 
-        //   scrollTrigger:{
-        //     trigger: ".programCircle1",
-        //     start: "top center",
-        //     toggleActions: "restart none none none",
-        //   },
-        //   y: 500,
-        //   duration: 3
-        // });
         gsap.fromTo(".programCircle1", 
           { y: -50 }, // Starting properties
           { 

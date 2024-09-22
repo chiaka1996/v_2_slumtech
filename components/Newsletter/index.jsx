@@ -9,11 +9,11 @@ const Newsletter = () => {
         <div className='font-normal text-secondary'>Stay up to date on our, events, programs and more.</div>
         <form className='w-[35%] mx-auto max-large:w-[90%]'>
             <div className='my-[1em]'>
-                <input type="email" placeholder='email' className='outline-none rounded-[12px] px-5 border border-btn_bg w-full h-[45px]' />
+                <input type="email" placeholder='Email' className='outline-none rounded-[12px] px-5 border hover:border-2 border-btn_bg w-full h-[45px] hover:scale-[1.1]' />
             </div>
 
             <div className='my-[1em]'>
-                <input type="text" placeholder='Your name' className='outline-none rounded-[12px] px-5 border border-btn_bg w-full h-[45px]' />
+                <input type="text" placeholder='Your first name' className='outline-none rounded-[12px] px-5 border hover:border-2 border-btn_bg w-full h-[45px] hover:scale-[1.1]' />
             </div>
             
             <div className='w-full flex'>

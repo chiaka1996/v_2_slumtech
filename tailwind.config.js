@@ -21,6 +21,7 @@ module.exports = {
         btn_color: "#F5F5F5",
         card1: "#F5F5F5",
         index: "#FFFFFF",
+        mediaBannerHead: "#FEB31A"
     },
     screens: {
       'large': '900px',
