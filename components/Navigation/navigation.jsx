@@ -10,30 +10,20 @@ const Navigation = () => {
   const { bar, openBar, closeBar} = BarState();
   const router = useRouter();
 
-  // const selectLanguage = (e) => {
-  //   let value = e.target.value;
-  //   const googleOptions = document.getElementById("lang_select").options;
-   
-  //  for (var i = 0; i < googleOptions.length; i++) {
-  //   console.log(googleOptions[i].value)
-  //   console.log(value)
-  //   if (googleOptions[i].value == value) {
-  //    googleOptions[i].setAttribute("selected",true);
-  //     break;
-  //   }
-  // }
-  // }
-
-  function googleTranslateElementInit() {
-     window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-  }
-
   useEffect(() => {
-    googleTranslateElementInit()
-    // let selectLang =  document.getElementsByTagName('select');
-    //   let language = selectLang[1]
-    //   language.setAttribute('id', 'lang_select');
-    // console.log(language)
+    function googleTranslateElementInit() {
+      new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+   }
+    
+    const addGoogleTranslateScript = () => {
+      const script = document.createElement('script');
+      script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      document.body.appendChild(script);
+      window.googleTranslateElementInit = googleTranslateElementInit;
+    };
+
+    addGoogleTranslateScript();
   },[])
 
     return(
@@ -142,7 +132,6 @@ const Navigation = () => {
                     />   
                 </div>
                 }
-                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       </nav>
     )
 }
