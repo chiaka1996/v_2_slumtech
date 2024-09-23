@@ -4,13 +4,19 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Newsletter = () => {
     const [loading, setLoading] = useState(false)
+    const [checked, setChecked] = useState(false)
+    const [errMsg, setErrMsg] = useState("")
     const [data, setData] = useState({
         email: "",
-        name: "",
-        check: true
+        name: ""
     })
 
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi;
+
+    const toggleCheckbox = () => {
+        setErrMsg('')
+        setChecked((prev) => !prev)
+    }
 
     const onChangeInput = (e) => {
         let value = e.target.value;
@@ -25,8 +31,12 @@ const Newsletter = () => {
         try{
             e.preventDefault()
             setLoading(true)
-        const {email, name} = data;
-        console.log(data)
+            const {email, name} = data;
+
+        if(!checked){
+            setLoading(false)
+            return setErrMsg('please approve notifications')
+            }
       
         if(!email || !name) {
             setLoading(false)
@@ -73,6 +83,7 @@ const Newsletter = () => {
                 name: "",
                 email: ""
             })
+            setErrMsg('')
         }
         else{
             setLoading(false)
@@ -119,28 +130,29 @@ const Newsletter = () => {
                 />
             </div>
             
-            <div className='w-full flex'>
+            <div className='w-full flex justify-between'>
                 {/* <div> */}
+                <label className='w-[20px]'>
                 <input 
-                type="checkbox" 
-                name="check" 
-                // value={data.check}        
-                onChange={onChangeInput} 
-                className='appearance-none outline-none border border-btn_bg rounded-full h-[15px] w-[15px]'
-                checked
+                type="checkbox"    
+                onChange={toggleCheckbox} 
+                className='hidden'
                  />
+                 <div className={`border border-btn_bg rounded-full h-[15px] w-[15px] ${checked ? "bg-btn_bg" : "bg-index"}`}></div>
+                 </label>
                 {/* </div> */}
-                <div className='font-normal w-[100%] text-[1em] mb-[1em] ml-[0.5em] text-left'>
+                <div className='font-normal w-[100%] text-[1em] ml-[0.5em] text-left'>
                 I agree to receive notifications, 
                 updates, publications, alerts and newsletters from the SlumTech Foundation.
                 </div>
             </div>
+            <div className='text-btn_bg text-[13px] font-[400] mb-[1em]'>{errMsg}</div>
             <button
             disabled={loading}
             onClick={submitBtn}
             className='outline-none bg-btn_bg text-[1em] font-h2 w-full h-[50px] rounded-[12px] text-btn_color'
             >
-            {loading ? "Subscribing" : "Subscribe"}
+            {loading ? "Subscribing..." : "Subscribe"}
             </button>
         </form>
        </section>

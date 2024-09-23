@@ -25,7 +25,7 @@ const Navigation = () => {
   // }
 
   function googleTranslateElementInit() {
-    new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+     window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
   }
 
   useEffect(() => {
