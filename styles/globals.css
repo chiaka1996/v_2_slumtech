@@ -1,43 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unlock&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* iframe.skiptranslate { display: "none !important"; } */
-.VIpgJd-ZVi9od-l4eHX-hSRGPd{
-  display: none !important;
+html{
+  font-size: 62.5%;
+  font-family: 'Poppins';
+  scroll-behavior: smooth;
 }
 
-/* .skiptranslate{
-  display: none !important;
-} */
-
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
+.container{
+  max-width: 116rem;
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+  margin: auto auto;
 }
 
-.programSection{
-  background: linear-gradient(180deg, #E8107D 0%, #FD213E 100%);
+.serviceCard{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3.3rem; 
 }
 
-.program_grid{
-  border: 1px solid;
-  border-image: linear-gradient(to bottom, rgba(245, 245, 245, 0) 0%, #F5F5F5 50%, rgba(245, 245, 245, 0)) 1 100%;
+.approachCard{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  gap: 3.5rem; 
 }
 
-.indexAbout{
-  border: 2px solid;
-  border-top: 0;
-  border-image-source: linear-gradient(73.97deg, #FD213E 5.16%, #02AED6 94.84%, #FD213E 5.16%,#02AED6 94.84%) 1;
+.footerGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3.5rem; 
 }
 
-.upcomingEvent{
-  /* background-color:  #d8bbbe; */
-  /* background-color: linear-gradient(180deg, rgba(253, 33, 62, 0.01) 0%, #FFFFFF 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)) 100%; */
-
-}
-
-/* home banner */
-.bannerOverlay{
-  background: linear-gradient(180deg, rgba(232, 16, 125, 0) 0%, #044930 96.5%);
-}
-  

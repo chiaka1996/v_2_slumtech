@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router';
 import {State} from "../context/context"
 import '../styles/globals.css';
-import '../styles/home.css';
 
 function LoadingNewPage() {
   const router = useRouter();
@@ -23,7 +22,7 @@ function LoadingNewPage() {
   });
   return (
     loading && (
-      <div className={loading ? "pageLoader" : "pageLoaderInactive"}></div>
+      <div className={loading ? "pageLoader" : "pageLoaderInactive"}> </div>
     )
   );
 }
@@ -33,14 +32,9 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Head>
       <link rel="shortcut icon" href="/logo/slumtechLogo.png" sizes='32x32' />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-          <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-      />
       </Head>
     <State>
-    <div className='font-primary'>
+    <div>
     <LoadingNewPage />
     <Component {...pageProps} />
     </div>
