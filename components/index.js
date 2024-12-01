@@ -6,3 +6,4 @@ export {default as Banner} from "./BannerFolder/banner";
 export {default as MainHeader} from "./Header/mainheader";
 export {default as Card} from "./CardsFolder/card";
 export {default as ApproachCard} from "./CardsFolder/ApproachCard";
+export {default as JoinUs} from "./JoinUs";

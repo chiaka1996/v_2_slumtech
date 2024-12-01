@@ -11,7 +11,7 @@ const Navigation = () => {
   const router = useRouter();
 
     return(
-      <nav className="fixed top-0 left-0 w-full z-100 h-[9rem] flex items-center bg-transparent">
+      <nav className="fixed top-0 left-0 w-full z-500 h-[9rem] flex items-center bg-transparent">
         <div className="container flex flex-row justify-between items-center">
          <Image 
             src="/v_3_logo/logo1.png"
