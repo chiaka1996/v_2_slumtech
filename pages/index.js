@@ -97,7 +97,7 @@ export default function Home() {
   }
 ]
   return (
-   <main className="text-[1.6rem] font-[400] text-[#000]">
+   <main className="text-[1.6rem] font-[400] text-[#000] leading-[2.6rem]">
     <Navigation />
     <Sidebar /> 
     <Banner 
