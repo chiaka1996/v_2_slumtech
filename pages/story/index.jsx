@@ -45,9 +45,9 @@ export default function OurStory() {
       </div>
     </section>
 
+  {/* our story section */}
     <section className='bg-[#0A4527] text-[#fff] relative'>
       <div className='min-[1440px]:container'>
-        {/* our story section */}
         <div className='flex flex-row'>
         <div className='w-[50%] pt-[15.6rem]' >
           <div className='max-w-[49.2rem] mx-auto'>
