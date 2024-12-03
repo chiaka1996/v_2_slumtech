@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
     <State>
     <div>
-    <LoadingNewPage />
+    {/* <LoadingNewPage /> */}
     <Component {...pageProps} />
     </div>
     </State>

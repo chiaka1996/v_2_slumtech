@@ -5,3 +5,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@media screen and (max-width: 768px) {
+    .banner_main_header{
+        padding: 0;
+    }
+  }
+
