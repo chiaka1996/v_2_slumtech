@@ -28,14 +28,14 @@ export default function OurStory() {
     />
 
     {/* video section */}
-    <section>
-      <div className="container py-[10rem]">
-      <h2 className='font-[500] text-center text-[4.5rem] leading-[4.5rem]'>
+    <section className=''>
+      <div className="container py-[10rem] max-small:py-[5rem]">
+      <h2 className='text-center font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
       <span>Journey Through</span>
       <span className='text-[#FDB21A]'> Our Lens</span>
       </h2>
 
-      <div className='max-w-[97.1rem] h-[52.8rem] mt-[5rem] mx-auto'>
+      <div className='max-w-[97.1rem] h-[52.8rem] max-small:h-[20rem] mt-[5rem] max-small:mt-[3rem] mx-auto'>
       <video controls className='rounded-[20px] w-full'>
           <source src="https://res.cloudinary.com/dcr1pvlh3/video/upload/v1728152331/samples/elephants.mp4" />
           Your browser does not support the video tag.
@@ -45,14 +45,14 @@ export default function OurStory() {
       </div>
     </section>
 
-  {/* our story section */}
-    <section className='bg-[#0A4527] text-[#fff] relative'>
-      <div className='min-[1440px]:container'>
-        <div className='flex flex-row'>
-        <div className='w-[50%] pt-[15.6rem]' >
+  {/*our story section */}
+     <section className='bg-[#0A4527] text-[#fff] relative'>
+     <div className='min-[1440px]:container max-small:px-[1rem] max-small:py-[5rem]'>
+        <div className='flex flex-row max-small:flex-col max-small:gap-y-[1rem] items-center'>
+        <div className='w-[50%] max-small:w-full'>
           <div className='max-w-[49.2rem] mx-auto'>
-            <h1 className='text-[2.5rem] leading-[2.5rem]'>Our Story</h1>
-            <h2 className='font-[500] text-[4.5rem] leading-[4.5rem] mt-[2rem] mb-[3.5rem]'>
+            <h1 className='text-[2.5rem] max-small:text-[1.8rem] leading-[2.5rem]'>Our Story</h1>
+            <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[3.5rem] max-small:mb-[1rem]'>
                 <span>Story of</span>
                 <span className='text-[#FDB21A]'> SlumTech Foundation</span>
                 </h2>
@@ -64,12 +64,12 @@ export default function OurStory() {
             through access to digital tools and resources.
             </p>
 
-            <div className='max-w-[16rem] h-[5.8rem] mt-[3.5rem]'>
+            <div className='max-w-[16rem] h-[5.8rem] mt-[3.5rem] max-small:mt-[1.5rem]'>
             <Button text="Learn More" />
             </div>
           </div>
         </div>
-        <div className='w-[50%] h-[74rem] relative' >
+        <div className='w-[50%] max-small:w-full h-[74rem] max-small:h-[30rem] relative' >
             <Image 
                 src="/v_3_images/ourstory.png"
               fill
@@ -79,18 +79,18 @@ export default function OurStory() {
         </div>
 
          {/* what we do section */}
-         <div className='flex flex-row'>
-         <div className='w-[50%] h-[74rem] relative' >
+         <div className='flex flex-row max-small:flex-col-reverse max-small:gap-y-[1rem] items-center max-small:mt-[2rem]'>
+         <div className='w-[50%] max-small:w-full h-[74rem] max-small:h-[30rem] relative' >
             <Image 
                 src="/v_3_images/whatwedo.png"
               fill
               alt="slumtech foundation story"
             />
         </div>
-        <div className='w-[50%] pt-[15.6rem]' >
+        <div className='w-[50%] max-small:w-full' >
           <div className='max-w-[49.2rem] mx-auto'>
-            <h1 className='text-[2.5rem] leading-[2.5rem]'>What We Do</h1>
-            <h2 className='font-[500] text-[4.5rem] leading-[4.5rem] mt-[2rem] mb-[3.5rem]'>
+            <h1 className='text-[2.5rem] max-small:text-[1.8rem] leading-[2.5rem]'>What We Do</h1>
+            <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[3.5rem] max-small:mb-[1rem]'>
                 <span>How we </span>
                 <span className='text-[#FDB21A]'>Make a Differece</span>
                 </h2>
@@ -102,7 +102,7 @@ export default function OurStory() {
             or providing mentorship, we are committed to making a tangible impact.
             </p>
 
-            <div className='max-w-[16rem] h-[5.8rem] mt-[3.5rem]'>
+            <div className='max-w-[16rem] h-[5.8rem] mt-[3.5rem] max-small:mt-[1.5rem]'>
             <Button text="Learn More" />
             </div>
           </div>
@@ -110,21 +110,22 @@ export default function OurStory() {
         </div>
 
       </div>
-    </section>
+    </section> 
 
     {/* timeline/milestone */}
-    <section className='relative py-[10rem]'>
+    <section className='relative py-[10rem] max-small:py-[5rem]'>
       <div className="container text-[#000] relative">
         <div className='text-center'>
         <MainHeader text="Timeline" />
-        <h2 className='font-[500] text-[4.5rem] leading-[4.5rem] mt-[2rem] mb-[2.5rem]'>
+        <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-0'>
                 <span className='text-[#FDB21A]'>Milestones </span>
                 <span>That Matter</span>
                 </h2>
         </div>
+
         {/* milestone */}
-        <div className='relative'>
-          <div className='absolute top-[27rem] left-0'>
+         <div className='relative'>
+          <div className='max-small:hidden absolute top-[27rem] left-0'>
           <div className='flex flex-col gap-y-[5rem] font-[500] text-[2.5rem] leading-[2.5rem]'>
             <span className='text-[#FDB21A]'>2024</span>
             <span>2023</span>
@@ -133,14 +134,14 @@ export default function OurStory() {
           </div>
           
           
-          <div className='w-[104.1rem] ml-auto mr-0'>
+          <div className='max-w-[104.1rem] ml-auto mr-0'> 
             {/* 2024 */}
-            <div className='flex flex-row justify-between border border-t-0 border-r-0 border-l-0 border-[#000] py-[5rem]'>
-              <div className='leading-[2.5rem] text-[10rem] font-[500] mt-[9rem]'>2024</div>
-              <div className='w-[69.9rem] flex flex-row justify-between'>
-                <div className='w-[26rem]'>
-                  <h1 className='font-[500] text-[2rem] leading-[2.5rem]'>SlumTech Ed-Tech Project in Houston, TX</h1>
-                  <div className='mt-[2rem]'>
+            <div className='flex flex-row max-small:flex-col justify-between border border-t-0 border-r-0 border-l-0 border-[#000] py-[5rem]'>
+              <div className='leading-[10rem] max-small:leading-[5rem] text-[10rem] max-small:text-[5rem] font-[500] mt-[9rem] max-small:mt-0'>2024</div>
+              <div className='w-[69.9rem] max-small:w-full flex flex-row max-small:flex-col justify-between'>
+                <div className='w-[26rem] max-small:w-full'>
+                  <h1 className='font-[500] text-[2rem] max-small:text-[1.6rem] leading-[2.5rem]'>SlumTech Ed-Tech Project in Houston, TX</h1>
+                  <div className='mt-[2rem] max-small:mt-[1rem]'>
                   Since early 2024, the SlumTech Ed-Tech project has expanded its 
                   horizons by launching training programs in Houston, Texas. Our founder 
                   took the lead in this initiative, personally conducting software development 
@@ -149,7 +150,7 @@ export default function OurStory() {
                   also created a vibrant community of aspiring developers.
                   </div>
                 </div>
-                <div className='w-[40rem] h-[27.5rem] relative' >
+                <div className='w-[40rem] max-small:w-full h-[27.5rem] max-small:h-[20rem] relative' >
                   <Image 
                       src="/v_3_images/milestone2024.png"
                     fill
@@ -157,22 +158,22 @@ export default function OurStory() {
                   />
               </div>
               </div>
-            </div>
+            </div> 
 
             {/* 2023 */}
-            <div className='flex flex-row justify-between border border-t-0 border-r-0 border-l-0 border-[#000] py-[5rem]'>
+             <div className='flex flex-row max-small:flex-col justify-between border border-t-0 border-r-0 border-l-0 border-[#000] py-[5rem]'>
               <div className='leading-[4.5rem] text-[5rem] font-[500] opacity-50'>2023</div>
-              <div className='w-[69.9rem]'>
-              <div className='flex flex-row justify-between border border-t-0 border-r-0 border-l-0 border-[#000] pb-[5rem]'>
-                <div className='w-[26rem]'>
-                  <h1 className='font-[500] text-[2rem] leading-[2.5rem]'>Personalized Training Experience</h1>
-                  <div className='mt-[2rem]'>
+              <div className='w-[69.9rem] max-small:w-full'>
+              <div className='flex flex-row max-small:flex-col justify-between border border-t-0 border-r-0 border-l-0 border-[#000] pb-[5rem]'>
+                <div className='w-[26rem] max-small:w-full'>
+                  <h1 className='font-[500] text-[2rem] max-small:text-[1.6rem] leading-[2.5rem]'>Personalized Training Experience</h1>
+                  <div className='mt-[2rem] max-small:mt-[1rem]'>
                   The training programs offered in Houston were designed to be highly interactive and engaging. Participants 
                   experienced a curriculum tailored to meet their needs, encompassing foundational
                   concepts to advanced software development techniques.
                   </div>
                 </div>
-                <div className='w-[40rem] h-[27.5rem] relative' >
+                <div className='w-[40rem] max-small:w-full h-[27.5rem] max-small:h-[20rem] relative' >
                   <Image 
                       src="/v_3_images/2023-1.png"
                     fill
@@ -181,16 +182,16 @@ export default function OurStory() {
               </div>
               </div>
 
-              <div className='flex flex-row justify-between pt-[5rem]'>
-                <div className='w-[26rem]'>
-                  <h1 className='font-[500] text-[2rem] leading-[2.5rem]'>Hands-On Workshops:</h1>
-                  <div className='mt-[2rem]'>
+              <div className='flex flex-row max-small:flex-col max-small:gap-y-[1rem] justify-between pt-[5rem]'>
+                <div className='w-[26rem] max-small:w-full'>
+                  <h1 className='font-[500] text-[2rem] max-small:text-[1.6rem] leading-[2.5rem]'>Hands-On Workshops:</h1>
+                  <div className='mt-[2rem] max-small:mt-[1rem]'>
                   Participants engaged in practical coding sessions,
                    working on real-life projects that allowed them to 
                    apply what they learned immediately.
                   </div>
                 </div>
-                <div className='w-[40rem] h-[27.5rem] relative' >
+                <div className='w-[40rem] max-small:w-full h-[27.5rem] max-small:h-[20rem] relative' >
                   <Image 
                       src="/v_3_images/2023-2.png"
                     fill
@@ -199,22 +200,22 @@ export default function OurStory() {
               </div>
               </div>
               </div>
-            </div>
+            </div> 
 
             {/* 2022 */}
-            <div className='flex flex-row justify-between border border-t-0 border-r-0 border-l-0 border-[#000] py-[5rem]'>
+             <div className='flex flex-row max-small:flex-col justify-between border border-t-0 border-r-0 border-l-0 border-[#000] py-[5rem]'>
               <div className='leading-[4.5rem] text-[5rem] font-[500] opacity-50'>2022</div>
-              <div className='w-[69.9rem]'>
-              <div className='flex flex-row justify-between'>
-                <div className='w-[26rem]'>
+              <div className='w-[69.9rem] max-small:w-full'>
+              <div className='flex flex-row max-small:flex-col justify-between'>
+                <div className='w-[26rem] max-small:w-full'>
                   <h1 className='font-[500] text-[2rem] leading-[2.5rem]'>Industry Insights</h1>
-                  <div className='mt-[2rem]'>
+                  <div className='mt-[2rem] max-small:mt-[1rem]'>
                   With our founder’s extensive experience in the tech industry,
                   participants gained valuable insights into current technologies 
                   and trends, preparing them for future careers.
                   </div>
                 </div>
-                <div className='w-[40rem] h-[27.5rem] relative' >
+                <div className='w-[40rem] max-small:w-full h-[27.5rem] max-small:h-[20rem] relative' >
                   <Image 
                       src="/v_3_images/2022.png"
                     fill
@@ -227,45 +228,31 @@ export default function OurStory() {
           </div>
         </div>
       </div>
-    </section>
+    </section> 
 
-    <section className='bg-[#FAFAFA] py-[10rem]'>
+    <section className='bg-[#FAFAFA] py-[10rem] max-small:py-[5rem]'>
     <div className='container'>
     <div className='text-center'>
         <MainHeader text="Testimonials" />
-        <h2 className='font-[500] text-[4.5rem] leading-[4.5rem]'>
+        <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[3rem] mt-[2rem] max-small:mt-[1rem]'>
           <span className='text-[#FDB21A]'>Testimonials </span>
           <span>from Thriving Participants</span>
           </h2>
-          <div className='max-w-[58.6rem] mx-auto mt-[2rem]'>The impact of the training has been evident in the heartfelt testimonials from our participants:</div>
+          <div className='max-w-[58.6rem] mx-auto mt-[2rem] max-small:mt-[1rem]'>The impact of the training has been evident in the heartfelt testimonials from our participants:</div>
         </div>
         {/* carousel */}
-        <Carousel>
-                <div>
-                    {/* <img src="assets/1.jpeg" /> */}
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    {/* <img src="assets/2.jpeg" /> */}
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    {/* <img src="assets/3.jpeg" /> */}
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel>
     </div>
     </section>
     {/* community */}
-    <section className='py-[10rem]'>
+    <section className='py-[10rem] max-small:py-[5rem]'>
     <div className="container text-[#000] relative">
         <div className=''>
         <MainHeader text="community" />
-        <h2 className='font-[500] text-[4.5rem] leading-[4.5rem] mt-[2rem] mb-[2.5rem]'>
+        <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[3rem] mt-[2rem] max-small:mt-[1rem]'>
           <span className='text-[#FDB21A]'>Building a</span>
           <span> Community of Innovators</span>
           </h2>
-          <div className='max-w-[81.7rem] mt-[2rem]'>
+          <div className='max-w-[81.7rem] mt-[2rem] max-small:mt-[1rem]'>
           The SlumTech training program in Houston not only focuses on skill development but
            also emphasizes the importance of collaboration and community.
            Participants often work together, share ideas, and build lasting 
@@ -273,15 +260,15 @@ export default function OurStory() {
           </div>
          </div>
 
-         <div className='mt-[5rem] flex flex-row justify-between items-center'>
-          <div className='w-[56.1rem] h-[57.5rem] relative'>
+         <div className='mt-[5rem] max-small:mt-[2rem] flex flex-row max-small:flex-col justify-between items-center'>
+          <div className='w-[56.1rem] max-small:w-full h-[57.5rem] max-small:h-[20rem] relative'>
           <Image 
             src="/v_3_images/community.png"
             fill
             alt="slumtech foundation community"
           />
           </div>
-          <div className='w-[57rem] flex flex-col gap-y-[1.5rem]'>
+          <div className='max-small:mt-[1rem] w-[57rem] max-small:w-full flex flex-col gap-y-[1rem]'>
             <div>
               <h1 className='flex flex-row items-center gap-x-[1rem] mb-[1rem'>
                 <div className='relative w-[3rem] h-[2.7rem]'>

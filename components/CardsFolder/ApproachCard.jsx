@@ -13,7 +13,7 @@ const ApproachCard = ({img, title, note}) => {
         />
         </div>
         </div>
-        <h1 className="text-[2rem] leading-[2.5rem] font-[500] my-[2rem]">{title}</h1>
+        <h1 className="text-[2rem] max-small:text-[1.8rem] leading-[2.5rem] font-[500] my-[2rem] max-small:my-[1rem]">{title}</h1>
         <div>
            {note}
         </div>

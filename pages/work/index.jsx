@@ -39,7 +39,7 @@ export default function Work() {
 
 ]
   return (
-   <main className="text-[1.6rem] max-small:text-[1.3rem] font-[400] text-[#000] leading-[2.6rem]  max-small:leading-[2rem]">
+   <main className="text-[1.6rem] max-small:text-[1.3rem] font-[400] text-[#000] leading-[2.6rem] max-small:leading-[2rem]">
     <Navigation />
     <Sidebar /> 
     <Banner 
@@ -54,7 +54,7 @@ export default function Work() {
         <div className='container'>
         <div className=''>
         <MainHeader text="Our Work" />
-        <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+        <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[3rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
         <span className='text-[#FDB21A]'>Where Vision </span>
         <span>Meets Reality</span>
         </h2>
@@ -102,7 +102,7 @@ export default function Work() {
 
      {/* our story section */}
      <section className='bg-[#0A4527] text-[#fff]'>
-      <div className='min-[1440px]:container max-small:px-[1rem] max-small:py-[2rem]'>
+      <div className='min-[1440px]:container max-small:px-[1rem] max-small:py-[5rem]'>
         <div className='flex flex-row max-small:flex-col max-small:gap-y-[1rem] items-center'>
         <div className='w-[50%] max-small:w-full'>
           <div className='max-w-[49.2rem] mx-auto'>

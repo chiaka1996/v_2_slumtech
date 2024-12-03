@@ -7,7 +7,7 @@ const Footer = () => {
 
     return(
         <footer className='bg-[#1B1B1B] w-[100%] text-[#fff]'>
-            <div className='container py-[5rem] flex flex-row flex-wrap justify-between'>
+            <div className='container py-[5rem] flex flex-row max-small:flex-col max-small:gap-y-[2rem] flex-wrap justify-between'>
             <div className='flex flex-col gap-[2rem] max-w-[29.6rem]'>
            <div className='relative w-[15.4rem] h-[68px]'>
              <Image 
@@ -22,19 +22,39 @@ const Footer = () => {
         </div>
       </div>
       {/* quicklinks */}
-      <div className='w-[37.7rem]'>
+      <div className='w-[37.7rem] max-small:w-full'>
         <h1 className='font-[600] text-[1.8rem] leading-[2.8rem]'>Quick Links</h1>
 
         <div className='flex flex-row flex-wrap justify-between mt-[2.5rem]'>
           <div className='flex flex-col gap-y-[2rem] leading-[2.8rem]'>
-            <span>Home</span>
-            <span>Our Story</span>
-            <span>FAQ</span>
+            <span>
+            <Link href="/" className='no-underline'>
+              Home
+              </Link>
+              </span>
+            <span>
+            <Link href="/story" className='no-underline'>
+              Our Story
+            </Link>  
+            </span>
+            <span>
+            <Link href="/faq" className='no-underline'>
+              FAQ
+              </Link>
+              </span>
           </div>
 
           <div className='flex flex-col gap-y-[2rem] leading-[2.8rem]'>
-            <span>Our Work</span>
-            <span>Contact Us</span>
+            <span>
+            <Link href="/faq" className='no-underline'>
+              Our Work
+              </Link>
+              </span>
+            <span>
+            <Link href="/contact" className='no-underline'>
+              Contact Us
+              </Link>
+              </span>
             <span>Ideas</span>
           </div>
         </div>

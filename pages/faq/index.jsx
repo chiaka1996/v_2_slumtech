@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Faq() {
  
   return (
-   <main className="text-[1.6rem] font-[400] text-[#000] leading-[2.6rem] relative">
+   <main className="text-[1.6rem] max-small:text-[1.3rem] font-[400] text-[#000] leading-[2.6rem] relative">
     <Navigation />
     <Sidebar /> 
     <Banner 
@@ -24,14 +24,14 @@ export default function Faq() {
       header2Color="#fff"
       subheader="FAQs Unlocked"
     />
-    <section className='py-[10rem]'>
+    <section className='py-[10rem] max-small:py-[5rem]'>
         <div className='container'>
         <div className='text-center'>
         <MainHeader text="FAQS" />
-        <h2 className='font-[500] text-[4.5rem] leading-[4.5rem] mt-[2rem] mb-[2.5rem]'>
-                <span className='text-[#FDB21A]'>Frequently asked </span>
-                <span>questions</span>
-                </h2>
+        <h2 className='text-center font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+          <span className='text-[#FDB21A]'>Frequently asked </span>
+          <span>questions</span>
+          </h2>
         </div>
         </div>
     </section>
