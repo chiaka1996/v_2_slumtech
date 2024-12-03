@@ -154,7 +154,7 @@ export default function Work() {
       </div>
     </section>
 
-    <section className='py-[10rem] bg-[#fafafa]'>
+    <section className='py-[10rem]'>
         <div className='container'>
         <div className='text-center'>
         <MainHeader text="News" />
@@ -201,10 +201,141 @@ export default function Work() {
         and tailored to the specific needs of the community, promoting a sense of ownership and investment in the institute’s success.
         </p>
        </div>
+
+       <div className='mt-[2.5rem] flex flex-col gap-y-[1.5rem]'>
+            <h1 className='text-[2.5rem] leading-[2.5rem]'>Key features of the proposed SlumTech Institute include :</h1>
+            <div className='flex flex-row gap-x-[1rem]'>
+            <div className='w-[2.4rem] h-[2.4rem] relative' >
+            <Image 
+                src="/v_3_icons/check.png"
+              fill
+              alt="latest news"
+            />
+           </div>
+            <span>Free Enrollment: No tuition fees for students, ensuring equal access for all.</span>
+            </div>
+            <div className='flex flex-row gap-x-[1rem]'>
+            <div className='w-[2.4rem] h-[2.4rem] relative' >
+            <Image 
+                src="/v_3_icons/check.png"
+              fill
+              alt="latest news"
+            />
+           </div>
+            <span>Expert Instructors: A team of experienced educators and industry professionals dedicated to providing
+            high-quality instruction.</span>
+            </div>
+            <div className='flex flex-row gap-x-[1rem]'>
+            <div className='w-[2.4rem] h-[2.4rem] relative' >
+            <Image 
+                src="/v_3_icons/check.png"
+              fill
+              alt="latest news"
+            />
+           </div>
+            <span>Community Projects: Opportunities for students to work on real-world projects that address local challenges.</span>
+            </div>
+            <div className='flex flex-row gap-x-[1rem]'>
+            <div className='w-[2.4rem] h-[2.4rem] relative' >
+            <Image 
+                src="/v_3_icons/check.png"
+              fill
+              alt="latest news"
+            />
+           </div>
+            <span>Mentorship Programs: Connections with mentors in the tech industry to guide and support students in their
+            career paths.</span>
+            </div>
+       </div>
+
+       <div className='mt-[2.5rem] flex flex-col gap-y-[2.5rem]'>
+       <p>The launch event to present the proposal will be held at a set date that will be announced, 
+        where community members can learn more about the vision for SlumTech Institute and how they 
+        can get involved. Attendees will hear testimonials from successful individuals who overcame 
+        challenges through education and technology, showcasing the potential impact of such an initiative.
+        </p>
+        <p>Support from local governments, nonprofits, and tech companies will be crucial in bringing the 
+          SlumTech Institute to fruition. The proposal reflects a growing recognition of the importance of 
+          technology education in driving economic empowerment and social change in underserved communities.
+        </p>
+        <p>For additional details about the proposed SlumTech Institute and how to contribute to its development, 
+          visit www.SlumTech.org
+          </p>
+       </div>
        </div>
         </div>
     </section>
 
+    <section className='py-[10rem] bg-[#fafafa]'>
+        <div className='container'>
+        <div className=''>
+        <MainHeader text="Upcoming Events" />
+        <h2 className='font-[500] text-[4.5rem] leading-[4.5rem] mt-[2rem] mb-[2.5rem]'>
+        <span className='text-[#FDB21A]'>Upcoming Event: </span>
+        <span> Tech for Good Summit</span>
+        </h2>
+        </div>
+
+        <div className='mt-[5rem] flex flex-row gap-x-[5rem] items-start'>
+        <div className='w-[56.1rem] h-[57.8rem] relative' >
+            <Image 
+              src="/v_3_images/upcomig-event..png"
+              fill
+              alt="slumtech upcoming events"
+            />
+           </div>
+        <div className='flex flex-col gap-y-[2rem] w-[49.2rem]'>
+          <p>
+          SlumTech Foundation will host the "Tech for Good Summit" in Houston Texas on 4th of November, 2025. 
+          This event will bring together community leaders, tech innovators, 
+          and industry experts across the globe to discuss best practices, 
+          share success stories, and explore collaborative opportunities.
+          </p>
+          <div className='flex flex-col gap-y-[1.5rem]'>
+            <h1 className='text-[2.5rem] leading-[2.5rem]'>Key features of the proposed SlumTech Institute include :</h1>
+            <div className='flex flex-row gap-x-[1rem]'>
+            <div className='w-[2.4rem] h-[2.4rem] relative' >
+            <Image 
+                src="/v_3_icons/check.png"
+              fill
+              alt="latest news"
+            />
+           </div>
+            <span>Panel discussions featuring industry leaders on the latest tech trends in community development.</span>
+            </div>
+            <div className='flex flex-row gap-x-[1rem]'>
+            <div className='w-[2.4rem] h-[2.4rem] relative' >
+            <Image 
+                src="/v_3_icons/check.png"
+              fill
+              alt="latest news"
+            />
+           </div>
+            <span>Workshops focused on digital literacy and sustainable technology solutions.</span>
+            </div>
+            <div className='flex flex-row gap-x-[1rem]'>
+            <div className='w-[2.4rem] h-[2.4rem] relative' >
+            <Image 
+                src="/v_3_icons/check.png"
+              fill
+              alt="latest news"
+            />
+           </div>
+            <span>Networking opportunities to connect with like-minded individuals and organizations.</span>
+            </div>
+       </div>
+        <div className='flex flex-col gap-y-[2rem]'>
+        <p>Join us as we explore how technology can empower communities and drive sustainable change!</p>
+        <p>SlumTech Foundation – Together Towards a Brighter Future</p>
+        <div className='w-[16rem] h-[5.8rem]'>
+          <Button text="Join Today" />
+        </div>
+        </div>
+        </div>
+       
+        </div>
+        </div>
+      </section>
      <JoinUs />
      <Footer />
     </main>
