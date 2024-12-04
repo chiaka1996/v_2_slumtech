@@ -1,0 +1,36 @@
+.inactive, .active{
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 4rem;
+    padding: 0 5rem;
+    background-color: #f8f8f8;
+    border-radius: 46px;
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer
+}
+
+.active{
+    color: #fff;
+    background-color: #0A4527;
+}
+
+.active + div{
+    display: block;
+}
+
+.inactive + div{
+    display: none;
+}
+
+.faqIconActive{
+    transform: rotate(180deg);
+}
+
+.faqiconInactive{
+    transform: rotate(45deg);
+}

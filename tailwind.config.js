@@ -15,7 +15,7 @@ module.exports = {
        approacIconBackgroundColor: 'rgba(253, 178, 26, 0.1)'
     },
     screens: {
-      "small": "768px"
+      "small": "769px"
     },
     backgroundImage: {
       // 'hero': "url('/images/approach2.png')"

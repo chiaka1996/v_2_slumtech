@@ -31,6 +31,7 @@ function MyApp({ Component, pageProps }) {
   return(
     <div>
       <Head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
       <link rel="shortcut icon" href="/logo/slumtechLogo.png" sizes='32x32' />
       </Head>
     <State>

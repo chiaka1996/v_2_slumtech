@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import gsap from 'gsap'; 
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Image from "next/image";
 import Link from "next/link";
+import css from './faq.module.css'
 import {Navigation, Sidebar, MainHeader, Banner, Footer, Button, JoinUs} from "../../components"
 
 
@@ -11,6 +13,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Faq() {
+  const [toggle, setToggle] = useState(null)
+
+  const toggleState = (num) => {
+    toggle == num ? setToggle(null) : setToggle(num)   
+  }
  
   return (
    <main className="text-[1.6rem] max-small:text-[1.3rem] font-[400] text-[#000] leading-[2.6rem] relative">
@@ -32,6 +39,41 @@ export default function Faq() {
           <span className='text-[#FDB21A]'>Frequently asked </span>
           <span>questions</span>
           </h2>
+        </div>
+
+        <div className='mt-[5rem]'>
+          <div className='mt-[2.5rem]'>
+            <div onClick={() => toggleState(1)} className={toggle == 1 ? css.active : css.inactive}>
+              <span>Lorem ipsum dolor sit amet</span>
+              <span className={`${toggle == 1 ? css.faqIconActive : css.faqIconInactive} material-icons`}>keyboard_arrow_down</span>
+            </div>
+            <div className='px-[5rem] py-[2rem]'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+              tempor incididunt ut labore et dolore
+            </div>
+          </div>
+
+          <div className='mt-[2.5rem]'>
+            <div onClick={() => toggleState(2)} className={toggle == 2 ? css.active : css.inactive}>
+              <span>Lorem ipsum dolor sit amet</span>
+              <span className={`${toggle == 2 ? css.faqIconActive : css.faqIconInactive} material-icons`}>keyboard_arrow_down</span>
+            </div>
+            <div className='px-[5rem] py-[2rem] note'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+              tempor incididunt ut labore et dolore
+            </div>
+          </div>
+          <div className='mt-[2.5rem]'>
+            <div onClick={() => toggleState(3)} className={toggle == 3 ? css.active : css.inactive}>
+              <span>Lorem ipsum dolor sit amet</span>
+              <span className={`${toggle == 3 ? css.faqIconActive : css.faqIconInactive} material-icons`}>keyboard_arrow_down</span>
+            </div>
+            <div className='px-[5rem] py-[2rem]'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+              tempor incididunt ut labore et dolore
+            </div>
+          </div>
+
         </div>
         </div>
     </section>
