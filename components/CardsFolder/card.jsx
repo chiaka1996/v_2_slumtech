@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const Card = ({img, title, list}) => {
-
     return(
        <div>
         <div className='relative w-full h-[27.5rem] max-small:h-[20rem]'>

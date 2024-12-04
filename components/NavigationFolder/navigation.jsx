@@ -11,8 +11,8 @@ const Navigation = () => {
   const router = useRouter();
 
     return(
-      <nav className="fixed top-0 left-0 w-full z-500 h-[9rem] flex items-center bg-transparent">
-        <div className="container flex flex-row justify-between items-center">
+      <nav className="fixed top-0 left-0 w-full z-500 h-[9rem] flex items-center  bg-transparent">
+        <div className="container flex flex-row justify-between items-center max-small:items-start">
          <Image 
             src="/v_3_logo/logo1.png"
             width="154"
@@ -66,22 +66,29 @@ const Navigation = () => {
 
            {
                     !bar ? <div className={style.hamburger}>
-                  <Image 
+                  {/* <Image 
                   width={24} 
                   height={24}
                   src="https://img.icons8.com/ios/24/menu--v1.png" 
                   alt="menu--v1"
-                  onClick={openBar}
-                  />
+                  /> */}
+                  <div className='flex flex-col gap-y-[1rem] mt-[0.5rem] relative' onClick={openBar}>
+                  <span className='block w-[3.5rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
+                  <span className='block w-[3.5rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
+                  <span className='block w-[3.5rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
+                  </div>
                     </div> : 
                     <div className={style.hamburger}>
-                    <Image 
+                    {/* <Image 
                     width={24}
                     height={24}
                     src="https://img.icons8.com/ios/24/delete-sign.png" 
                     alt="delete-sign"
-                    onClick={closeBar}
-                    />   
+                    />    */}
+                  <div className='mt-[2rem] relative' onClick={closeBar}>
+                  <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform rotate-45'></span>
+                  <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform -rotate-45'></span>
+                  </div>
                 </div>
                 }
           </div>

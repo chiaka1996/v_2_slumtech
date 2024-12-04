@@ -27,38 +27,14 @@
 
 .activeLink{
   position: relative;
-  padding: 0 2% 3% 2%;
-  border-bottom: 1px solid #1A1A1A;
+  padding: 0 2% 2% 2%;
+  border-bottom: 2px solid #FDB21A;
   text-align: center;
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
 }
 
-.activeLink:before{
-  position: absolute;
-  content: "";
-  width: 2px;
-  height: 2px;
-  background-color: #1A1A1A;
-  border-radius: 0.1875rem;
-  bottom: 0;
-  left: 0;
-  transform: translateY();
-}
-
-
-.activeLink:after{
-  position: absolute;
-  content: "";
-  width: 2px;
-  height: 2px;
-  background-color: #1A1A1A;
-  border-radius: 0.1875rem;
-  bottom: 0;
-  right: 0;
-  transform: translateY();
-}
 
 .navLink{
   position: relative;
