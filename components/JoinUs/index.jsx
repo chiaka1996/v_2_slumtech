@@ -19,7 +19,9 @@ const JoinUs = () => {
       </p>
 
       <div className="w-[16rem] h-[5.8rem]">
+        <Link href="/contact" className='no-underline'>
         <Button text="Join Today" />
+        </Link>
         </div>
     </div>
     </div>

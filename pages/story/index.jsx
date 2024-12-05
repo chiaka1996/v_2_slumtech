@@ -65,7 +65,9 @@ export default function OurStory() {
             </p>
 
             <div className='max-w-[16rem] h-[5.8rem] mt-[3.5rem] max-small:mt-[1.5rem]'>
+            <Link href="/story" className='no-underline'>
             <Button text="Learn More" />
+            </Link>
             </div>
           </div>
         </div>
@@ -103,7 +105,9 @@ export default function OurStory() {
             </p>
 
             <div className='max-w-[16rem] h-[5.8rem] mt-[3.5rem] max-small:mt-[1.5rem]'>
+            <Link href="/story" className='no-underline'>
             <Button text="Learn More" />
+            </Link>
             </div>
           </div>
         </div>

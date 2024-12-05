@@ -31,7 +31,7 @@ const Navigation = () => {
             height="68"
             alt="logo"
         />
-           <div className="w-[53.6rem] leading-[1.8rem] flex flex-row justify-between items-center max-lg:hidden">
+           <div className="w-[53.6rem] leading-[1.8rem] flex flex-row justify-between items-center max-[900px]:hidden">
            <span className={router.asPath == "/" ? style.activeLink : style.navLink}> 
            {/* <div className={router.asPath == "/" ? style.activeLink : style.navLink}>  */}
            <Link href="/" className='no-underline'>
@@ -57,11 +57,11 @@ const Navigation = () => {
             </Link>
             </span>
 
-            <span className={router.asPath == "/contact" ? style.activeLink : style.navLink}> 
+            {/* <span className={router.asPath == "/contact" ? style.activeLink : style.navLink}> 
            <Link href="/contact" className='no-underline text-primary text-normal'>
             Contact Us
             </Link>
-            </span>
+            </span> */}
 
             <span className={router.asPath == "/ideas" ? style.activeLink : style.navLink}> 
            <Link href="/ideas" className='no-underline text-primary text-normal'>
@@ -70,8 +70,10 @@ const Navigation = () => {
             </span>
             </div>
 
-            <div className='w-[15rem] h-[5rem] max-lg:hidden'> 
-              <Button text="Contact" />
+            <div className='w-[15rem] h-[5rem] max-[900px]:hidden'> 
+            <Link href="/contact" className='no-underline'>
+              <Button text="Contact Us" />
+              </Link>
             </div>
 
             

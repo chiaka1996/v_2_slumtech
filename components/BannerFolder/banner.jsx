@@ -1,5 +1,6 @@
 import css from "./banner.module.css";
 import Image from 'next/image';
+import Link from 'next/link';
 import {Button} from "../index"
 
 const Banner = ({img, header1, header2, subheader, header1Color, header2Color }) => {
@@ -16,7 +17,9 @@ const Banner = ({img, header1, header2, subheader, header1Color, header2Color })
             </h2>
             <h3 className="font-[600] text-[2.5rem] max-small:text-[1.8rem] leading-[2.6rem] text-[#fff]">{subheader}</h3>
             <div className="w-[16rem] h-[5.8rem] mx-auto mt-[5rem] max-small:mt-[3rem]">
+                <Link href="/story" className='no-underline'>
                 <Button text="Learn More" />
+                </Link>
             </div>
             <div className="flex flex-col gap-y-[2rem] max-small:mt-[3rem] max-small:pl-[2rem]">
         <div className="w-[3.6rem] max-small:w-[3rem] h-[3.6rem] max-small:h-[3rem] relative">
