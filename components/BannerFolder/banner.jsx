@@ -10,7 +10,7 @@ const Banner = ({img, header1, header2, subheader, header1Color, header2Color })
        className='pt-[10rem] max-small:pt-0 flex items-center justify-center h-[100vh] w-full bg-cover bg-center'
        >
         <div className="text-center container" >
-             <h1 className={`font-[700] tracking-[0.10em] text-[15rem] max-small:text-[5rem] leading-[9rem] max-small:leading-[9rem]  ${css.banner_main_header}`}>SLUMTECH</h1>
+             <h1 className={`font-[700] tracking-[0.10em] text-[15rem] small:max-medium:text-[12rem] max-small:text-[5rem] leading-[9rem]  ${css.banner_main_header}`}>SLUMTECH</h1>
            <h2 className="font-[700] text-[5rem] max-small:text-[2.5rem] leading-[9rem] max-small:leading-[4rem]">
             <span style={{color: `${header1Color}`}}>{header1} </span><span style={{color: `${header2Color}`}}> {header2}</span>
             </h2>

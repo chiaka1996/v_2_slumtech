@@ -11,8 +11,6 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
 
-  console.log(isScrolled)
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0); // Check if the user has scrolled down
