@@ -75,7 +75,9 @@ export default function Work() {
             ensuring that innovative solutions reach those who need them most.
             </p>
             <div className='mt-[3.5rem] max-small:mt-[1.5rem] w-[16rem] h-[5.8rem]'>
+            <Link href="/story" className='no-underline'>
                 <Button text="Learn More" />
+              </Link>
             </div>
             </div>
         </div>
@@ -328,7 +330,9 @@ export default function Work() {
         <p>Join us as we explore how technology can empower communities and drive sustainable change!</p>
         <p>SlumTech Foundation – Together Towards a Brighter Future</p>
         <div className='w-[16rem] h-[5.8rem]'>
-          <Button text="Join Today" />
+        <Link href="/contact" className='no-underline'>
+        <Button text="Join Today" />
+        </Link>
         </div>
         </div>
         </div>

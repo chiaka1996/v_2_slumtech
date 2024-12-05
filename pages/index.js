@@ -135,7 +135,9 @@ export default function Home() {
         </p>
 
         <div className="w-[16rem] h-[5.8rem] mt-[1.5rem]">
-            <Button text="Learn More" />
+        <Link href="/story" className='no-underline'>
+        <Button text="Learn More" />
+        </Link>
         </div>
         </div>
       </div>
@@ -166,7 +168,9 @@ export default function Home() {
         Your dream for a better tomorrow is within reach, and with SlumTech Foundation by your side, we can make it happen!
         </p>
         <div className="w-[18.2rem] h-[5.8rem] mx-auto">
-            <Button text="Connect Now" />
+        <Link href="/" className='no-underline'>
+        <Button text="Connect Now" />
+        </Link>
         </div>
         
         </div>

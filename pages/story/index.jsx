@@ -65,7 +65,9 @@ export default function OurStory() {
             </p>
 
             <div className='max-w-[16rem] h-[5.8rem] mt-[3.5rem] max-small:mt-[1.5rem]'>
+            <Link href="/story" className='no-underline'>
             <Button text="Learn More" />
+            </Link>
             </div>
           </div>
         </div>
@@ -103,7 +105,9 @@ export default function OurStory() {
             </p>
 
             <div className='max-w-[16rem] h-[5.8rem] mt-[3.5rem] max-small:mt-[1.5rem]'>
+            <Link href="/story" className='no-underline'>
             <Button text="Learn More" />
+            </Link>
             </div>
           </div>
         </div>
@@ -241,69 +245,110 @@ export default function OurStory() {
           <div className='max-w-[58.6rem] mx-auto mt-[2rem] max-small:mt-[1rem]'>The impact of the training has been evident in the heartfelt testimonials from our participants:</div>
         </div>
         {/* carousel */}
-        <Carousel autoPlay={true} infiniteLoop={true}>
+        <Carousel autoPlay={true} showThumbs={false} infiniteLoop={true} className='max-small:hidden'>
                 <div className='gridStyle gap-x-[3rem]'>
+                  <div className="small:max-[1010px]:hidden">
                  <TestimonialCard 
                  name="Jennifer" 
                  img="/v_3_images/jennifer.png"
                  note="The training was incredible! I went from not knowing anything about coding to building my own website in just a few weeks. The support was amazing!" 
                  occupation="Aspiring Developer"
                  />
+                 </div>
+                 <div>
                 <TestimonialCard 
                  name="Marcus" 
                  img="/v_3_images/marcus.png"
                  note="I always wanted to learn to code, but I never knew where to start. SlumTech made it easy and fun. I now have the skills to pursue a career in tech." 
                  occupation="Recent Graduate"
                  />
+                 </div>
+                 <div>
                  <TestimonialCard 
                  name="Elena" 
                  img="/v_3_images/elena.png" 
                  note="As a high school student, I was nervous about entering a tech field. But the inclusive environment made me feel confident. I even created my own app during the training!" 
                  occupation="High School Student"
                  />
+                 </div>
                 </div>
                 <div className='gridStyle gap-x-[3rem]'>
+                  <div>
                  <TestimonialCard 
                  name="Jennifer" 
                  img="/v_3_images/jennifer.png"
                  note="The training was incredible! I went from not knowing anything about coding to building my own website in just a few weeks. The support was amazing!" 
                  occupation="Aspiring Developer"
                  />
+                 </div>
+                 <div className="small:max-[1010px]:hidden">
                 <TestimonialCard 
                  name="Marcus" 
                  img="/v_3_images/marcus.png"
                  note="I always wanted to learn to code, but I never knew where to start. SlumTech made it easy and fun. I now have the skills to pursue a career in tech." 
                  occupation="Recent Graduate"
+                  className="small:max-[1010px]:hidden"
                  />
+                 </div>
+                 <div>
                  <TestimonialCard 
                  name="Elena" 
                  img="/v_3_images/elena.png" 
                  note="As a high school student, I was nervous about entering a tech field. But the inclusive environment made me feel confident. I even created my own app during the training!" 
                  occupation="High School Student"
                  />
-                </div>
-                
-                <div className='gridStyle gap-x-[3rem]'>
-                 <TestimonialCard 
-                 name="Jennifer" 
-                 img="/v_3_images/jennifer.png"
-                 note="The training was incredible! I went from not knowing anything about coding to building my own website in just a few weeks. The support was amazing!" 
-                 occupation="Aspiring Developer"
-                 />
-                <TestimonialCard 
-                 name="Marcus" 
-                 img="/v_3_images/marcus.png"
-                 note="I always wanted to learn to code, but I never knew where to start. SlumTech made it easy and fun. I now have the skills to pursue a career in tech." 
-                 occupation="Recent Graduate"
-                 />
-                 <TestimonialCard 
-                 name="Elena" 
-                 img="/v_3_images/elena.png" 
-                 note="As a high school student, I was nervous about entering a tech field. But the inclusive environment made me feel confident. I even created my own app during the training!" 
-                 occupation="High School Student"
-                 />
+                 </div>
                 </div>
                 
+                <div className='gridStyle gap-x-[3rem]'>
+                  <div>
+                 <TestimonialCard 
+                 name="Jennifer" 
+                 img="/v_3_images/jennifer.png"
+                 note="The training was incredible! I went from not knowing anything about coding to building my own website in just a few weeks. The support was amazing!" 
+                 occupation="Aspiring Developer"
+                 />
+                 </div>
+                 <div>
+                <TestimonialCard 
+                 name="Marcus" 
+                 img="/v_3_images/marcus.png"
+                 note="I always wanted to learn to code, but I never knew where to start. SlumTech made it easy and fun. I now have the skills to pursue a career in tech." 
+                 occupation="Recent Graduate"
+                 />
+                 </div>
+                 <div className="small:max-[1010px]:hidden">
+                 <TestimonialCard 
+                 name="Elena" 
+                 img="/v_3_images/elena.png" 
+                 note="As a high school student, I was nervous about entering a tech field. But the inclusive environment made me feel confident. I even created my own app during the training!" 
+                 occupation="High School Student"
+                  className="small:max-[1010px]:hidden"
+                 />
+                 </div>
+                </div>
+                
+            </Carousel>
+            {/* carousel for mobile */}
+            <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false} className='small:hidden'>
+            <TestimonialCard 
+                 name="Jennifer" 
+                 img="/v_3_images/jennifer.png"
+                 note="The training was incredible! I went from not knowing anything about coding to building my own website in just a few weeks. The support was amazing!" 
+                 occupation="Aspiring Developer"
+                 />
+                <TestimonialCard 
+                 name="Marcus" 
+                 img="/v_3_images/marcus.png"
+                 note="I always wanted to learn to code, but I never knew where to start. SlumTech made it easy and fun. I now have the skills to pursue a career in tech." 
+                 occupation="Recent Graduate"
+                 />
+                 <TestimonialCard 
+                 name="Elena" 
+                 img="/v_3_images/elena.png" 
+                 note="As a high school student, I was nervous about entering a tech field. But the inclusive environment made me feel confident. I even created my own app during the training!" 
+                 occupation="High School Student"
+                 />
             </Carousel>
     </div>
     </section>
