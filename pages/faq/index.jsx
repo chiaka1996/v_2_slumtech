@@ -41,10 +41,10 @@ export default function Faq() {
           </h2>
         </div>
 
-        <div className='mt-[5rem]'>
+        <div className='mt-[5rem] max-small:mt-[3rem]'>
           <div className='mt-[2.5rem]'>
             <div onClick={() => toggleState(1)} className={toggle == 1 ? css.active : css.inactive}>
-              <span>Lorem ipsum dolor sit amet</span>
+              <span className='font-[500] text-[2rem] max-small:text-[1.6rem] leading-[4rem] max-small:leading-[2rem]'>Lorem ipsum dolor sit amet</span>
               <span className={`${toggle == 1 ? css.faqIconActive : css.faqIconInactive} material-icons`}>keyboard_arrow_down</span>
             </div>
             <div className='px-[5rem] py-[2rem]'>
