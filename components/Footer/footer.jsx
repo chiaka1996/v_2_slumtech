@@ -6,81 +6,121 @@ import style from './footer.module.css';
 const Footer = () => {
 
     return(
-        <footer className='bg-primary w-[100%] text-center py-[2em] text-btn_color'>
-           <div className='relative w-[122px] h-[68px] mx-auto'>
+        <footer className='bg-[#1B1B1B] w-[100%] text-[#fff]'>
+            <div className='container py-[5rem] flex flex-row max-small:flex-col max-small:gap-y-[2rem] flex-wrap justify-between'>
+            <div className='flex flex-col gap-[2rem] max-w-[29.6rem]'>
+           <div className='relative w-[15.4rem] h-[68px]'>
              <Image 
-            src="/images/footerLogo.png"
+            src="/v_3_logo/footerLogo.png"
             fill
             alt="logo"
         />
         </div>
-        <div className='text-[9px] -mt-[1em]'>Automate | Innovate | Accelerate</div>
+        <div className="text-[1.5rem] leading-[2.3rem]">
+        Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        </div>
+      </div>
+      {/* quicklinks */}
+      <div className='w-[37.7rem] max-small:w-full'>
+        <h1 className='font-[600] text-[1.8rem] leading-[2.8rem]'>Quick Links</h1>
 
-        <div className='flex flex-row justify-center items-center my-[2em]'>
-            <span className='text-[12px] font-normal mr-[1em]'>Member</span>
-            <div className='relative w-[123px] h-[28px]'>
-            <Image 
-            src="/images/commerce.png"
-            fill
-            alt="commerce"
-        />
-        </div>
-        </div>
-        <Link href="/donation" className='no-underline'>
-        <button className='px-5 py-3 text-btn_color bg-btn_bg rounded-[12px]'>Donate</button>
-        </Link>
-        <div className='w-full text-center my-5 flex flex-row justify-center flex-wrap'>
-            <div className=''>
-            <Link href="/about" className='no-underline'>
-            About us
-            </Link>
-            </div>
-            <div className='ml-[3em]  max-large:ml-[1em]'>
-            <Link href="/media" className='no-underline'>
-            Events and News
-            </Link>
-            </div>
-            <div className='ml-[3em]  max-large:ml-[1em]'>
-            <Link href="/programs" className='no-underline'>
-            Programs
-            </Link>
-            </div>
-            <div className='ml-[3em]  max-large:ml-[1em]'>
-            <Link href="/ourteam" className='no-underline'>
-            Get Involved
-            </Link>
-            </div>
-            <div className='ml-[3em]  max-large:ml-[1em]'>
+        <div className='flex flex-row flex-wrap justify-between mt-[2.5rem]'>
+          <div className='flex flex-col gap-y-[2rem] leading-[2.8rem]'>
+            <span>
+            <Link href="/" className='no-underline'>
+              Home
+              </Link>
+              </span>
+            <span>
+            <Link href="/story" className='no-underline'>
+              Our Story
+            </Link>  
+            </span>
+            <span>
+            <Link href="/faq" className='no-underline'>
+              FAQ
+              </Link>
+              </span>
+          </div>
+
+          <div className='flex flex-col gap-y-[2rem] leading-[2.8rem]'>
+            <span>
+            <Link href="/faq" className='no-underline'>
+              Our Work
+              </Link>
+              </span>
+            <span>
             <Link href="/contact" className='no-underline'>
-            Contact
-              </Link>  
-              </div>
-            <div className='ml-[3em]  max-large:ml-[1em]'>FAQs</div>
+              Contact Us
+              </Link>
+              </span>
+            <span>Ideas</span>
+          </div>
         </div>
+      </div>
 
-        <div className=' w-full justify-center flex flex-row'>
-            <div className='relative w-[24px] h-[24px]'>
-                <Image
-                 src="https://img.icons8.com/ios-filled/24/F5F5F5/facebook-new.png"
-                 fill
-                 alt="facebook"
-                 />
+      {/* get in touch */}
+       <div className='max-w-[22.1rem]'>
+        <h1 className='font-[600] text-[1.8rem] leading-[2.8rem]'>Get in Touch With Us</h1>
+          <div className='flex flex-col gap-y-[2rem] leading-[2.8rem] mt-[2.5rem]'>
+            <div className='flex flex-row gap-x-[1.5rem]'>
+            <div className='relative w-[2.3rem] h-[2.3rem]'>
+                <Image 
+                src="/v_3_icons/phone.png"
+                fill
+                alt="slumtech foundation phone number"
+            />
             </div>
-            <div className='relative w-[24px] h-[24px] ml-7'>
-                <Image
-                src="https://img.icons8.com/ios/24/F5F5F5/twitterx--v2.png"
-                 fill
-                 alt="twitter"
-                 />
+            <span>(808) 551-1413</span>
             </div>
-            <div className='relative w-[24px] h-[24px] ml-7'>
-                <Image
-               src="https://img.icons8.com/ios/24/F5F5F5/instagram-new--v1.png"
-                 fill
-                 alt="instagram"
-                 />
+            <div className='flex flex-row gap-x-[1.5rem]'>
+            <div className='relative w-[2.5rem] h-[1.7rem]'>
+                <Image 
+                src="/v_3_icons/mail.png"
+                fill
+                alt="slumtech foundation email address"
+            />
             </div>
+            <span>SlumTech@gmail.com</span>
+            </div>
+           <div className='flex flex-row flex-wrap gap-x-[1.5rem]'>
+          <div className='flex items-center rounded-full w-[3.6rem] h-[3.6rem] border border-[#fdb21a]'>
+           <div className='relative w-[0.8rem] h-[1.7rem] mx-auto'>
+                <Image 
+                src="/v_3_icons/facebook-footer.png"
+                fill
+                alt="slumtech foundation facebook link"
+            />
+            </div>
+            </div>
+
+            <div className='flex items-center rounded-full w-[3.6rem] h-[3.6rem] border border-[#fdb21a]'>
+           <div className='relative w-[2.2rem] h-[1.7rem] mx-auto'>
+                <Image 
+                src="/v_3_icons/twitter-footer.png"
+                fill
+                alt="slumtech foundation twitter link"
+            />
+            </div>
+            </div>
+
+            <div className='flex items-center rounded-full w-[3.6rem] h-[3.6rem] border border-[#fdb21a]'>
+           <div className='relative w-[1.7rem] h-[1.7rem] mx-auto'>
+                <Image 
+                src="/v_3_icons/instagram-footer.png"
+                fill
+                alt="slumtech foundation instagram link"
+            />
+            </div>
+            </div>
+           </div>
+          </div>
         </div>
+      </div>
+
+      <div className="opacity-40 bg-[#fff] w-full h-[0.1rem]"></div>
+      <div className='text-center leading-[2.8rem] py-[2rem]'>Copyright © 2024 SlumTech Foundation All Rights Reserved</div>
         </footer>
     )
 }

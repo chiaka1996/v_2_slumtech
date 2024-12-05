@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link';
 import style from './sidebar.module.css';
 import { BarState } from '../../context/context';
+import {Button} from "../index"
 
 const SideBar = ({page}) => {
   const router = useRouter();
@@ -14,20 +15,24 @@ const SideBar = ({page}) => {
         url: "/"
       },
       {
-        label: "ABOUT",
-        url: "/about"
+        label: "Our Story",
+        url: "/story"
       },
       {
-        label: "PROGRAMS",
-        url: "/programs"
+        label: "FAQ",
+        url: "/faq"
       },
       {
-        label: "MEDIA",
-        url: "/media"
+        label: "Our Work",
+        url: "/work"
       },
       {
-        label: "CONTACT US",
+        label: "Contact Us",
         url: "/contact"
+      },
+      {
+        label: "Ideas",
+        url: "/#"
       }
     ]
   
@@ -43,8 +48,10 @@ const SideBar = ({page}) => {
               )
             }
 
-         <Link href='/ourteam' onClick={()=>closeBar()} className='no-underline'>
-        <button className='bg-btn_bg text-normal px-[1rem] py-[1rem] 2xl:py-3 text-btn_color rounded-[12px] font-header w-[80%] mx-[10%]'>GET INVOLVED</button>
+         <Link href='/contact' onClick={()=>closeBar()} className='no-underline'>
+         <div className='w-[15rem] h-[5rem] mx-auto'> 
+            <Button text="Contact" />
+          </div>
         </Link>
        </nav>
     )

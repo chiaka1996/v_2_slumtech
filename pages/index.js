@@ -1,376 +1,196 @@
-import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
 import gsap from 'gsap'; 
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Image from "next/image";
 import Link from "next/link";
-import {Navigation, Sidebar, Footer, Newsletter} from "../components"
-import style from "./blog/index.module.css"
+import {Navigation, Sidebar, Banner, Button, MainHeader, Card, JoinUs, ApproachCard, Footer} from "../components"
+
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-export const ProgramCard1 = () => {
-  return (
-    <div className="grid grid-cols-2 w-[45%] max-large:w-full">
-     <div className="text-center flex items-center program_grid">
-      <div className="w-full">
-     <div className="relative w-[66px] h-[71px] mx-auto">
-      <Image 
-      src="/icons/vector1.png" 
-      fill
-      alt="event"
-      /> 
-      </div>
-      <p className="font-h3 text-secondary text-center text-index mt-[1rem]">Community Tech Hubs</p>
-      </div>
-     </div>
-
-     <div className="text-center flex items-center program_grid">
-      <div className="w-full">
-     <div className="relative w-[66px] h-[71px] mx-auto">
-      <Image 
-      src="/icons/vector6.png" 
-      fill
-      alt="vector"
-      /> 
-      </div>
-      <p className="font-h3 text-secondary text-index mt-[1rem]">STEM Education Outreach</p>
-      </div>
-     </div>
-
-     <div className="text-center flex items-center program_grid max-large:my-[2em]">
-      <div className="w-full">
-     <div className="relative w-[66px] h-[71px] mx-auto">
-      <Image 
-      src="/icons/vector4.png" 
-      fill
-      alt="event"
-      /> 
-      </div>
-      <p className="font-h3 text-secondary text-index mt-[1rem]">Digital Literacy Workshops</p>
-      </div>
-     </div>
-
-     <div className="text-center flex items-center program_grid max-large:my-[2em]">
-      <div className="w-full">
-     <div className="relative w-[66px] h-[71px] mx-auto">
-      <Image 
-      src="/icons/vector5.png" 
-      fill
-      alt="event"
-      /> 
-      </div>
-      <p className="font-h3 text-secondary text-index mt-[1rem]">Tech for Good Initiatives</p>
-      </div>
-     </div>
-    </div>
-
-  )
-}
-
-export const ProgramCard2 = () => {
-  return (
-    <div className="grid grid-cols-2 w-[45%] max-large:w-full">
-     <div className="text-center flex items-center program_grid">
-      <div className="w-full">
-     <div className="relative w-[66px] h-[71px] mx-auto">
-      <Image 
-      src="/icons/vector4.png" 
-      fill
-      alt="event"
-      /> 
-      </div>
-      <p className="font-h3 text-secondary text-index mt-[1rem]">Digital Inclusion Campaign</p>
-      </div>
-     </div>
-
-     <div className="text-center flex items-center program_grid">
-      <div className="w-full">
-     <div className="relative w-[66px] h-[71px] mx-auto">
-      <Image 
-      src="/icons/vector3.png" 
-      fill
-      alt="vector"
-      /> 
-      </div>
-      <p className="font-h3 text-secondary text-index mt-[1rem]">Tech Entrepreneurship Incubator</p>
-      </div>
-     </div>
-    
-     <div className="text-center flex items-center program_grid max-large:my-[2em]">
-      <div className="w-full">
-     <div className="relative w-[66px] h-[71px] mx-auto">
-      <Image 
-      src="/icons/vector2.png" 
-      fill
-      alt="event"
-      /> 
-      </div>
-      <p className="font-h3 text-secondary text-index mt-[1rem]">Innovation Grants Program</p>
-      </div>
-     </div>
-    </div>
-  )
-}
 
 export default function Home() {
-  const container = useRef();
-  useGSAP(
-    () => {
-        // gsap code here...
-        gsap.fromTo(".programCircle1", 
-          { y: -50 }, // Starting properties
-          { 
-            y: 0,   // Ending properties
-            duration: 1, 
-            scrollTrigger: {
-              trigger: ".programHouse",
-              start: "top center", 
-            }
-          }
-        );
-
-        gsap.fromTo(".programCircle2", 
-          { y: -50 }, // Starting properties
-          { 
-            y: 0,   // Ending properties
-            duration: 1, 
-            scrollTrigger: {
-              trigger: ".programHouse",
-              start: "center center",
-            }
-          }
-        );
-
-        gsap.fromTo(".programText", 
-          { y: 200 }, // Starting properties
-          { 
-            y: 0,   // Ending properties
-            duration: 1, 
-            scrollTrigger: {
-              trigger: ".programHouse",
-              start: "top center", 
-            }
-          }
-        );
+  const ourApproach = [{
+    img: "/v_3_icons/approach1.png",
+    title: "Community-Centric",
+    note: "We believe that effective solutions must be rooted in the communities they serve. Our programs are developed in collaboration with local leaders and organizations to ensure they address specific needs and challenges."
+  },
+  {
+  img: "/v_3_icons/approach2.png",
+    title: "Cloud-Based Tech",
+    note: "We focus on creating lasting change by equipping individuals with skills and knowledge that promote self-sufficiency and resilience."
+  },
+  {
+    img: "/v_3_icons/approach3.png",
+      title: "Sustainability",
+      note: "We focus on creating lasting change by equipping individuals with skills and knowledge that promote self-sufficiency and resilience."
     },
-    { scope: container }
-);
-  const bannerImages = ["/images/banner1.png", "/images/banner2.png", "/images/banner3.png"]
-  const [imgCount, setImageCount] = useState(0);
+    {
+      img: "/v_3_icons/approach4.png",
+        title: "Innovation-Driven",
+        note: "By leveraging the latest technologies, we aim to bridge the digital divide and pave the way for improved educational and economic opportunities."
+      },
+  ]
+  const ourServiceArray = [{
+    img: "/v_3_images/service1.png",
+    title: "CommunityCentric Technology Development",
+    list: [
+      "Tailored tech solutions designed collaboratively with community members.",
+       "Development of mobile apps and digital platforms that address specific local challenges, such as health, education, and economic opportunities."
+    ]
+  },
+  {
+    img: "/v_3_images/service2.png",
+    title: "Digital Literacy Training",
+    list: [
+      "Workshops and training sessions focused on building digital skills among community members.",
+      "Programs that educate individuals on using technology to access resources, gain employment, and improve their quality of life."]
 
-  useEffect(() => {
-    const interval =  setInterval(() => {
-      imgCount > 1 ? setImageCount(0) : setImageCount((img) => img + 1)
-    },5000)
-    return () => clearInterval(interval)
-  },[imgCount])
+  },
+  {
+    img: "/v_3_images/service3.png",
+    title: "Social Impact Consulting",
+    list: [
+      "Consultancy services for organizations looking to implement technology-driven solutions in underserved communities.",
+      "Strategies that align technological advancements with community needs for sustainable development." ]
+  },
+  {
+    img: "/v_3_images/service4.png",
+    title: "Resource Access and Distribution",
+    list: [
+      "Facilitation of access to essential services, information, and resources through our integrated platforms.",
+      "Partnerships with local organizations to ensure the distribution of resources is efficient and impactful."]
 
-  const empowerImages = ["/images/empower.png", "/images/donation1.png", "/images/donation2.png"]
-  const [empowerCount, setEmpowerCount] = useState(0);
+  },
+  {
+    img: "/v_3_images/service5.png",
+    title: "Sustainable Project Implementation",
+    list: [
+      "Execution of projects that promote environmental sustainability alongside technological advancement.",
+      "Initiatives that incorporate renewable energy and eco-friendly practices in community development." ]
 
-  useEffect(() => {
-    const interval =  setInterval(() => {
-      imgCount > 1 ? setEmpowerCount(0) : setEmpowerCount((img) => img + 1)
-    },7000)
-    return () => clearInterval(interval)
-  },[empowerCount])
+  },
+  {
+    img: "/v_3_images/service6.png",
+    title: "Networking and Collaboration Opportunities",
+    list: [
+      "Creation of a network for individuals, organizations, and businesses to collaborate on tech solutions for social issues.",
+      "Facilitation of partnerships to leverage resources and strengths for greater impact within communities." ]
+  },
+  {
+    img: "/v_3_images/service7.png",
+    title: "Monitoring and Evaluation",
+    list: [
+      "Comprehensive assessment and evaluation services to measure the impact of technology on community wellbeing.",
+      "Feedback loop implementation to ensure ongoing improvement and responsiveness to community needs."
+       ]
 
-  const [programSwitch, setProgramSwitch] = useState(false);
-  useEffect(() => {
-    const interval =  setInterval(() => {
-      programSwitch ? setProgramSwitch(false) : setProgramSwitch(true)
-    },7000)
-    return () => clearInterval(interval)
-  },[programSwitch])
+  },
+  {
+    img: "/v_3_images/service8.png",
+    title: "Your Dream Realized",
+    list: [
+      "At SlumTech Foundation, we are dedicated to turning your dreams into reality through our expertise. Whether you're a community leader, a local organization, or an aspiring tech innovator, we are here to support you. Together, we can drive meaningful change and build resilient communities."   
+    ]
 
+  }
+]
   return (
-   <main className="font-primary text-primary" ref={container}>
+   <main className="text-[1.6rem] max-small:text-[1.3rem] font-[400] text-[#000] leading-[2.6rem] max-small:leading-[2rem]">
     <Navigation />
     <Sidebar /> 
-    {/* banner */}
-    <section className="relative mt-[7em] w-full min-h-[45.2rem] max-large:h-[30rem]">
-    <Image 
-       src={bannerImages[imgCount]}
-      fill
-      alt="home banner"
-      /> 
-      <div className="bannerOverlay absolute top-0 left-0 w-full min-h-[45.2rem] max-desktop:h-[20em] opacity-[1]"></div>
-      <div className="absolute w-full text-center bottom-[7rem] left-0">
-        <div className="text-index">
-        <p className="font-h2 text-[2.5rem] max-large:text-[2.1rem] ">Welcome to SlumTech Foundation</p>
-        <p className="font-normal text-[1.5rem] max-large:text-[1.1rem]">Empowering Communities Through Technology!</p>
-        </div>
-      </div>
-    </section>
-    
-    {/* about description */}
-    <section className="">
-      <div className="flex flex-row max-large:flex-col items-center w-[65%] max-large:w-[90%] px-[3em] max-large:px-[1em] rounded-[12px] py-[3em] max-large:py-[1em] mx-auto indexAbout">
-      <div className="mr-[1rem] max-large:mr-[0] text-h2 max-large:text-h3 font-normal min-w-[55%] max-large:w-full max-large:mb-[2rem]">
-      <p className="mb-[0.5em]">
-      At SlumTech Foundation, we are dedicated to leveraging the power of technology to uplift and empower 
-      underserved communities worldwide. Our mission is to bridge the digital divide and create opportunities 
-      for individuals living in slums and marginalized areas to thrive in the digital age. Through our innovative 
-      programs and initiatives, we provide access to technology resources, education, and training to help build a 
-      brighter future for all.
-      </p>
-      <Link href="/about" className='no-underline'>
-      <button className="px-[2em] py-[1em] bg-btn_bg rounded-[12px] text-index text-[14px] font-h2">Learn more</button>
-      </Link>
-      </div>
-      <div className="relative min-w-[45%] max-large:w-full min-h-[26rem] max-large:min-h-[20rem]">
-      <Image 
-      src="/images/home1.png" 
-      fill
-      alt="event"
-      /> 
-      </div>
-      </div>
-    </section>
+    <Banner 
+      img="/v_3_images/banner-image.png"
+      header1="Welcome to"
+      header2="SlumTech Foundation"
+      header2Color="#FDB21A"
+      header1Color="#fff"
+      subheader="Empowering Communities Through Technology!"
+    />
 
-    <section className="relative mt-[5rem] max-large:mt-[3rem] w-[50%] max-large:w-[90%] mx-auto text-center z-[100]">
-    <div className="box relative max-w-[13rem] h-[10rem] max-large:h-[10rem] mx-auto z-[100]">
-      <Image 
-      src="/images/boylaptop.png" 
-      fill
-      alt="home"
-      /> 
-      </div>
-      <p className="mt-[2em] font-h4 text-h2 max-large:text-h3 z-[100]">
-      Join us in our mission to make a difference and 
-      transform lives through technology. Explore our website to learn more about our work, 
-      get involved, and support our cause.
-      </p>
-    </section>
+    {/* about slumtech */}
+    <section className='container py-[10rem] max-small:py-[5rem]'>
+      <MainHeader text="About SlumTech Foundation" />
+      <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[3rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+      <span className='text-[#FDB21A]'>Empowering Underserved Communities </span>
+      <span>Through Technology and Innovation</span>
+      </h2>
 
-    {/* our programs */}
-    <section className="programHouse relative programSection text-btn_color px-[15%] max-large:px-[5%]  py-2 mt-[5em] mb-[3em]">
-      {/* semi circle */}
-      <div className="programCircle1 absolute w-[38rem] max-large:w-[20rem] h-[38rem] max-large:h-[20rem] rounded-full bg-[#fff] left-[3rem] max-large:left-[-1rem] top-[-25rem] max-large:top-[-7rem] z-10"></div>
-      <div className="programCircle2 max-large:hidden absolute w-[38rem] h-[38rem] rounded-full bg-[#fff] left-[-30rem] top-[-25rem] z-10"></div>
-    
-    <div className="programText !z-[300] relative flex flex-row max-large:flex-col flex-wrap w-full justify-between z-[100]">
-    <div className="w-[45%] max-large:w-full mt-[5em] mb-[5em] max-large:mb-[1.5em] z-[100]">
-      <header className="relative text-btn_bg font-h2 text-h4 !z-[300]">Our Programs</header>
-    <p className="font-normal text-secondary mt-[5em] mb-[1em]">
-    One of the key pillars of SlumTech Foundation is its focus on technology education. 
-    The foundation offers training in coding, digital skills, and entrepreneurship, 
-    preparing young people for the demands of the 21st-century workforce. By providing 
-    hands-on learning experiences and practical skills development, SlumTech 
-    Foundation empowers youth to become creators and innovators in an increasingly 
-    digital world.
-    </p>
-    <Link href="/programs" className='no-underline'>
-    <button className="px-[0.8em] max-large:px-[1.2em] py-[0.6em] max-large:py-[1em] font-h2 text-normal rounded-[12px] text-btn_bg bg-btn_color">Learn more</button>
-    </Link>
-    </div>
-
-    {programSwitch ? <ProgramCard1 /> : <ProgramCard2 />}
-    </div>
-    </section>
-
-    {/* upcoming events */}
-    <section className="w-[65%] max-large:w-[90%] mx-auto mt-[5rem] max-large:mt-[3rem] rounded-t-[12px]">
-      <div className="text-h4 text-index font-h2 bg-btn_bg text-center py-[0.5em] rounded-t-[12px]">Upcoming Events</div>
-      <div className="upcomingEvent p-[1.5rem] flex flex-row max-large:flex-col items-center justify-between">
-      <div className="w-[25%] max-large:w-full  min-h-[15rem]">
-      <div className="relative w-full h-[10rem] mx-auto">
-      <Image 
-      src="/images/event4.png" 
-      fill
-      alt="event"
-      /> 
-      </div>
-      <p className="font-h4 text-secondary text-[#2C2543] mb-[0.3em]">
-      2025 Event:<br/>
-      Tech for Change: Empowering Communities Worldwide.
-      </p>
-      <Link href="/media/post2" className='no-underline'>
-      <button className="px-[1em] py-[0.5em] bg-btn_bg rounded-[12px] text-index text-[14px] font-h2">Read more</button>
-      </Link>
-      </div>      
-      </div>
-    </section>
-
-    <section className="mt-[5rem] max-large:mt-[3rem] flex flex-row max-large:flex-col items-center w-[65%] max-large:w-[90%] mx-auto">
-    <div className="relative w-[45%] max-large:w-full min-h-[22rem] mr-[4em] max-large:mr-0 max-large:h-[20rem] mx-auto">
-      <Image 
-       src={empowerImages[imgCount]}
-      fill
-      alt="empower"
-      /> 
-      </div>
-      <div className="text-center w-[55%] max-large:w-full max-large:mt-[1rem] font-h3 text-h1">
-      <p className="text-h2">Empower communities. Change lives.</p>
-      <p className="text-h4">Join SlumTech Foundation today.</p>
-
-      <div className="my-[1em] font-normal text-secondary px-[1em]">
-      Join us in shaping a brighter future for Africa.
-      Your support, no matter how big or small, 
-      will make a meaningful impact on the lives of those we aim to serve.
-      </div>
-      <Link href="/register" className='no-underline'>
-      <button className="px-6 py-3 bg-btn_bg rounded-[12px]">
-        <div  className="relative min-w-[30px] min-h-[30px] max-large:h-[30px]">
+      <div className='flex flex-row max-small:flex-col max-small:gap-y-[1.5rem] items-center gap-x-[5rem] mt-[5rem] max-small:mt-[2rem]'>
+        <div className='relative w-[56.1rem] max-small:w-full h-[40rem] max-small:h-[25rem]'>
         <Image 
-        src="https://img.icons8.com/ios/50/FCFCFD/circled-right-2.png" 
-        fill
-        alt="right-btn"
-        /> 
+            src="/v_3_images/about_image.png"
+           fill
+          alt="about slumtech foundation description"
+        />
         </div>
-    </button>
-    </Link>
+        <div className='w-[50rem] max-small:w-full flex flex-col gap-y-[2rem] max-small:gap-y-[1rem]'>
+        <p>Founded on the belief that every individual deserves the opportunity to thrive, 
+          SlumTech Foundation is a global nonprofit organization dedicated to transforming the lives of underserved 
+          communities both in the United States and around the world. 
+        </p>
+        <p>Our mission is to harness the power of technology and innovation to 
+        create sustainable solutions that address the unique challenges faced by marginalized populations.
+        </p>
+
+        <div className="w-[16rem] h-[5.8rem] mt-[1.5rem]">
+            <Button text="Learn More" />
+        </div>
+        </div>
       </div>
     </section>
 
-    {/* recent updates */}
-    <section className="w-[65%] max-medium:w-[90%] mx-auto mt-[5rem] max-large:mt-[3rem]">
-      <header className="font-h2 text-h4">Recent Updates</header>
-      <div className="upcomingEvent p-[1.5rem] flex flex-row max-medium:flex-col flex-wrap items-center justify-between">
-      <div className="w-[25%] max-large:w-full min-h-[15rem]">
-      <div className="relative w-full h-[10em] max-large:h-[10em] mx-auto">
-      <Image 
-      src="/images/event1.png" 
-      fill
-      alt="event"
-      /> 
-      </div>
-      <p className="font-normal text-secondary mb-[0.3em] text-center">
-      Empowering Tomorrow's Leaders: The Global Impact of...
-      </p>
-      </div> 
+    {/* our service */}
+    <section className='bg-[#fafafa]'>
+      <div className='container py-[10rem] max-small:py-[5rem]'>
+      <MainHeader text="Our Services" classnames="text-center"/>
+      <h2 className='font-[500] text-center text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+      <span className='text-[#FDB21A]'>Our Expertise,</span><span>Your Dream</span>
+      </h2>
+      <h3 className='max-w-[58.6rem] mx-auto max-small:max-w-full text-center mt-[2rem] max-small:mt-0'>
+      We offer a range of innovative services designed to empower
+      communities and create sustainable solutions through technology. Here’s how we can help:
+      </h3>
 
-       <div className="w-[25%] max-large:w-full min-h-[15rem] max-large:mt-[1em]">
-      <div className="relative w-full h-[10rem] max-large:h-[10rem] mx-auto">
-      <Image 
-      src="/images/media1.png" 
-      fill
-      alt="event"
-      /> 
+      <div className='mt-[5rem] serviceCard'>
+        {
+          ourServiceArray.map((service, index) =>  <Card key={index} img={service.img} title={service.title} list={service.list} />)
+        }
       </div>
-      <p className="font-normal text-secondary mb-[0.3em] text-center">
-      SlumTech Foundation Joins US Chamber of Commerce
-      </p>
-      </div> 
 
-       <div className="w-[25%] max-large:w-full min-h-[15rem] max-large:mt-[2em]">
-      <div className="relative w-full h-[10rem] max-large:h-[10rem] mx-auto">
-      <Image 
-      src="/images/volunteer.png" 
-      fill
-      alt="event"
-      /> 
+      <div className='mt-[5rem] text-center'>
+        <h1 className='text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem]'>Let’s Connect!</h1>
+        <p className='py-[2rem] max-small:py-[1rem] max-w-[58.6rem] max-small:max-w-full mx-auto'>
+        Explore our services, partner with us, or find out how you can get involved. 
+        Your dream for a better tomorrow is within reach, and with SlumTech Foundation by your side, we can make it happen!
+        </p>
+        <div className="w-[18.2rem] h-[5.8rem] mx-auto">
+            <Button text="Connect Now" />
+        </div>
+        
+        </div>
       </div>
-      <p className="font-normal text-secondary mb-[0.3em] text-center">
-      Career: Country Director/Representative at SlumTech Foundation
-      </p>
-      </div>            
+    </section>  
+
+    {/* our Approach */}
+    <section className=''>
+      <div className='container py-[10rem] max-small:py-[5rem]'>  
+      <MainHeader text="Our Approach" classnames="text-center"/>
+      <h2 className='font-[500] text-center text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[3.5rem] max-small:mb-[0.5rem]'>
+      <span className='text-[#FDB21A]'>Inovation</span><span> in Action</span>
+      </h2>
+
+      <div className='mt-[5rem] max-small:mt-[3rem] approachCard'>
+      {
+          ourApproach.map((approach, index) =>  <ApproachCard key={index} img={approach.img} title={approach.title} note={approach.note} />)
+        }
+
       </div>
+        </div>
     </section>
-    <Newsletter />
+
+    <JoinUs />
     <Footer />
     </main>
   );
