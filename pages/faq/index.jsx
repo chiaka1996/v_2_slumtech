@@ -55,7 +55,7 @@ export default function Faq() {
 
           <div className='mt-[2.5rem]'>
             <div onClick={() => toggleState(2)} className={toggle == 2 ? css.active : css.inactive}>
-              <span>Lorem ipsum dolor sit amet</span>
+              <span className='font-[500] text-[2rem] max-small:text-[1.6rem] leading-[4rem] max-small:leading-[2rem]'>Lorem ipsum dolor sit amet</span>
               <span className={`${toggle == 2 ? css.faqIconActive : css.faqIconInactive} material-icons`}>keyboard_arrow_down</span>
             </div>
             <div className='px-[5rem] py-[2rem] note'>
@@ -65,7 +65,7 @@ export default function Faq() {
           </div>
           <div className='mt-[2.5rem]'>
             <div onClick={() => toggleState(3)} className={toggle == 3 ? css.active : css.inactive}>
-              <span>Lorem ipsum dolor sit amet</span>
+              <span className='font-[500] text-[2rem] max-small:text-[1.6rem] leading-[4rem] max-small:leading-[2rem]'>Lorem ipsum dolor sit amet</span>
               <span className={`${toggle == 3 ? css.faqIconActive : css.faqIconInactive} material-icons`}>keyboard_arrow_down</span>
             </div>
             <div className='px-[5rem] py-[2rem]'>

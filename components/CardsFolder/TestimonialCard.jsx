@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const TestimonialCard = ({img, name, occupation, note}) => {
     return(
-       <div className="bg-[#fff] px-[2.5rem] pt-[7rem] pb-[4rem] relative mt-[5rem]">
+       <div className="bg-[#fff] px-[2.5rem] pt-[6rem] relative mt-[5rem] h-[35.1rem]">
         <div className='absolute top-[6rem] left-[2.5rem] w-[5.7rem] h-[3.5rem]'>
         <Image 
             src="/v_3_icons/quote.png" 
