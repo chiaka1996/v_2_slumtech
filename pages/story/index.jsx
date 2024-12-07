@@ -37,7 +37,7 @@ export default function OurStory() {
 
       <div className='max-w-[97.1rem] h-[52.8rem] max-small:h-[20rem] mt-[5rem] max-small:mt-[3rem] mx-auto'>
       <video controls className='rounded-[20px] w-full'>
-          <source src="https://res.cloudinary.com/dcr1pvlh3/video/upload/v1728152331/samples/elephants.mp4" />
+          <source src="/v_3_videos/slumtech_highlight.mp4"/>
           Your browser does not support the video tag.
         </video>
       </div>

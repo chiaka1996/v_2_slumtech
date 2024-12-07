@@ -168,11 +168,10 @@ export default function Work() {
 
        <div className='w-[90rem] max-small:w-full mx-auto mt-[5rem] max-small:mt-[2rem]'>
        <div className='w-full h-[50rem] max-small:h-[20rem] relative' >
-            <Image 
-                src="/v_3_images/news.png"
-              fill
-              alt="latest news"
-            />
+            <video controls className='rounded-[20px] w-full'>
+          <source src="/v_3_videos/slumtech_highlight.mp4"/>
+          Your browser does not support the video tag.
+        </video>
         </div>
         <h1 className="font-[500] text-[2.5rem] max-small:text-[1.8rem] leading-[2.5rem] my-[2.5rem] max-small:my-[1rem]">A Vision for Change: Proposed SlumTech Institute Aims to Provide Free
         Technology Education for Africa's Slum Communities</h1>
