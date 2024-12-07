@@ -33,7 +33,6 @@ const Navigation = () => {
         />
            <div className="w-[53.6rem] leading-[1.8rem] flex flex-row justify-between items-center max-[900px]:hidden">
            <span className={router.asPath == "/" ? style.activeLink : style.navLink}> 
-           {/* <div className={router.asPath == "/" ? style.activeLink : style.navLink}>  */}
            <Link href="/" className='no-underline'>
             HOME
             </Link>
@@ -64,7 +63,7 @@ const Navigation = () => {
             </span> */}
 
             <span className={router.asPath == "/ideas" ? style.activeLink : style.navLink}> 
-           <Link href="/ideas" className='no-underline text-primary text-normal'>
+           <Link href="/" className='no-underline text-primary text-normal'>
             Ideas
             </Link>
             </span>
@@ -80,10 +79,10 @@ const Navigation = () => {
 
            {
                     !bar ? <div className={style.hamburger}>
-                  <div className='flex flex-col gap-y-[1rem] mt-[0.5rem] relative' onClick={openBar}>
-                  <span className='block w-[3.5rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
-                  <span className='block w-[3.5rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
-                  <span className='block w-[3.5rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
+                  <div className='flex flex-col gap-y-[0.6rem] mt-[2rem] relative' onClick={openBar}>
+                  <span className='block w-[3.2rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
+                  <span className='block w-[3.2rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
+                  <span className='block w-[3.2rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
                   </div>
                     </div> : 
                     <div className={style.hamburger}>
