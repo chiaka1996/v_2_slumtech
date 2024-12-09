@@ -1,17 +1,14 @@
-import gsap from 'gsap'; 
-import { useGSAP} from '@gsap/react';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {Navigation, Sidebar, MainHeader, Banner, Footer, Button, JoinUs} from "../../components"
-
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
+import { topToBottomAnimation, bottomToTopAnimation } from "../../utilis/animations";
 
 export default function Contact() {
- 
+  useEffect(() => {
+    topToBottomAnimation(".contactHeader")
+    bottomToTopAnimation(".contactForm")
+  },[])
   return (
    <main className="text-[1.6rem] max-small:text-[1.3rem] font-[400] text-[#000] leading-[2.6rem] relative">
     <Navigation />
@@ -28,13 +25,13 @@ export default function Contact() {
         <div className='container'>
         <div className='text-center'>
         <MainHeader text="Contact Us" />
-        <h2 className='text-center font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+        <h2 className='contactHeader text-center font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
         <span className='text-[#FDB21A]'>How Can </span>
         <span>We Help?</span>
         </h2>
         </div>
 
-        <form className='max-w-[94.2rem] max-small:w-full mx-auto py-[5rem] max-small:py-[3rem] px-[7.5rem] max-small:px-0 flex flex-col gap-y-[2rem]'>
+        <form className='contactForm max-w-[94.2rem] max-small:w-full mx-auto py-[5rem] max-small:py-[3rem] px-[7.5rem] max-small:px-0 flex flex-col gap-y-[2rem]'>
           {/* check global css for css of gridStyle */}
             <div className='gridStyle gap-x-[4rem]'>
                 <div className=''>

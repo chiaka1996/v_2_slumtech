@@ -8,6 +8,9 @@ import {Navigation, Sidebar, MainHeader, Banner, Footer, Button, JoinUs} from ".
 export default function Faq() {
   useEffect(() => {
     topToBottomAnimation(".faqHeader")
+    bottomToTopAnimation(".faq-1")
+    bottomToTopAnimation(".faq-2")
+    bottomToTopAnimation(".faq-3")
   },[])
 
   const [toggle, setToggle] = useState(null)
@@ -39,7 +42,7 @@ export default function Faq() {
         </div>
 
         <div className='mt-[5rem] max-small:mt-[3rem]'>
-          <div className='mt-[2.5rem]'>
+          <div className='faq-1 mt-[2.5rem]'>
             <div onClick={() => toggleState(1)} className={toggle == 1 ? css.active : css.inactive}>
               <span className='font-[500] text-[2rem] max-small:text-[1.6rem] leading-[4rem] max-small:leading-[2rem]'>Lorem ipsum dolor sit amet</span>
               <span className={`${toggle == 1 ? css.faqIconActive : css.faqIconInactive} material-icons`}>keyboard_arrow_down</span>
@@ -50,7 +53,7 @@ export default function Faq() {
             </div>
           </div>
 
-          <div className='mt-[2.5rem]'>
+          <div className='faq-2 mt-[2.5rem]'>
             <div onClick={() => toggleState(2)} className={toggle == 2 ? css.active : css.inactive}>
               <span className='font-[500] text-[2rem] max-small:text-[1.6rem] leading-[4rem] max-small:leading-[2rem]'>Lorem ipsum dolor sit amet</span>
               <span className={`${toggle == 2 ? css.faqIconActive : css.faqIconInactive} material-icons`}>keyboard_arrow_down</span>
@@ -60,7 +63,7 @@ export default function Faq() {
               tempor incididunt ut labore et dolore
             </div>
           </div>
-          <div className='mt-[2.5rem]'>
+          <div className='faq-3 mt-[2.5rem]'>
             <div onClick={() => toggleState(3)} className={toggle == 3 ? css.active : css.inactive}>
               <span className='font-[500] text-[2rem] max-small:text-[1.6rem] leading-[4rem] max-small:leading-[2rem]'>Lorem ipsum dolor sit amet</span>
               <span className={`${toggle == 3 ? css.faqIconActive : css.faqIconInactive} material-icons`}>keyboard_arrow_down</span>

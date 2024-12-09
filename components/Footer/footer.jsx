@@ -8,7 +8,7 @@ const Footer = () => {
     return(
         <footer className='bg-[#1B1B1B] w-[100%] text-[#fff]'>
             <div className='container py-[5rem] flex flex-row max-small:flex-col max-small:gap-y-[2rem] flex-wrap justify-between'>
-            <div className='flex flex-col gap-[2rem] max-w-[29.6rem]'>
+            <div className='flex flex-col gap-[2rem] max-w-[33.6rem]'>
            <div className='relative w-[15.4rem] h-[68px]'>
              <Image 
             src="/v_3_logo/footerLogo.png"
@@ -17,12 +17,14 @@ const Footer = () => {
         />
         </div>
         <div className="text-[1.5rem] leading-[2.3rem]">
-        Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        At SlumTech Foundation, we believe in transforming communities through innovative technology solutions.
+         Our mission is to empower individuals, uplift families, and inspire sustainable development. Together, 
+         we can bridge the digital divide, fostering education, entrepreneurship, 
+        and improved quality of life in underserved areas. Join us in creating a brighter, tech-driven future.
         </div>
       </div>
       {/* quicklinks */}
-      <div className='w-[37.7rem] max-small:w-full'>
+      <div className='w-[34.7rem] max-small:w-full'>
         <h1 className='font-[600] text-[1.8rem] leading-[2.8rem]'>Quick Links</h1>
 
         <div className='flex flex-row flex-wrap justify-between mt-[2.5rem]'>
@@ -72,7 +74,7 @@ const Footer = () => {
                 alt="slumtech foundation phone number"
             />
             </div>
-            <span>(808) 551-1413</span>
+            <span> 832-847-2178</span>
             </div>
             <div className='flex flex-row gap-x-[1.5rem]'>
             <div className='relative w-[2.5rem] h-[1.7rem]'>
@@ -82,7 +84,7 @@ const Footer = () => {
                 alt="slumtech foundation email address"
             />
             </div>
-            <span>SlumTech@gmail.com</span>
+            <span> contact@slumtech.org</span>
             </div>
            <div className='flex flex-row flex-wrap gap-x-[1.5rem]'>
            <a href="https://www.facebook.com/share/1EBLeawcny/?mibextid=LQQJ4d" target="_blank">

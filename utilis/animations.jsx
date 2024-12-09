@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const topToBottomAnimation = (classname) => {
     gsap.fromTo(classname,
-      { opacity: 0, y: -70 }, 
+      { opacity: 0, y: -60 }, 
       {
         opacity: 1,
         y: 0,
