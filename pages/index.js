@@ -1,50 +1,10 @@
 import { useEffect } from 'react';
-import gsap from 'gsap'; 
-import { useGSAP} from '@gsap/react';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Image from "next/image";
 import Link from "next/link";
 import { topToBottomAnimation, bottomToTopAnimation } from '../utilis/animations';
 import {Navigation, Sidebar, Banner, Button, MainHeader, Card, JoinUs, ApproachCard, Footer} from "../components"
 
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
-
 export default function Home() {
-
-//   const topToBottomAnimation = (classname, content) => {
-//     gsap.fromTo(classname,
-//       { opacity: 0, y: -50 }, 
-//       {
-//         opacity: 1,
-//         y: 0,
-//         duration: 1,
-//         scrollTrigger: {
-//           trigger: classname, 
-//           start: "top 95%",       
-//         }
-//       }
-//     );
-    
-// }
-
-// const bottomToTopAnimation = (classname) => {
-//   gsap.fromTo(classname,
-//     { opacity: 0, y: 100 }, 
-//     {
-//       opacity: 1,
-//       y: 0,
-//       duration: 1,
-//       scrollTrigger: {
-//         trigger: classname, 
-//         start: "top 90%",       
-//       },
-//     }
-//   );
-// }
-  
   useEffect(() => {
     topToBottomAnimation(".aboutHeader")
     topToBottomAnimation(".aboutText")
