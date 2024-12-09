@@ -1,13 +1,16 @@
+import { useEffect } from 'react';
 import gsap from 'gsap'; 
-import { useGSAP} from '@gsap/react';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+// import { useGSAP} from '@gsap/react';
+// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+// import {TextPlugin} from 'gsap/TextPlugin';
 import Image from "next/image";
 import Link from "next/link";
 import {Navigation, Sidebar, MainHeader, Banner, Footer, Button, JoinUs, WorkCard} from "../../components"
 
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(useGSAP);
+// gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(TextPlugin);
 
 
 export default function Work() {
@@ -35,9 +38,15 @@ export default function Work() {
         img: "/v_3_images/approach-5.png",
         title: "Innovative Projects",
         note: "From building mobile applications that solve real-life problems to creating platforms that facilitate knowledge sharing, our initiatives are grounded in creativity and practicality. We strive to convert visionary ideas into impactful realities."
-    },
-
+    }
 ]
+
+// useEffect(() => {
+
+
+// }, [])
+
+
   return (
    <main className="text-[1.6rem] max-small:text-[1.3rem] font-[400] text-[#000] leading-[2.6rem] max-small:leading-[2rem]">
     <Navigation />

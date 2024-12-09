@@ -86,7 +86,7 @@ const Footer = () => {
             </div>
            <div className='flex flex-row flex-wrap gap-x-[1.5rem]'>
            <a href="https://www.facebook.com/share/1EBLeawcny/?mibextid=LQQJ4d" target="_blank">
-          <div className='flex items-center rounded-full w-[3.6rem] h-[3.6rem] border border-[#fdb21a]'>
+          <div className='hover:scale-110  flex items-center rounded-full w-[3.6rem] h-[3.6rem] border border-[#fdb21a]'>
            <div className='relative w-[0.8rem] h-[1.7rem] mx-auto'>
                 <Image 
                 src="/v_3_icons/facebook-footer.png"
@@ -98,7 +98,7 @@ const Footer = () => {
             </a>
 
             <a href="https://www.linkedin.com/company/slumtech-foundation/" target="_blank">
-            <div className='flex items-center rounded-full w-[3.6rem] h-[3.6rem] border border-[#fdb21a]'>
+            <div className='hover:scale-110 flex items-center rounded-full w-[3.6rem] h-[3.6rem] border border-[#fdb21a]'>
            <div className='relative w-[2.2rem] h-[1.7rem] mx-auto'>
                 <Image 
                 src="/v_3_icons/linkedin-footer.png"
@@ -110,8 +110,8 @@ const Footer = () => {
             </a>
 
             <a href="https://www.instagram.com/slumtechfoundation/profilecard/?igsh=MThrcGRqZXQ0bm15bA==" target="_blank">
-            <div className='flex items-center rounded-full w-[3.6rem] h-[3.6rem] border border-[#fdb21a]'>
-           <div className='relative w-[1.7rem] h-[1.7rem] mx-auto'>
+            <div className='hover:scale-110 flex items-center rounded-full w-[3.6rem] h-[3.6rem] border border-[#fdb21a]'>
+           <div className='hover:scale-110 relative w-[1.7rem] h-[1.7rem] mx-auto'>
                 <Image 
                 src="/v_3_icons/instagram-footer.png"
                 fill

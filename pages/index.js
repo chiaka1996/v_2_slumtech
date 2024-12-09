@@ -1,16 +1,27 @@
-import gsap from 'gsap'; 
-import { useGSAP} from '@gsap/react';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import { topToBottomAnimation, bottomToTopAnimation } from '../utilis/animations';
 import {Navigation, Sidebar, Banner, Button, MainHeader, Card, JoinUs, ApproachCard, Footer} from "../components"
 
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
-
 export default function Home() {
+  useEffect(() => {
+    topToBottomAnimation(".aboutHeader")
+    topToBottomAnimation(".aboutText")
+    bottomToTopAnimation(".aboutImage")
+
+    topToBottomAnimation(".serviceHeader")
+    bottomToTopAnimation(".seviceSubHeader")
+    bottomToTopAnimation(".serviceContent")
+
+    bottomToTopAnimation(".connectNow")
+
+    topToBottomAnimation(".aprroachHeader")
+    bottomToTopAnimation(".approachContent")
+
+  }, []);
+
+
   const ourApproach = [{
     img: "/v_3_icons/approach1.png",
     title: "Community-Centric",
@@ -112,20 +123,20 @@ export default function Home() {
     {/* about slumtech */}
     <section className='container py-[10rem] max-small:py-[5rem]'>
       <MainHeader text="About SlumTech Foundation" />
-      <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[3rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+      <h2 className='aboutHeader font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[3rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
       <span className='text-[#FDB21A]'>Empowering Underserved Communities </span>
       <span>Through Technology and Innovation</span>
       </h2>
 
       <div className='flex flex-row max-small:flex-col max-small:gap-y-[1.5rem] items-center gap-x-[5rem] mt-[5rem] max-small:mt-[2rem]'>
-        <div className='relative w-[56.1rem] max-small:w-full h-[40rem] max-small:h-[25rem]'>
+        <div className='aboutImage relative w-[56.1rem] max-small:w-full h-[40rem] max-small:h-[25rem]'>
         <Image 
             src="/v_3_images/about_image.png"
            fill
           alt="about slumtech foundation description"
         />
         </div>
-        <div className='w-[50rem] max-small:w-full flex flex-col gap-y-[2rem] max-small:gap-y-[1rem]'>
+        <div className='aboutText w-[50rem] max-small:w-full flex flex-col gap-y-[2rem] max-small:gap-y-[1rem]'>
         <p>Founded on the belief that every individual deserves the opportunity to thrive, 
           SlumTech Foundation is a global nonprofit organization dedicated to transforming the lives of underserved 
           communities both in the United States and around the world. 
@@ -133,12 +144,6 @@ export default function Home() {
         <p>Our mission is to harness the power of technology and innovation to 
         create sustainable solutions that address the unique challenges faced by marginalized populations.
         </p>
-
-        <div className="w-[16rem] h-[5.8rem] mt-[1.5rem]">
-        <Link href="/story" className='no-underline'>
-        <Button text="Learn More" />
-        </Link>
-        </div>
         </div>
       </div>
     </section>
@@ -147,21 +152,21 @@ export default function Home() {
     <section className='bg-[#fafafa]'>
       <div className='container py-[10rem] max-small:py-[5rem]'>
       <MainHeader text="Our Services" classnames="text-center"/>
-      <h2 className='font-[500] text-center text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+      <h2 className='serviceHeader font-[500] text-center text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
       <span className='text-[#FDB21A]'>Our Expertise,</span><span>Your Dream</span>
       </h2>
-      <h3 className='max-w-[58.6rem] mx-auto max-small:max-w-full text-center mt-[2rem] max-small:mt-0'>
+      <h3 className='seviceSubHeader max-w-[58.6rem] mx-auto max-small:max-w-full text-center mt-[2rem] max-small:mt-0'>
       We offer a range of innovative services designed to empower
       communities and create sustainable solutions through technology. Here’s how we can help:
       </h3>
 
-      <div className='mt-[5rem] serviceCard'>
+      <div className='serviceContent mt-[5rem] serviceCard'>
         {
           ourServiceArray.map((service, index) =>  <Card key={index} img={service.img} title={service.title} list={service.list} />)
         }
       </div>
 
-      <div className='mt-[5rem] text-center'>
+      <div className='connectNow mt-[5rem] text-center'>
         <h1 className='text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem]'>Let’s Connect!</h1>
         <p className='py-[2rem] max-small:py-[1rem] max-w-[58.6rem] max-small:max-w-full mx-auto'>
         Explore our services, partner with us, or find out how you can get involved. 
@@ -181,11 +186,11 @@ export default function Home() {
     <section className=''>
       <div className='container py-[10rem] max-small:py-[5rem]'>  
       <MainHeader text="Our Approach" classnames="text-center"/>
-      <h2 className='font-[500] text-center text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[3.5rem] max-small:mb-[0.5rem]'>
+      <h2 className='aprroachHeader font-[500] text-center text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[3.5rem] max-small:mb-[0.5rem]'>
       <span className='text-[#FDB21A]'>Inovation</span><span> in Action</span>
       </h2>
 
-      <div className='mt-[5rem] max-small:mt-[3rem] approachCard'>
+      <div className='approachContent mt-[5rem] max-small:mt-[3rem] approachCard'>
       {
           ourApproach.map((approach, index) =>  <ApproachCard key={index} img={approach.img} title={approach.title} note={approach.note} />)
         }

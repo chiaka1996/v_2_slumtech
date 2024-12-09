@@ -1,18 +1,15 @@
-import { useState } from 'react';
-import gsap from 'gsap'; 
-import { useGSAP} from '@gsap/react';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import css from './faq.module.css'
+import { topToBottomAnimation, bottomToTopAnimation } from "../../utilis/animations";
 import {Navigation, Sidebar, MainHeader, Banner, Footer, Button, JoinUs} from "../../components"
 
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
-
 export default function Faq() {
+  useEffect(() => {
+    topToBottomAnimation(".faqHeader")
+  },[])
+
   const [toggle, setToggle] = useState(null)
 
   const toggleState = (num) => {
@@ -35,7 +32,7 @@ export default function Faq() {
         <div className='container'>
         <div className='text-center'>
         <MainHeader text="FAQS" />
-        <h2 className='text-center font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+        <h2 className='faqHeader text-center font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
           <span className='text-[#FDB21A]'>Frequently asked </span>
           <span>questions</span>
           </h2>
