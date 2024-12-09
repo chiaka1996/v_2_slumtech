@@ -70,10 +70,9 @@ export default function Faq() {
             </div>
             <div className='px-[5rem] py-[2rem]'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-              tempor incididunt ut labore et dolore
+              tempor. need real texts
             </div>
           </div>
-
         </div>
         </div>
     </section>
