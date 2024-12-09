@@ -1,17 +1,8 @@
 import { useEffect } from 'react';
-import gsap from 'gsap'; 
-// import { useGSAP} from '@gsap/react';
-// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-// import {TextPlugin} from 'gsap/TextPlugin';
 import Image from "next/image";
 import Link from "next/link";
 import {Navigation, Sidebar, MainHeader, Banner, Footer, Button, JoinUs, WorkCard} from "../../components"
-
-
-// gsap.registerPlugin(useGSAP);
-// gsap.registerPlugin(ScrollTrigger);
-// gsap.registerPlugin(TextPlugin);
-
+import { topToBottomAnimation, bottomToTopAnimation } from "../../utilis/animations";
 
 export default function Work() {
     const OurWorkApproach = [{
@@ -41,10 +32,26 @@ export default function Work() {
     }
 ]
 
-// useEffect(() => {
+useEffect(() => {
+  topToBottomAnimation(".ourWorkHeader")
+  bottomToTopAnimation(".workImage")
+  topToBottomAnimation(".workText")
+
+  topToBottomAnimation(".strategiesHeader")
+  bottomToTopAnimation(".approachGrid")
+
+  topToBottomAnimation(".impactStory")
+  bottomToTopAnimation(".joinUs")
+
+  topToBottomAnimation(".newsHeader")
+  bottomToTopAnimation(".newsVideo")
+
+  topToBottomAnimation(".upcomingHeader")
+  topToBottomAnimation(".upcomingImage")
+  bottomToTopAnimation(".upcomingText")
 
 
-// }, [])
+},[])
 
 
   return (
@@ -63,31 +70,26 @@ export default function Work() {
         <div className='container'>
         <div className=''>
         <MainHeader text="Our Work" />
-        <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[3rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+        <h2 className='ourWorkHeader font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[3rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
         <span className='text-[#FDB21A]'>Where Vision </span>
         <span>Meets Reality</span>
         </h2>
         </div>
 
         <div className='mt-[5rem] max-small:mt-[2rem] flex flex-row max-small:flex-col items-center gap-x-[5rem] max-small:gap-x-0 max-small:gap-y-[1.5rem]'>
-            <div className='w-[56.1rem] max-small:w-full h-[40rem] max-small:h-[25rem] relative' >
+            <div className='workImage w-[56.1rem] max-small:w-full h-[40rem] max-small:h-[25rem] relative' >
                 <Image 
                     src="/v_3_images/ourwork.png"
                     fill
                     alt="our work at slumtech"
                 />
             </div>
-            <div className='w-[49.2rem] max-small:w-full'>
+            <div className='workText w-[49.2rem] max-small:w-full'>
             <p>At SlumTech Foundation, we believe that the power of technology can 
             transform lives and uplift communities. Our mission is to bridge 
             the gap between vision and tangible outcomes, 
             ensuring that innovative solutions reach those who need them most.
             </p>
-            <div className='mt-[3.5rem] max-small:mt-[1.5rem] w-[16rem] h-[5.8rem]'>
-            <Link href="/story" className='no-underline'>
-                <Button text="Learn More" />
-              </Link>
-            </div>
             </div>
         </div>
         </div>
@@ -97,13 +99,13 @@ export default function Work() {
         <div className='container'>
         <div className=''>
         <MainHeader text="Our Approach" />
-        <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+        <h2 className='strategiesHeader font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
         <span className='text-[#FDB21A]'>Strategies </span>
         <span>That Drive Us</span>
         </h2>
         </div>
 
-        <div className='mt-[5rem] max-small:mt-[2rem] gap-x-[3.3rem] gap-y-[5rem] max-small:gap-y-[2rem] gridStyle'>
+        <div className='approachGrid mt-[5rem] max-small:mt-[2rem] gap-x-[3.3rem] gap-y-[5rem] max-small:gap-y-[2rem] gridStyle'>
             {
                 OurWorkApproach.map((approach, index) => <WorkCard key={index} img={approach.img} title={approach.title} note={approach.note} />)
             }
@@ -116,7 +118,7 @@ export default function Work() {
       <div className='min-[1440px]:container max-small:px-[1rem] max-small:py-[5rem]'>
         <div className='flex flex-row max-small:flex-col max-small:gap-y-[1rem] items-center'>
         <div className='w-[50%] max-small:w-full'>
-          <div className='max-w-[49.2rem] mx-auto'>
+          <div className='impactStory max-w-[49.2rem] mx-auto'>
             <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[3.5rem] max-small:mb-[0.5rem]'>
                 <span>Impact</span>
                 <span className='text-[#FDB21A]'> Stories</span>
@@ -147,7 +149,7 @@ export default function Work() {
             />
         </div>
         <div className='w-[50%] max-small:w-full' >
-          <div className='max-w-[49.2rem] max-small:max-w-full mx-auto'>
+          <div className='joinUs max-w-[49.2rem] max-small:max-w-full mx-auto'>
           <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[3.5rem] max-small:mb-[0.5rem]'>
                 <span>Join</span>
                 <span className='text-[#FDB21A]'> Us</span>
@@ -169,14 +171,14 @@ export default function Work() {
         <div className='container'>
         <div className='text-center'>
         <MainHeader text="News" />
-        <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
+        <h2 className='newsHeader font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[2.5rem] max-small:mb-[1.5rem]'>
         <span className='text-[#FDB21A]'>Our </span>
         <span>Latest News</span>
         </h2>
         </div>
 
        <div className='w-[90rem] max-small:w-full mx-auto mt-[5rem] max-small:mt-[2rem]'>
-       <div className='w-full h-[50rem] max-small:h-[20rem] relative' >
+       <div className='newsVideo w-full h-[50rem] max-small:h-[20rem] relative' >
             <video controls className='rounded-[20px] w-full'>
           <source src="/v_3_videos/slumtech_highlight.mp4"/>
           Your browser does not support the video tag.
@@ -276,25 +278,26 @@ export default function Work() {
         </div>
     </section>
 
+  {/* upcoming events */}
     <section className='py-[10rem] max-small:py-[5rem] bg-[#fafafa]'>
         <div className='container'>
         <div className=''>
         <MainHeader text="Upcoming Events" />
-        <h2 className='font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[3.5rem] max-small:mb-[0.5rem]'>
+        <h2 className='upcomingHeader font-[500] text-[4.5rem] max-small:text-[2rem] leading-[4.5rem] max-small:leading-[2rem] mt-[2rem] max-small:mt-[1rem] mb-[3.5rem] max-small:mb-[0.5rem]'>
         <span className='text-[#FDB21A]'>Upcoming Event: </span>
         <span> Tech for Good Summit</span>
         </h2>
         </div>
 
         <div className='mt-[5rem]  max-small:mt-[2rem] flex flex-row  max-small:flex-col gap-x-[5rem]  max-small:gap-y-[1rem] items-start'>
-        <div className='w-[56.1rem] max-small:w-full h-[57.8rem]  max-small:h-[30rem] relative' >
+        <div className='upcomingImage w-[56.1rem] max-small:w-full h-[57.8rem]  max-small:h-[30rem] relative' >
             <Image 
               src="/v_3_images/upcoming-event.png"
               fill
               alt="slumtech upcoming events"
             />
            </div>
-        <div className='flex flex-col gap-y-[2rem] w-[49.2rem]  max-small:w-full'>
+        <div className='upcomingText flex flex-col gap-y-[2rem] w-[49.2rem]  max-small:w-full'>
           <p>
           SlumTech Foundation will host the "Tech for Good Summit" in Houston Texas on 4th of November, 2025. 
           This event will bring together community leaders, tech innovators, 
