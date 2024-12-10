@@ -18,10 +18,10 @@ const SideBar = ({page}) => {
         label: "Our Story",
         url: "/story"
       },
-      {
-        label: "FAQ",
-        url: "/faq"
-      },
+      // {
+      //   label: "FAQ",
+      //   url: "/faq"
+      // },
       {
         label: "Our Work",
         url: "/work"
@@ -30,10 +30,10 @@ const SideBar = ({page}) => {
         label: "Contact Us",
         url: "/contact"
       },
-      {
-        label: "Ideas",
-        url: "/#"
-      }
+      // {
+      //   label: "Ideas",
+      //   url: "/#"
+      // }
     ]
   
     

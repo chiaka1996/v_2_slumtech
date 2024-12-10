@@ -44,11 +44,11 @@ const Navigation = () => {
             </Link>
             </span>
 
-             <span className={router.asPath == "/faq" ? style.activeLink : style.navLink}> 
+             {/* <span className={router.asPath == "/faq" ? style.activeLink : style.navLink}> 
            <Link href="/faq" className='no-underline text-primary text-normal'>
             FAQ
             </Link>
-            </span>
+            </span> */}
 
             <span className={router.asPath == "/work" ? style.activeLink : style.navLink}> 
            <Link href="/work" className='no-underline text-primary text-normal'>
