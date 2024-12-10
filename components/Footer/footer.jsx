@@ -39,11 +39,11 @@ const Footer = () => {
               Our Story
             </Link>  
             </span>
-            <span>
+            {/* <span>
             <Link href="/faq" className='no-underline'>
               FAQ
               </Link>
-              </span>
+              </span> */}
           </div>
 
           <div className='flex flex-col gap-y-[2rem] leading-[2.8rem]'>
