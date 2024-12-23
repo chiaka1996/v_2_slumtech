@@ -13,6 +13,6 @@ export const transporter = nodemailer.createTransport({
 });
 
 export const mailOptions ={ 
-    from: email,
-    to: "career@slumtech.org"
+    from: "Slumtech",
+    to: "contact@slumtech.org"
 }

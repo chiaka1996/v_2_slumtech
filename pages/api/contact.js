@@ -5,11 +5,11 @@ import {mailOptions, transporter} from "../../Config/nodemailer";
 const AddMessage = async (req, res) => {
     try{
         await ConnectMongo()
-        const {firstname, lastname, email, phone, message} = req.body;
+        const {name, email, phone, message, subject} = req.body;
 
         const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi;
 
-        if(!firstname || !lastname || !phone || !email || !message){
+        if(!name || !phone || !email || !message || !subject){
             return res.status(400).json({
                 message: "please fill all fields",
                 status: false,
@@ -17,7 +17,7 @@ const AddMessage = async (req, res) => {
             })
         }
 
-        if(firstname.length < 2 || lastname.length < 2){
+        if(name < 2){
             return res.status(400).json({
                 message: "name should be a minnimum of 2 characters",
                 status: false,
@@ -35,34 +35,22 @@ const AddMessage = async (req, res) => {
 
         await transporter.sendMail({
             ...mailOptions,
-            subject: "Slumtech Contact Message",
+            subject: subject,
             html: `<!DOCTYPE html><html lang="en"><body><div class="">
-            <h1>Slumtech Message</h1>
-            <p>firstname:<span>${firstname}</span></p>
-             <p>lastname:<span>${lastname}</span></p>
-            <p>Email:<span>${email}</span></p>
+            <h1>SLUMTECH WEBSITE CONTACT MESSAGE</h1>
+            <p>Name:<span> ${name}</span></p>
+            <p>Email:<span> ${email}</span></p>
             p>Phone:<span>${phone}</span></p>
-            <p>message:<span>${message}</span></p>
+             <p>lastname:<span>${subject}</span></p>
+            <p>Message:<span>${message}</span></p>
             </div></body></html>`
         })
 
-        const saveMessage = new modelMessages({
-            firstname,
-            lastname,
-            email,
-            phone,
-            message
+        return res.status(200).json({
+            message: "message sent successfull",
+            status: true,
+            code: 200
         })
-
-        const response = await saveMessage.save()
-
-        if(response){
-            return res.status(200).json({
-                message: "message sent",
-                status: true,
-                code: 200
-            })
-        }
 
     }
     catch(error){
