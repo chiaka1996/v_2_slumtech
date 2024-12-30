@@ -30,8 +30,9 @@ const Navigation = () => {
             width="154"
             height="68"
             alt="logo"
+            className='mt-[1rem]'
         />
-           <div className="w-[53.6rem] leading-[1.8rem] flex flex-row justify-between items-center max-[900px]:hidden">
+           <div className="w-[55rem] text-[1.6rem] font-[400] leading-[3rem] flex flex-row justify-between items-center max-[900px]:hidden">
            <span className={router.asPath == "/" ? style.activeLink : style.navLink}> 
            <Link href="/" className='no-underline'>
             HOME
@@ -39,42 +40,23 @@ const Navigation = () => {
             </span>
 
              <span className={router.asPath == "/story" ? style.activeLink : style.navLink}> 
-           <Link href="/story" className='no-underline text-primary text-normal'>
-            Our Story
+           <Link href="/story" className='no-underline'>
+            ABOUT US
             </Link>
             </span>
-
-             {/* <span className={router.asPath == "/faq" ? style.activeLink : style.navLink}> 
-           <Link href="/faq" className='no-underline text-primary text-normal'>
-            FAQ
-            </Link>
-            </span> */}
 
             <span className={router.asPath == "/work" ? style.activeLink : style.navLink}> 
-           <Link href="/work" className='no-underline text-primary text-normal'>
-            Our Work
+           <Link href="/work" className='no-underline'>
+            STEM
             </Link>
             </span>
 
-            {/* <span className={router.asPath == "/contact" ? style.activeLink : style.navLink}> 
-           <Link href="/contact" className='no-underline text-primary text-normal'>
-            Contact Us
-            </Link>
-            </span> */}
-
-            <span className={router.asPath == "/ideas" ? style.activeLink : style.navLink}> 
-           <Link href="/" className='no-underline text-primary text-normal'>
-            Ideas
-            </Link>
-            </span>
-            </div>
-
-            <div className='w-[15rem] h-[5rem] max-[900px]:hidden'> 
-            <Link href="/contact" className='no-underline'>
-              <Button text="Contact Us" />
+            <Link href="/contact" className='no-underline max-[900px]:hidden'>
+              <Button text="Get Involved" />
               </Link>
             </div>
 
+           
             
 
            {
