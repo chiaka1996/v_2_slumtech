@@ -10,4 +10,5 @@ export {default as TestimonialCard} from "./CardsFolder/TestimonialCard";
 export {default as JoinUs} from "./JoinUs";
 export {default as WorkCard} from "./CardsFolder/workCard";
 export {default as Spinner} from "./Spinner/index";
-export {default as CoreValue} from "./core-value";
+export {default as CoreValue} from "./AboutComponents/core-value";
+export {default as Programs} from "./AboutComponents/programs";

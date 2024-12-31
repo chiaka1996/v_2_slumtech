@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
 import Link from "next/link";
 import { topToBottomAnimation, bottomToTopAnimation } from "../../utilis/animations";
-import {Navigation, Sidebar, MainHeader, CoreValue, Banner, Footer, Button, JoinUs, TestimonialCard} from "../../components"
+import {Navigation, Sidebar, MainHeader, CoreValue, Programs, Footer, Button} from "../../components"
 import gsap from 'gsap'; 
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -152,6 +152,7 @@ useEffect(() => {
             </div>
         </section>
         <CoreValue />
+        <Programs />
     </main>
   )
 };

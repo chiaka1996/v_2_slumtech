@@ -11,6 +11,8 @@ html{
   font-size: 62.5%;
   font-family: 'DM Sans';
   scroll-behavior: smooth;
+  font-weight: 400;
+  /* color: #ede6f8; */
 }
 
 .container{
@@ -20,23 +22,15 @@ html{
   margin: auto auto;
 }
 
-.serviceCard{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 3.3rem; 
-}
-
-.approachCard{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-  gap: 3.5rem; 
-}
-
-.footerGrid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 3.5rem; 
-}
+/* .programImage1::after{
+  content: "hello";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/v_3_images/program1.png");
+  height: 58.3rem;
+  width: 89.4rem;
+} */
 
 .gridStyle{
   display: grid;
