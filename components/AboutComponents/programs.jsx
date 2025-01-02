@@ -68,9 +68,9 @@ const Programs = ({img }) => {
 
     return(
        <section 
-        className={`relative pt-[12rem] pb-[37rem] max-small:pt-0 flex items-center justify-center w-full bg-gradient-to-r from-[#D8CAFF]/50 to-[#F1C9FF]/50`}
+        className={`font-[400] text-[1.6rem] leading-[2.4rem] pt-[12rem] max-small:pt-0 flex items-center justify-center w-full bg-gradient-to-r from-[#D8CAFF]/50 to-[#F1C9FF]/50`}
        >
-        <div className="container text-center">
+        <div className="relative pb-[37rem] container text-center">
             <MainHeader text="Programs" />
             <div className='text-[1.8rem] font-[400] text-[#7E7E7E] max-w-[106rem] mx-auto'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -240,9 +240,61 @@ const Programs = ({img }) => {
                 </div>
 
             </div>
-        </div> 
+            <div className='absolute bottom-[-26rem] w-full left-0 mx-auto bg-[#3A1667] rounded-[20px] p-[6.5rem] flex justify-between'>
+            <div className='relative w-[70rem] h-[40rem]'>
+                <Image 
+                src="/v_3_images/program2.png"
+                fill
+                alt="slumtech programs"
+            />
+            </div> 
+
+            <div className='w-[56rem]'>
+                <h2 className='font-[700] text-[4.8rem] leading-[6.2rem] tracking-wide text-[#fff]'>Global Impact</h2>
+                <div className='mt-[5rem] flex flex-row justify-between'>
+                    <div className='w-[24.7rem] text-center flex flex-col gap-y-[1.5rem]'>
+                        <div className='w-[6.2rem] h-[6.2rem] mx-auto flex items-center rounded-full bg-[#EEE8FF]'>
+                        <div className='relative w-[3.3rem] h-[3.3rem] mx-auto'>
+                        <Image 
+                        src="/v_3_icons/program3.png"
+                        fill
+                        alt="slumtech programs"
+                        />
+                        </div>
+                        </div>
+
+                        <h3 className='font-[600] text-[1.8rem] text-[#fff] leading-[2.3rem]'>United States</h3>
+                        <p className='text-[#fff] text-opacity-70'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <div className='flex justify-center items-center gap-x-[1.2rem] mt-[1rem]'>
+                            <span className='font-[900] text-[3rem] text-[#FFC700]'>20+</span>
+                            <span className='text-[#fff] text-opacity-70'>Project completed</span>
+                        </div>
+                    </div>
+
+                    <div className='w-[24.7rem] text-center flex flex-col gap-y-[1.5rem]'>
+                        <div className='w-[6.2rem] h-[6.2rem] mx-auto flex items-center rounded-full bg-[#EEE8FF]'>
+                        <div className='relative w-[3.3rem] h-[3.3rem] mx-auto'>
+                        <Image 
+                        src="/v_3_icons/integrity.png"
+                        fill
+                        alt="slumtech programs"
+                        />
+                        </div>
+                        </div>
+
+                        <h3 className='font-[600] text-[1.8rem] text-[#fff] leading-[2.3rem]'>Africa</h3>
+                        <p className='text-[#fff] text-opacity-70'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <div className='flex justify-center items-center gap-x-[1.2rem] mt-[1rem]'>
+                            <span className='font-[900] text-[3rem] text-[#FFC700]'>15+</span>
+                            <span className='text-[#fff] text-opacity-70'>Project completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
        </section>
-    )
+   ) 
 }
 
 export default Programs;

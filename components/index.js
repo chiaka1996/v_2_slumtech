@@ -12,3 +12,7 @@ export {default as WorkCard} from "./CardsFolder/workCard";
 export {default as Spinner} from "./Spinner/index";
 export {default as CoreValue} from "./AboutComponents/core-value";
 export {default as Programs} from "./AboutComponents/programs";
+export {default as GetInvolved} from "./AboutComponents/getInvolved";
+export {default as UpcomingEvent} from "./AboutComponents/upcoming-event";
+export {default as Blog} from "./AboutComponents/blog";
+export {default as Newsletter} from "./AboutComponents/newsletter";
