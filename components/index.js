@@ -16,3 +16,4 @@ export {default as GetInvolved} from "./AboutComponents/getInvolved";
 export {default as UpcomingEvent} from "./AboutComponents/upcoming-event";
 export {default as Blog} from "./AboutComponents/blog";
 export {default as Newsletter} from "./AboutComponents/newsletter";
+export {default as ContactUs} from "./AboutComponents/contactUs";
