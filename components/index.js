@@ -3,6 +3,7 @@ export {default as Sidebar} from "./Sidebar/sidebar"
 export {default as Footer} from "./Footer/footer"
 export {default as Button} from "./Button/btn";
 export {default as Banner} from "./BannerFolder/banner";
+export {default as StemAboutBanner} from "./BannerFolder/about-stem-banner";
 export {default as MainHeader} from "./Header/mainheader";
 export {default as Card} from "./CardsFolder/card";
 export {default as ApproachCard} from "./CardsFolder/ApproachCard";
@@ -17,3 +18,7 @@ export {default as UpcomingEvent} from "./AboutComponents/upcoming-event";
 export {default as Blog} from "./AboutComponents/blog";
 export {default as Newsletter} from "./AboutComponents/newsletter";
 export {default as ContactUs} from "./AboutComponents/contactUs";
+export {default as StemNavigation} from "./Stem/nav/index";
+export {default as Mission} from "./Stem/aboutComponents/mission";
+export {default as Vision} from "./Stem/aboutComponents/vision";
+export {default as Values} from "./Stem/aboutComponents/values";
