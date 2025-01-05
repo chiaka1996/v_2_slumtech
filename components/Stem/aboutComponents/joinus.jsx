@@ -11,11 +11,11 @@ const JoinUs = () => {
     return(
       <section
       style={{backgroundImage: `url(/v_3_images/join.png)`, borderImage: "fill 1 linear-gradient(#00000000, #00000099)"}}
-      className="w-full h-[63rem]"
+      className="w-full h-[63rem] text-[1.8rem] leading-[3rem] text-[#fff]"
      >
-        <div className='container text-[1.8rem] leading-[3rem] text-[#fff]'>
-            <div >
-            <h2 className='font-[700] text-[5.4rem] leading-[6.4rem] text-[#F5B021]'>Join Us</h2>
+        <div className='container'>
+            <div>
+            <h2 className='font-[700] text-[5.4rem] leading-[6.4rem] text-[#F5B021] mt-[10rem]'>Join Us</h2>
             <div className='max-w-[62rem] mt-[1.5rem] flex flex-col gap-y-[3rem] text-[#fff]'>
              <p>
                 Whether you’re a student eager to demonstrate your skills or a mentor looking

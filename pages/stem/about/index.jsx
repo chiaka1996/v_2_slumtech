@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
 import Link from "next/link";
 import { topToBottomAnimation, bottomToTopAnimation } from "../../../utilis/animations";
-import {StemNavigation, StemAboutBanner, Mission, Vision, Values, Sidebar, JoinUs, Change} from "../../../components"
+import {StemNavigation, StemAboutBanner, Mission, Vision, Values, Sidebar, JoinUs, Change, StemFooter} from "../../../components"
 import gsap from 'gsap'; 
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -86,6 +86,7 @@ useEffect(() => {
     <Values />
     <JoinUs />
     <Change />
+    <StemFooter />
     </main>
   )
 };

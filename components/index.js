@@ -23,3 +23,4 @@ export {default as Vision} from "./Stem/aboutComponents/vision";
 export {default as Values} from "./Stem/aboutComponents/values";
 export {default as JoinUs} from "./Stem/aboutComponents/joinUs";
 export {default as Change} from "./Stem/aboutComponents/change";
+export {default as StemFooter} from "./Stem/footer/index";
