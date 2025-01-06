@@ -27,3 +27,4 @@ export {default as Change} from "./Stem/aboutComponents/change";
 export {default as StemAbout} from "./Stem/homeComponent/about";
 export {default as Whyparticipate} from "./Stem/homeComponent/whyparticipate";
 export {default as StemFooter} from "./Stem/footer/index";
+export {default as WhoCanEnter} from "./Stem/homeComponent/whocanenter";
