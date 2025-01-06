@@ -13,68 +13,6 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-
-useEffect(() => {
-    gsap.fromTo(".aboutImage",
-        {y: 100,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          onComplete: () => {
-            gsap.fromTo(".aboutHeader",
-                {y: 100,
-                opacity: 0
-                
-                },
-                {
-                  y: 0,
-                  opacity: 1,
-                  duration: 1,
-                  onComplete: () => {
-                    gsap.fromTo(".paragraph1",
-                        {y: 100,
-                        opacity: 0
-                        
-                        },
-                        {
-                          y: 0,
-                          opacity: 1,
-                          duration: 1,
-                          onComplete: () => {
-                            gsap.fromTo(".paragraph2",
-                                {y: 100,
-                                opacity: 0
-                                
-                                },
-                                {
-                                  y: 0,
-                                  opacity: 1,
-                                  duration: 1,
-                                  onComplete: () => {
-                                    gsap.fromTo(".paragraph3",
-                                        {y: 100,
-                                        opacity: 0
-                                        
-                                        },
-                                        {
-                                          y: 0,
-                                          opacity: 1,
-                                          duration: 1
-                                        })        
-                                  }
-                                })        
-                          }
-                           
-                        })        
-                  }
-                  
-                })        
-          }
-        })
-}, [])
  
   return (
    <main className="text-[1.6rem] font-[400] text-[#000] leading-[2.6rem] relative">

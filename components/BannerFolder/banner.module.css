@@ -23,7 +23,7 @@
     filter: blur(50px);
 }
 
-.StemAboutBanner::before{
+.StemAboutBanner::before, .StemHomeBanner::before{
     content: "";
     top: 0;
     left: 0;

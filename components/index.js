@@ -4,6 +4,7 @@ export {default as Footer} from "./Footer/footer"
 export {default as Button} from "./Button/btn";
 export {default as Banner} from "./BannerFolder/banner";
 export {default as StemAboutBanner} from "./BannerFolder/about-stem-banner";
+export {default as StemHomeBanner} from "./BannerFolder/home-stem-banner";
 export {default as MainHeader} from "./Header/mainheader";
 export {default as Card} from "./CardsFolder/card";
 export {default as ApproachCard} from "./CardsFolder/ApproachCard";
@@ -23,4 +24,6 @@ export {default as Vision} from "./Stem/aboutComponents/vision";
 export {default as Values} from "./Stem/aboutComponents/values";
 export {default as JoinUs} from "./Stem/aboutComponents/joinUs";
 export {default as Change} from "./Stem/aboutComponents/change";
+export {default as StemAbout} from "./Stem/homeComponent/about";
+export {default as Whyparticipate} from "./Stem/homeComponent/whyparticipate";
 export {default as StemFooter} from "./Stem/footer/index";

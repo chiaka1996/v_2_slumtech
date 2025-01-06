@@ -27,7 +27,7 @@ module.exports = {
   },
 fontFamily: {
   "primary": ['DM Sans'],
-  "secondary" : ['Inter']
+  "secondary" : ['Poppins']
 },
     },
   },

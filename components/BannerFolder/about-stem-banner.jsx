@@ -14,59 +14,6 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
 const Banner = ({img }) => {
-    useEffect(() => {
-        gsap.fromTo(".bigHeader",
-            {y: 100,
-              opacity: 0
-            },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 1,
-              onComplete: () => {
-                gsap.fromTo(".smallHeader",
-                    {y: 100,
-                    opacity: 0
-                    
-                    },
-                    {
-                      y: 0,
-                      opacity: 1,
-                      duration: 1,
-                      onComplete: () => {
-                        gsap.fromTo(".intro",
-                            {y: 100,
-                            opacity: 0
-                            
-                            },
-                            {
-                              y: 0,
-                              opacity: 1,
-                              duration: 1,
-                              onComplete: () => {
-                                gsap.fromTo(".btnLinks",
-                                    {y: 100,
-                                    opacity: 0
-                                    
-                                    },
-                                    {
-                                      y: 0,
-                                      opacity: 1,
-                                      duration: 1,
-                                      
-                
-                                    })        
-                              }
-                               
-                            })        
-                      }
-                      
-                    })        
-              }
-            })
-    }, [])
-    
-
     return(
        <section 
         style={{backgroundImage: `url(/v_3_images/about-stem-banner.png)`, borderImage: "fill 1 linear-gradient(#00000099, #00000099)"}}
