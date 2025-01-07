@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
 import Link from "next/link";
 import { topToBottomAnimation, bottomToTopAnimation } from "../../utilis/animations";
-import {StemNavigation, StemHomeBanner, StemAbout, Whyparticipate, StemFooter, WhoCanEnter} from "../../components"
+import {StemNavigation, StemHomeBanner, StemAbout, Whyparticipate, StemFooter, WhoCanEnter, Resources, Support} from "../../components"
 import gsap from 'gsap'; 
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -29,6 +29,8 @@ export default function About() {
       className="font-[800] text-[13.8rem] leading-[207px] tracking-wider slumtech">SLUM  TECH</h1>
     </div>
     <WhoCanEnter />
+    <Resources />
+    <Support />
     <StemFooter />
     </main>
   )
