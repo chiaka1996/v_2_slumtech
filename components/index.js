@@ -22,7 +22,6 @@ export {default as StemNavigation} from "./Stem/nav/index";
 export {default as Mission} from "./Stem/aboutComponents/mission";
 export {default as Vision} from "./Stem/aboutComponents/vision";
 export {default as Values} from "./Stem/aboutComponents/values";
-export {default as Join} from "./Stem/aboutComponents/joinUs";
 export {default as SlumtechJoin} from "./Stem/aboutComponents/joinslumtech";
 export {default as Change} from "./Stem/aboutComponents/change";
 export {default as StemAbout} from "./Stem/homeComponent/about";
