@@ -21,9 +21,9 @@ const Vision = () => {
                          showcases potential talent but also promotes critical thinking, 
                         creativity, and collaboration among participants, pushing them to innovate for their communities.
                     </p>
-                    <button className='w-[210px] h-[50px] rounded-[25px] bg-[#F5B021] text-[700]'>
+                    {/* <button className='w-[210px] h-[50px] rounded-[25px] bg-[#F5B021] text-[700]'>
                         Contact Now
-                    </button>
+                    </button> */}
                 </div>
                 </div>
 
@@ -56,9 +56,9 @@ const Vision = () => {
                          showcases potential talent but also promotes critical thinking, 
                         creativity, and collaboration among participants, pushing them to innovate for their communities.
                     </p>
-                    <button className='w-[210px] h-[50px] rounded-[25px] bg-[#F5B021] text-[700]'>
+                    {/* <button className='w-[210px] h-[50px] rounded-[25px] bg-[#F5B021] text-[700]'>
                         Contact Now
-                    </button>
+                    </button> */}
                 </div>
                 </div>
             </div>

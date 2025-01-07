@@ -39,19 +39,19 @@ const Navigation = () => {
             </Link>
             </span>
 
-             <span className={router.asPath == "/story" ? style.activeLink : style.navLink}> 
-           <Link href="/story" className='no-underline'>
+             <span className={router.asPath == "/about" ? style.activeLink : style.navLink}> 
+           <Link href="/about" className='no-underline'>
             ABOUT US
             </Link>
             </span>
 
-            <span className={router.asPath == "/work" ? style.activeLink : style.navLink}> 
-           <Link href="/work" className='no-underline'>
+            <span className={router.asPath == "/stem" ? style.activeLink : style.navLink}> 
+           <Link href="/stem" className='no-underline'>
             STEM
             </Link>
             </span>
 
-            <Link href="/contact" className='no-underline max-[900px]:hidden'>
+            <Link href="/" className='no-underline max-[900px]:hidden'>
               <Button text="Get Involved" />
               </Link>
             </div>
