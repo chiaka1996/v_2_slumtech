@@ -6,6 +6,34 @@
     -webkit-text-fill-color: transparent;
 }
 
+/* stem about banner */
+.StemAboutBanner{
+    position: relative;
+    /* z-index: -1; */
+}
+
+.StemAboutBanner::after{
+    content: "";
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: #37DBFF26;
+    width: 60.1rem;
+    height: 60.1rem;
+    filter: blur(50px);
+}
+
+.StemAboutBanner::before, .StemHomeBanner::before{
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #11CE8A26;
+    width: 60.1rem;
+    height: 60.1rem;
+    filter: blur(50px);
+}
+
 @media screen and (max-width: 768px) {
     .banner_main_header{
         padding: 0;

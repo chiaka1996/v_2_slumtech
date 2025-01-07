@@ -13,15 +13,18 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
-const Banner = ({img, header1, header2, subheader, header1Color, header2Color }) => {
+const Banner = ({img }) => {
     useEffect(() => {
         gsap.fromTo(".bigHeader",
-            {y: -100},
+            {y: 100,
+              opacity: 0
+            },
             {
               y: 0,
+              opacity: 1,
               duration: 1,
               onComplete: () => {
-                gsap.fromTo(".heading",
+                gsap.fromTo(".smallHeader",
                     {y: 100,
                     opacity: 0
                     
@@ -31,11 +34,33 @@ const Banner = ({img, header1, header2, subheader, header1Color, header2Color })
                       opacity: 1,
                       duration: 1,
                       onComplete: () => {
-                        gsap.to('.subheading', {
-                            duration: 3, 
-                            text: subheader,
-                            })
+                        gsap.fromTo(".intro",
+                            {y: 100,
+                            opacity: 0
+                            
+                            },
+                            {
+                              y: 0,
+                              opacity: 1,
+                              duration: 1,
+                              onComplete: () => {
+                                gsap.fromTo(".btnLinks",
+                                    {y: 100,
+                                    opacity: 0
+                                    
+                                    },
+                                    {
+                                      y: 0,
+                                      opacity: 1,
+                                      duration: 1,
+                                      
+                
+                                    })        
+                              }
+                               
+                            })        
                       }
+                      
                     })        
               }
             })
@@ -45,50 +70,28 @@ const Banner = ({img, header1, header2, subheader, header1Color, header2Color })
     return(
        <section 
         style={{backgroundImage: `url(${img})`}}
-        className={`pt-[10rem] max-small:pt-0 flex items-center justify-center h-[100vh] w-full bg-cover bg-center`}
+        className={`pt-[10rem] max-small:pt-0 flex items-center justify-center h-[100vh] w-full bg-cover bg-center bg-[#060F26]`}
        >
+        <div className="container" >
+          <div className='flex flex-col gap-y-[2rem] text-[#fff] w-[79.7rem]'>
+            <h1 className='text-[6.2rem] leading-[8rem] font-[700] opacity-0 bigHeader'>Welcome to <span className='font-[900] text-[#FFC700]'>SLUMTECH</span> Foundation</h1>
+            <div className='font-[600] text-[2.2rem] leading-[3.6rem] opacity-0 smallHeader'>Innovating for Global Change, Empowering Communities</div>
+            <span className='leading-[3rem] text-[1.8rem] font-[400] opacity-0 intro'>
+            The SlumTech Foundation is a global nonprofit organization dedicated to leveraging 
+            technology as a transformative force in urban communities worldwide. Founded by Olanrewaju Ogunleye,
+             a tech-savvy entrepreneur, our mission is to empower marginalized populations in the United States, Africa, and beyond.
+            </span>
 
-        <div className="text-center container" >
-        <h1 className={`bigHeader font-[700] tracking-[0.10em] text-[15rem] small:max-medium:text-[12rem] max-small:text-[5rem] leading-[9rem] ${css.banner_main_header}`}>SLUMTECH</h1>
-           <h2 className="opacity-0 heading font-[700] text-[5rem] max-small:text-[2.5rem] leading-[9rem] max-small:leading-[4rem]">
-            <span style={{color: `${header1Color}`}}>{header1} </span><span style={{color: `${header2Color}`}}> {header2}</span>
-            </h2>
-            <h3 className="subheading font-[600] text-[2.5rem] max-small:text-[1.8rem] leading-[2.6rem] text-[#fff]"></h3>
-            {/* <div className="w-[16rem] h-[5.8rem] mx-auto mt-[5rem] max-small:mt-[3rem]">
-                <Link href="/story" className='no-underline'>
-                <Button text="Learn More" />
-                </Link>
-            </div> */}
-            <div className="flex flex-col gap-y-[2rem] max-small:mt-[3rem] max-small:pl-[2rem]">
-        <a href="https://www.facebook.com/share/1EBLeawcny/?mibextid=LQQJ4d" target="_blank">
-        <div className="hover:scale-110 w-[3.6rem] max-small:w-[3rem] h-[3.6rem] max-small:h-[3rem] relative">
-        <Image 
-            src="/v_3_icons/facebook-icon.png"
-           fill
-            alt="slumtech foundation facebook link"
-        />
-        </div>
-        </a>
-        <a href="https://www.linkedin.com/company/slumtech-foundation/" target="_blank">
-        <div className="hover:scale-110 w-[3.6rem] max-small:w-[3rem] h-[3.6rem] max-small:h-[3rem] relative">
-        <Image 
-            src="/v_3_icons/linkedin.png"
-           fill
-            alt="slumtech foundation linkedin link"
-        />
-        </div>
-        </a>
-        <a href="https://www.instagram.com/slumtechfoundation/profilecard/?igsh=MThrcGRqZXQ0bm15bA==" target="_blank">
-        <div className="hover:scale-110 w-[3.6rem] max-small:w-[3rem] h-[3.6rem] max-small:h-[3rem] relative">
-        <Image 
-            src="/v_3_icons/instagram-icon.png"
-           fill
-            alt="slumtech foundation instagram link"
-        />
-        </div>
-        </a>
-        </div>
-        </div>  
+            <div className='flex flex-row gap-x-[2rem] w-full opacity-0 btnLinks'>
+            <Button text='Get Involved' />
+            <span className='flex flex-row items-center gap-x-[0.6rem]'>
+              <span>Be part of the change!</span> 
+              <span className='material-icons text-[1.4rem]'>arrow_forward</span>
+              </span>
+          </div>
+          </div>
+        
+        </div> 
        </section>
     )
 }
