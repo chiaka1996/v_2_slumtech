@@ -9,7 +9,7 @@ import {Button} from "../../index"
 const Values = () => {
  
     return(
-        <section className='w-full bg-gradient-to-r from-[#FEB41E26] to-[#12CE8926] py-[12rem] text-[1.8rem] leading-[3rem]'>
+        <section className='w-full bg-gradient-to-r from-[#FEB41E26] to-[#12CE8926] py-[12rem] max-small:py-[5rem] text-[1.8rem] leading-[3rem]'>
         <div className='container'>
         <h2 className='text-[#004658] font-[700] text-[5.4rem] leading-[6.4rem]'>Our Values</h2>
         <p className='max-w-[878px]'>
