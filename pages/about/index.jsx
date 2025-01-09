@@ -77,14 +77,14 @@ useEffect(() => {
 }, [])
  
   return (
-   <main className="text-[1.6rem] font-[400] text-[#000] leading-[2.6rem] relative">
+   <main className="text-[1.6rem] max-small:text-[1.4rem] font-[400] text-[#000] leading-[2.6rem] max-small:leading-[1.8rem] relative">
     <Navigation />
     <Sidebar /> 
     <section 
-        className={`pt-[17rem] max-small:pt-0  w-full bg-[#EAE2FF]`}
+        className={`pt-[10rem] max-small:pb-[5rem] w-full bg-[#EAE2FF] min-h-[100vh]`}
        >
-        <div className="container flex flex-row gap-x-[10rem]" >
-           <div className="relative w-[80rem] h-[57.8rem] aboutImage">
+        <div className="container gridStyle gap-x-[15rem] gap-y-[5rem]" >
+           <div className="relative max-w-[80rem] min-h-[57.8rem] max-small:min-h-[40rem] aboutImage">
             <Image 
             src="/v_3_images/about_main.png"
             fill
@@ -96,9 +96,9 @@ useEffect(() => {
             <MainHeader text="About Us" />
             </div>
            
-           <div className="mt-[5rem] flex flex-col gap-y-[3rem]">
+           <div className="mt-[5rem] max-small:mt-[3rem] flex flex-col gap-y-[3rem]">
             <div className="flex flex-row gap-x-[1.5rem] opacity-0 paragraph1">
-            <div className="relative w-[3.8rem] h-[3.8rem]">
+            <div className="relative min-w-[3.8rem] h-[3.8rem]">
             <Image 
             src="/v_3_icons/about1.png"
             fill
@@ -106,7 +106,7 @@ useEffect(() => {
         />
            </div>
            <div className="max-w-[56rem]">
-            <h2 className="text-[#000] font-[700] text-[2rem] leading-[2.5rem] mb-[1.5rem]">Mission Statement</h2>
+            <h2 className="text-[#000] font-[700] text-[2rem] max-small:text-[1.6rem] leading-[2.5rem] mb-[1.5rem]">Mission Statement</h2>
             <div className="text-[1.6rem] font-[400] text-[#6D6D6D] leading-[2.4rem]">
             At SlumTech Foundation, our mission is to harness the power of technology 
             to improve the lives of individuals in impoverished communities, fostering
@@ -116,7 +116,7 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-row gap-x-[1.5rem] opacity-0 paragraph2">
-            <div className="relative w-[3.8rem] h-[3.8rem]">
+            <div className="relative min-w-[3.8rem] h-[3.8rem]">
             <Image 
             src="/v_3_icons/about2.png"
             fill
@@ -133,7 +133,7 @@ useEffect(() => {
            </div>
             </div>
             <div className="flex flex-row gap-x-[1.5rem] opacity-0 paragraph3">
-            <div className="relative w-[3.8rem] h-[3.8rem]">
+            <div className="relative min-w-[3.8rem] h-[3.8rem]">
             <Image 
             src="/v_3_icons/about3.png"
             fill
@@ -152,13 +152,13 @@ useEffect(() => {
             </div>
         </section>
         <CoreValue />
-        <Programs />
-        <GetInvolved />
-        <UpcomingEvent />
-        <Blog />
-        <Newsletter />
-        <ContactUs />
-        <Footer />
+       <Programs />
+         <GetInvolved />
+         <UpcomingEvent />
+         <Blog />
+          <Newsletter />
+         <ContactUs />
+         <Footer />
     </main>
   )
 };
