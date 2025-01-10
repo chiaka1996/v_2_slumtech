@@ -22,11 +22,11 @@ export default function About() {
     <Whyparticipate />
     <div 
      style={{backgroundImage: `url(/v_3_images/slumtech.png)`, borderImage: "fill 1 linear-gradient(#00000047, #00000033)"}}
-     className="bg-center w-full h-[600px] flex items-center justify-center"
+     className="bg-center w-full h-[600px] max-small:h-[400px] flex items-center justify-center"
     >
       {/* the slumtech gradient design is in the global css with classname of .slumtech */}
       <h1 
-      className="font-[800] text-[13.8rem] leading-[207px] tracking-wider slumtech">SLUM  TECH</h1>
+      className="font-[800] text-[13.8rem] max-small:text-[6rem] leading-[207px] tracking-wider slumtech">SLUM  TECH</h1>
     </div>
     <WhoCanEnter />
     <Resources />
