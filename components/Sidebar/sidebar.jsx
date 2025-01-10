@@ -37,11 +37,11 @@ const SideBar = ({page}) => {
               )
             }
 
-         <Link href='/contact' onClick={()=>closeBar()} className='no-underline'>
+         {/* <Link href='/contact' onClick={()=>closeBar()} className='no-underline'>
          <div className='w-[15rem] h-[5rem] mx-auto'> 
             <Button text="Contact" />
           </div>
-        </Link>
+        </Link> */}
        </nav>
     )
 }
