@@ -16,9 +16,15 @@ gsap.registerPlugin(TextPlugin);
 const Banner = ({img }) => {
     return(
        <section 
-        style={{backgroundImage: `url(/v_3_images/stem-home-banner.png)`, borderImage: "fill 1 linear-gradient(#000000B2, #00000080)"}}
-        className={`font-[400] pt-[19.5rem] pb-[8rem] max-small:pb-0 text-[#fff] max-small:pt-[13rem] justify-center min-h-[100vh] max-small:min-h-full w-full bg-center bg-[#00000099] ${css.StemHomeBanner}`}
+        style={{borderImage: "fill 1 linear-gradient(#000000B2, #00000080)"}}
+        className={`relative font-[400] pt-[19.5rem] pb-[8rem] max-small:pb-0 text-[#fff] max-small:pt-[13rem] justify-center min-h-[100vh] max-small:min-h-full w-full bg-center bg-[#00000099] ${css.StemHomeBanner}`}
        >
+        <video muted loop autoPlay playsInline disablePictureInPicture
+        className='absolute top-0 left-0 w-full min-h-full z-[-1] object-cover'
+        >
+            <source src="/v_3_videos/slumtech-video1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+            </video>
         <div className='container'>
         <div className='max-w-[876px] flex flex-col gap-y-[1.5rem]'>
             <button className='w-[138px] h-[34px] rounded-[25px] bg-[#14CB8A80] text-[16px] max-small:text-[1.4rem] font-[600] leading-[24px]'>Completion</button>

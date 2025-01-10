@@ -21,9 +21,15 @@ export default function About() {
     <StemAbout />
     <Whyparticipate />
     <div 
-     style={{backgroundImage: `url(/v_3_images/slumtech.png)`, borderImage: "fill 1 linear-gradient(#00000047, #00000033)"}}
-     className="bg-center w-full h-[600px] max-small:h-[400px] flex items-center justify-center"
+     style={{borderImage: "fill 1 linear-gradient(#00000047, #00000033)"}}
+     className="relative w-full h-[600px] max-small:h-[400px] flex items-center justify-center"
     >
+       <video muted loop autoPlay playsInline disablePictureInPicture
+        className='absolute top-0 left-0 w-full h-full z-[-1] object-cover'
+        >
+            <source src="/v_3_videos/slumtech-video2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+            </video>
       {/* the slumtech gradient design is in the global css with classname of .slumtech */}
       <h1 
       className="font-[800] text-[13.8rem] max-small:text-[6rem] leading-[207px] tracking-wider slumtech">SLUM  TECH</h1>
