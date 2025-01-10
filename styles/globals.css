@@ -16,9 +16,9 @@ html{
 }
 
 .container{
-  max-width: 150rem;
-  padding-right: 0.2rem;
-  padding-left: 0.2rem;
+  max-width: 151rem;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
   margin: auto auto;
 }
 
@@ -33,7 +33,7 @@ html{
     -webkit-background-clip: text; 
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   .container{
     padding-right: 1rem;
     padding-left: 1rem;

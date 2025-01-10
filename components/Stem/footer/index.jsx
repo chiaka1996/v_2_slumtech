@@ -5,13 +5,13 @@ import { useRouter } from "next/router";
 
 const Footer = () => {
     return(
-        <footer className='bg-[#175046] w-full text-[1.8rem] leading-[3rem] text-[#fff]'>
+        <footer className='bg-[#175046] w-full text-[1.8rem] max-samll:text-[1.4rem] leading-[3rem] text-[#fff]'>
           <div className='container'>
-            <div className='gridStyle pt-[9.2rem]'>
+            <div className='gridStyle gap-y-[3rem] pt-[9.2rem] max-small:pt-[5rem]'>
             <div className='max-w-[40.5rem]'>
-            <div className="relative h-[4.5rem] w-[167px]">
+            <div className="relative h-[7.1rem] w-[167px]">
               <Image 
-              src="/v_3_icons/footerLogo.png"
+              src="/v_3_logo/logo1.png"
               fill 
               alt="slumtech logo"
                 />
@@ -26,9 +26,9 @@ const Footer = () => {
 
             {/* quicklinks */}
             <div className='max-w-[150px]'>
-            <h3 className='font-[700] text-[2.2rem] leading-[3rem]'>Quick Links</h3>
+            <h3 className='font-[700] text-[2.2rem] max-small:text-[2rem] leading-[3rem] max-small:leading-[2.5rem]'>Quick Links</h3>
 
-              <div className='flex flex-col mt-[3rem] text-[1.8rem] leading-[4.2rem]'>
+              <div className='flex flex-col mt-[3rem] max-small:mt-[1rem] text-[1.8rem] leading-[4.2rem]'>
                 <span>Home</span>
                 <span>About Us</span>
                 <span>Contact Us</span>
@@ -37,10 +37,10 @@ const Footer = () => {
 
             {/* email */}
             <div className='max-w-[47rem] '>
-            <h3 className='font-[700] text-[2.2rem] leading-[3rem]'>Email</h3>
+            <h3 className='font-[700] text-[2.2rem] max-small:text-[2rem] leading-[3rem] max-small:leading-[2.5rem]'>Email</h3>
 
-              <div className='flex flex-col mt-[3rem]'>
-                <div className='w-full w-[47rem] relative'>
+              <div className='flex flex-col mt-[3rem] max-small:mt-[1rem]'>
+                <div className='w-full relative'>
                   <input 
                   type='email' 
                   placeholder='Enter email address' 
@@ -92,7 +92,7 @@ const Footer = () => {
             </div> 
             </div>
 
-            <div className='mt-[6rem] py-[3rem] border border-t-[#FFFFFF80] border-b-0 border-x-0 flex justify-between'>
+            <div className='mt-[6rem] max-small:mt-[3rem] py-[3rem] max-small:py-[1.5rem] border border-t-[#FFFFFF80] border-b-0 border-x-0 flex max-small:flex-col max-small:gap-y-[1rem] justify-between'>
               <span>Copyright all rights reserved</span>
               <span>Terms & Condition . Privacy Policy</span>
             </div>

@@ -17,7 +17,8 @@ module.exports = {
     screens: {
       "xsmall": "349px",
       "small": "769px",
-      "medium": "989px"
+      "medium": "989px",
+      "large": "1250px"
     },
     backgroundImage: {
       // 'hero': "url('/images/approach2.png')"

@@ -59,7 +59,7 @@ const Navigation = () => {
            
             
 
-           {/* {
+           {
                     !bar ? <div className={style.hamburger}>
                   <div className='flex flex-col gap-y-[0.6rem] mt-[2rem] relative' onClick={openBar}>
                   <span className='block w-[3.2rem] h-[0.2rem] rounded-[10px] bg-[#fff]'></span>
@@ -69,11 +69,14 @@ const Navigation = () => {
                     </div> : 
                     <div className={style.hamburger}>
                   <div className='mt-[2rem] relative' onClick={closeBar}>
-                  <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform rotate-45'></span>
-                  <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform -rotate-45'></span>
+                  {/* <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform rotate-45'></span>
+                  <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform -rotate-45'></span> */}
+                  <span class="material-icons text-[#fff]">
+                    close
+                    </span>
                   </div>
                 </div>
-                } */}
+                }
           </div>
       </nav>
     )

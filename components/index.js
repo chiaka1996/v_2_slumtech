@@ -19,6 +19,7 @@ export {default as Blog} from "./AboutComponents/blog";
 export {default as Newsletter} from "./AboutComponents/newsletter";
 export {default as ContactUs} from "./AboutComponents/contactUs";
 export {default as StemNavigation} from "./Stem/nav/index";
+export {default as StemSidebar} from "./Stem/Sidebar/sidebar";
 export {default as Mission} from "./Stem/aboutComponents/mission";
 export {default as Vision} from "./Stem/aboutComponents/vision";
 export {default as Values} from "./Stem/aboutComponents/values";

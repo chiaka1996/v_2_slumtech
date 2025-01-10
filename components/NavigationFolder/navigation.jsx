@@ -32,7 +32,7 @@ const Navigation = () => {
             alt="logo"
             className='mt-[1rem]'
         />
-           <div className="w-[55rem] text-[1.6rem] font-[400] leading-[3rem] flex flex-row justify-between items-center max-[900px]:hidden">
+           <div className="w-[35rem] text-[1.6rem] font-[400] leading-[3rem] flex flex-row justify-between items-center max-[900px]:hidden">
            <span className={router.asPath == "/" ? style.activeLink : style.navLink}> 
            <Link href="/" className='no-underline'>
             HOME
@@ -51,9 +51,9 @@ const Navigation = () => {
             </Link>
             </span>
 
-            <Link href="/" className='no-underline max-[900px]:hidden'>
+            {/* <Link href="/" className='no-underline max-[900px]:hidden'>
               <Button text="Get Involved" />
-              </Link>
+              </Link> */}
             </div>
 
            
@@ -69,8 +69,11 @@ const Navigation = () => {
                     </div> : 
                     <div className={style.hamburger}>
                   <div className='mt-[2rem] relative' onClick={closeBar}>
-                  <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform rotate-45'></span>
-                  <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform -rotate-45'></span>
+                  {/* <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform rotate-45'></span>
+                  <span className='block w-[3rem] h-[0.2rem] rounded-[10px] bg-[#fff] transform -rotate-45'></span> */}
+                   <span class="material-icons text-[#fff]">
+                    close
+                    </span>
                   </div>
                 </div>
                 }
