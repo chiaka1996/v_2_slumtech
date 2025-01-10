@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
 import Link from "next/link";
 import { topToBottomAnimation, bottomToTopAnimation } from "../../utilis/animations";
-import {StemNavigation, StemHomeBanner, StemAbout, Whyparticipate, StemFooter, WhoCanEnter, Resources, Support} from "../../components"
+import {StemNavigation, StemHomeBanner, StemAbout, Whyparticipate, StemFooter, WhoCanEnter, Resources, Support, StemSidebar} from "../../components"
 import gsap from 'gsap'; 
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -16,7 +16,7 @@ export default function About() {
   return (
    <main className="text-[1.6rem] font-[400] text-[#000] leading-[2.6rem] relative overflow-x-hidden">
     <StemNavigation />
-    {/* <Sidebar />  */}
+    <StemSidebar /> 
     <StemHomeBanner />
     <StemAbout />
     <Whyparticipate />

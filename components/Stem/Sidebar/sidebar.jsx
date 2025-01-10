@@ -2,8 +2,8 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link';
 import style from './sidebar.module.css';
-import { BarState } from '../../context/context';
-import {Button} from "../index"
+import { BarState } from '../../../context/context';
+// import {Button} from "../index"
 
 const SideBar = ({page}) => {
   const router = useRouter();
@@ -12,16 +12,11 @@ const SideBar = ({page}) => {
     const NavItems = [
       {
         label: "HOME",
-        url: "/"
-      },
-      {
-        label: "ABOUT US",
-        url: "/about"
-      },
-     
-      {
-        label: "STEM",
         url: "/stem"
+      },
+      {
+        label: "About us",
+        url: "/stem/about"
       }
     ]
   
@@ -37,11 +32,11 @@ const SideBar = ({page}) => {
               )
             }
 
-         <Link href='/contact' onClick={()=>closeBar()} className='no-underline'>
+         {/* <Link href='/contact' onClick={()=>closeBar()} className='no-underline'>
          <div className='w-[15rem] h-[5rem] mx-auto'> 
             <Button text="Contact" />
           </div>
-        </Link>
+        </Link> */}
        </nav>
     )
 }
