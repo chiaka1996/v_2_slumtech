@@ -3,6 +3,7 @@ import {gsap} from "gsap";
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import {TextPlugin} from 'gsap/dist/TextPlugin';
+import { topToBottomAnimation, bottomToTopAnimation} from "../../utilis/animations";
 import Image from 'next/image';
 import Link from 'next/link';
 import { MainHeader } from '..';
@@ -13,55 +14,10 @@ gsap.registerPlugin(TextPlugin);
 
 const Blog = ({img }) => {
     useEffect(() => {
-        gsap.fromTo(".bigHeader",
-            {y: 100,
-              opacity: 0
-            },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 1,
-              onComplete: () => {
-                gsap.fromTo(".smallHeader",
-                    {y: 100,
-                    opacity: 0
-                    
-                    },
-                    {
-                      y: 0,
-                      opacity: 1,
-                      duration: 1,
-                      onComplete: () => {
-                        gsap.fromTo(".intro",
-                            {y: 100,
-                            opacity: 0
-                            
-                            },
-                            {
-                              y: 0,
-                              opacity: 1,
-                              duration: 1,
-                              onComplete: () => {
-                                gsap.fromTo(".btnLinks",
-                                    {y: 100,
-                                    opacity: 0
-                                    
-                                    },
-                                    {
-                                      y: 0,
-                                      opacity: 1,
-                                      duration: 1,
-                                      
-                
-                                    })        
-                              }
-                               
-                            })        
-                      }
-                      
-                    })        
-              }
-            })
+        topToBottomAnimation(".blogHeader")
+        bottomToTopAnimation(".blogSubHeader")
+        bottomToTopAnimation(".blogs")
+       
     }, [])
     
 
@@ -70,13 +26,13 @@ const Blog = ({img }) => {
         className={`py-[12rem] max-small:pb-[5rem] max-small:pt-[5rem]  font-[400] text-[1.6rem] max-small:text-[1.4rem] leading-[2.4rem] w-full bg-gradient-to-r from-[#D9CBFF]/100 to-[#F9D7FF]/100`}
        >
         <div className="relative container text-left">
-            <MainHeader text="Our Blog" />
-            <div className='text-[1.8rem] max-small:mt-[1rem] max-small:text-[1.6rem] font-[400] text-[#7E7E7E] max-w-[70rem]'>
+            <MainHeader text="Our Blog" classname="blogHeader" />
+            <div className='blogSubHeader text-[1.8rem] max-small:mt-[1rem] max-small:text-[1.6rem] font-[400] text-[#7E7E7E] max-w-[70rem]'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
              et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
             </div>
 
-            <div className='gridStyle gap-[3.2rem] mt-[5rem] max-small:mt-[3rem]'>
+            <div className='blogs gridStyle gap-[3.2rem] mt-[5rem] max-small:mt-[3rem]'>
                 <div className='rounded-[25px] border border-[#00000026]'>
                 <div className="relative h-[23.5rem]">
                 <Image 

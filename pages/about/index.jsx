@@ -81,7 +81,7 @@ useEffect(() => {
     <Navigation />
     <Sidebar /> 
     <section 
-        className={`pt-[10rem] max-small:pb-[5rem] w-full bg-[#EAE2FF] min-h-[100vh]`}
+        className={`pt-[10rem] pb-0 max-small:pb-[5rem] w-full bg-[#EAE2FF] min-h-[100vh]`}
        >
         <div className="container gridStyle gap-x-[15rem] gap-y-[5rem]" >
            <div className="relative max-w-[80rem] min-h-[57.8rem] max-small:min-h-[40rem] aboutImage">
