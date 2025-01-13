@@ -3,6 +3,7 @@ import {gsap} from "gsap";
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import {TextPlugin} from 'gsap/dist/TextPlugin';
+import { topToBottomAnimation, bottomToTopAnimation} from "../../utilis/animations";
 import Image from 'next/image';
 import Link from 'next/link';
 import { MainHeader } from '..';
@@ -12,14 +13,18 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
 const ContactUs = () => {
+    useEffect(() => {
+      topToBottomAnimation(".connectHeader")
+      bottomToTopAnimation(".contactForm")
+    }, [])
     return(
        <section 
         className={`relative bg-[#7545FC]/5 text-center font-[400] text-[1.6rem] leading-[2.4rem] max-small:pt-[5rem] w-full min-h-[540px] pt-[12rem]`}
        >
-       <MainHeader text="Connect us" />
+       <MainHeader text="Connect us"  classname="connectHeader"/>
         <div className='w-full absolute max-small:relative bottom-[-28rem] max-small:bottom-0 left-0'>
-       <form className='mx-auto mt-[5rem] max-w-[115rem] min-h-[600px] max-small:min-h-full rounded-[30px] bg-[#fff] py-[5rem] px-[8.6rem] max-small:px-[1rem] text-center'>
-       <h3 className='font-[700] text-[30px] max-small:text-[2rem] leading-[39px] text-[#212121]'>Connect with Us</h3>
+       <form className='contactForm mx-auto mt-[5rem] max-w-[115rem] min-h-[600px] max-small:min-h-full rounded-[30px] bg-[#fff] py-[5rem] px-[8.6rem] max-small:px-[1rem] text-center'>
+       <h3 className='font-[700] text-[30px] max-small:text-[2rem] leading-[39px] text-[#212121] connectHeader'>Connect with Us</h3>
        <div className='text-[#6D6D6D] text-[1.8rem] max-small:text-[1.6rem] leading-[3rem]'>Have questions or wish to collaborate? Reach out to us</div>
 
        <div className='mt-[5rem] flex flex-col gap-y-[3rem] text-left'>

@@ -32,7 +32,7 @@ const Navigation = () => {
             alt="logo"
             className='mt-[1rem]'
         />
-           <div className="w-[20.2rem] text-[1.6rem] font-[400] leading-[3rem] flex flex-row justify-between items-center max-[900px]:hidden">
+           <div className="max-w-[100.2rem] text-[1.6rem] font-[400] leading-[3rem] flex flex-row  gap-x-[7rem] items-center max-[900px]:hidden">
            <span className={router.asPath == "/stem" ? style.activeLink : style.navLink}> 
            <Link href="/stem" className='no-underline'>
             HOME
@@ -45,11 +45,11 @@ const Navigation = () => {
             </Link>
             </span>
 
-            {/* <span className={router.asPath == "/work" ? style.activeLink : style.navLink}> 
-           <Link href="/work" className='no-underline'>
-            STEM
+            <span className={router.asPath == "/" ? style.activeLink : style.navLink}> 
+           <Link href="/" className='no-underline'>
+            FOUNDATION
             </Link>
-            </span> */}
+            </span>
 
             {/* <Link href="/contact" className='no-underline max-[900px]:hidden'>
               <Button text="Get Involved" />

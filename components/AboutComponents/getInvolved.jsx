@@ -4,6 +4,7 @@ import {gsap} from "gsap";
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import {TextPlugin} from 'gsap/dist/TextPlugin';
+import { topToBottomAnimation, bottomToTopAnimation, rightToLeftAnimation, leftToRightAnimation, scaleUpAnimation} from "../../utilis/animations";
 import Image from 'next/image';
 import Link from 'next/link';
 import { MainHeader } from '..';
@@ -14,55 +15,49 @@ gsap.registerPlugin(TextPlugin);
 
 const GetInvolved = () => {
     useEffect(() => {
-        gsap.fromTo(".bigHeader",
-            {y: 100,
-              opacity: 0
-            },
+      topToBottomAnimation(".getInvolvedHeader")
+      bottomToTopAnimation(".getInvolvedSubHeader")
+     leftToRightAnimation(".involvedImage")
+     gsap.fromTo(".involved1",
+      { opacity: 0, y: 100 }, 
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".involved1", 
+          start: "top 90%",       
+        },
+        onComplete: () => {
+          gsap.fromTo(".involved2",
+            { opacity: 0, y: 100 }, 
             {
-              y: 0,
               opacity: 1,
+              y: 0,
               duration: 1,
+              scrollTrigger: {
+                trigger: ".involved2", 
+                start: "top 90%",       
+              },
               onComplete: () => {
-                gsap.fromTo(".smallHeader",
-                    {y: 100,
-                    opacity: 0
-                    
-                    },
-                    {
-                      y: 0,
-                      opacity: 1,
-                      duration: 1,
-                      onComplete: () => {
-                        gsap.fromTo(".intro",
-                            {y: 100,
-                            opacity: 0
-                            
-                            },
-                            {
-                              y: 0,
-                              opacity: 1,
-                              duration: 1,
-                              onComplete: () => {
-                                gsap.fromTo(".btnLinks",
-                                    {y: 100,
-                                    opacity: 0
-                                    
-                                    },
-                                    {
-                                      y: 0,
-                                      opacity: 1,
-                                      duration: 1,
-                                      
-                
-                                    })        
-                              }
-                               
-                            })        
-                      }
-                      
-                    })        
+                gsap.fromTo(".involved3",
+                  { opacity: 0, y: 100 }, 
+                  {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                      trigger: ".involved3", 
+                      start: "top 90%",       
+                    }
+                  }
+                );
               }
-            })
+            }
+          );
+        }
+      }
+    );
     }, [])
     
 
@@ -71,15 +66,15 @@ const GetInvolved = () => {
         className={`font-[400] text-[1.6rem] max-small:text-[1.4rem] leading-[2.4rem] pt-[38rem] max-small:pt-[5rem] flex items-center justify-center w-full bg-[#fff]`}
        >
         <div className="relative pb-[12rem] max-small:pb-0 container text-left">
-            <MainHeader text="Get Involved" />
-            <div className='text-[1.8rem] font-[400] text-[#6D6D6D] leading-[3rem] max-w-[70rem]'>
+            <MainHeader text="Get Involved" classnames="getInvolvedHeader" />
+            <div className='getInvolvedSubHeader text-[1.8rem] font-[400] text-[#6D6D6D] leading-[3rem] max-w-[70rem]'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
              et dolore magna aliqua. 
             </div>
 
             <div className='max-small:mt-[3rem] gridStyle gap-x-[5rem] gap-y-[3rem] items-center'>
               <div className='max-w-[74.7rem] flex flex-col gap-y-[2rem]'>
-                <div className='w-full p-[2.4rem] rounded-[20px] flex gap-x-[2rem] bg-[#F5E1F5]'>
+                <div className='involved1 opacity-0 w-full p-[2.4rem] rounded-[20px] flex gap-x-[2rem] bg-[#F5E1F5]'>
                   <div className='min-w-[63px] h-[63px] rounded-full flex items-center bg-[#EEE8FF]'>
                     <div className='relative min-w-[3.2rem] h-[3.2rem] mx-auto'>
                       <Image 
@@ -97,7 +92,7 @@ const GetInvolved = () => {
 
                 </div>
 
-                <div className='w-full p-[2.4rem] rounded-[20px] flex gap-x-[2rem] bg-[#F5E1F5]'>
+                <div className='involved2 opacity-0 w-full p-[2.4rem] rounded-[20px] flex gap-x-[2rem] bg-[#F5E1F5]'>
                   <div className='min-w-[63px] h-[63px] rounded-full flex items-center bg-[#EEE8FF]'>
                     <div className='relative min-w-[3.2rem] h-[3.2rem] mx-auto'>
                       <Image 
@@ -117,7 +112,7 @@ const GetInvolved = () => {
 
                 </div>
 
-                <div className='w-full p-[2.4rem] rounded-[20px] flex gap-x-[2rem] bg-[#F5E1F5]'>
+                <div className='involved3 opacity-0 w-full p-[2.4rem] rounded-[20px] flex gap-x-[2rem] bg-[#F5E1F5]'>
                   <div className='min-w-[63px] h-[63px] rounded-full flex items-center bg-[#EEE8FF]'>
                     <div className='relative min-w-[3.2rem] h-[3.2rem] mx-auto'>
                       <Image 
@@ -136,7 +131,7 @@ const GetInvolved = () => {
                 </div>
               </div>
 
-               <div className='relative max-w-[72.3rem] min-h-[49.5rem] max-small:min-h-[35rem]'>
+               <div className='involvedImage opacity-0 relative max-w-[72.3rem] min-h-[49.5rem] max-small:min-h-[35rem]'>
                     <Image 
                   src="/v_3_images/involved4.png"
                   fill

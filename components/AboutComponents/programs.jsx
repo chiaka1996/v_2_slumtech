@@ -1,5 +1,6 @@
 "use client"
 import {useEffect} from 'react'
+import { topToBottomAnimation, bottomToTopAnimation, rightToLeftAnimation, leftToRightAnimation, scaleUpAnimation} from "../../utilis/animations";
 import {gsap} from "gsap";
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -14,55 +15,17 @@ gsap.registerPlugin(TextPlugin);
 
 const Programs = ({img }) => {
     useEffect(() => {
-        gsap.fromTo(".bigHeader",
-            {y: 100,
-              opacity: 0
-            },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 1,
-              onComplete: () => {
-                gsap.fromTo(".smallHeader",
-                    {y: 100,
-                    opacity: 0
-                    
-                    },
-                    {
-                      y: 0,
-                      opacity: 1,
-                      duration: 1,
-                      onComplete: () => {
-                        gsap.fromTo(".intro",
-                            {y: 100,
-                            opacity: 0
-                            
-                            },
-                            {
-                              y: 0,
-                              opacity: 1,
-                              duration: 1,
-                              onComplete: () => {
-                                gsap.fromTo(".btnLinks",
-                                    {y: 100,
-                                    opacity: 0
-                                    
-                                    },
-                                    {
-                                      y: 0,
-                                      opacity: 1,
-                                      duration: 1,
-                                      
-                
-                                    })        
-                              }
-                               
-                            })        
-                      }
-                      
-                    })        
-              }
-            })
+        topToBottomAnimation(".programHeader")
+        bottomToTopAnimation(".programSububHeader")
+       rightToLeftAnimation(".techLiteracy")
+       leftToRightAnimation(".healthTech")
+       rightToLeftAnimation(".techEducation")
+       leftToRightAnimation(".entrepreneurship")
+       scaleUpAnimation(".programImage")
+       scaleUpAnimation(".globalImage")
+       topToBottomAnimation(".globalHeader")
+       bottomToTopAnimation(".countries")
+
     }, [])
     
 
@@ -71,15 +34,15 @@ const Programs = ({img }) => {
         className={`font-[400] text-[1.6rem] max-small:text-[1.4rem] leading-[2.4rem] pt-[12rem] max-small:pt-[5rem] flex items-center justify-center w-full bg-gradient-to-r from-[#D8CAFF]/50 to-[#F1C9FF]/50`}
        >
         <div className="relative pb-[37rem] max-small:pb-[5rem] container text-center">
-            <MainHeader text="Programs" />
-            <div className='text-[1.8rem] max-small:text-[1.6rem] max-small:mt-[1rem] font-[400] text-[#7E7E7E] max-w-[106rem] mx-auto'>
+            <MainHeader text="Programs" className="programHeader" />
+            <div className='programSububHeader text-[1.8rem] max-small:text-[1.6rem] max-small:mt-[1rem] font-[400] text-[#7E7E7E] max-w-[106rem] mx-auto'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
              et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
             </div>
 
             <div 
                 className='mt-[5rem] max-small:mt-[3rem] flex flex-row max-[1200px]:flex-col justify-between gap-y-[3rem] w-full px-[10rem] [1050px]:max-[1215px]:px-[3rem] max-[1200px]:px-0'>
-                <div className='w-[47.6rem] max-[1200px]:w-full min-h-[25rem] bg-[#fff]/50 rounded-[2rem] p-[3rem]'>
+                <div className='techLiteracy w-[47.6rem] max-[1200px]:w-full min-h-[25rem] bg-[#fff]/50 rounded-[2rem] p-[3rem]'>
                     <h2 className='flex items-end gap-x-[8px] border border-b-[#933EFF26] border-t-0 border-x-0 pb-5'> 
                         <span className='text-[#933EFF5E] text-[3rem] leading-[3.9rem] font-[900] '>1.</span>
                         <span className='font-[700] text-[1.8rem] leading-[3.2rem]'>Tech Literacy and Education</span>
@@ -117,7 +80,7 @@ const Programs = ({img }) => {
 
                 </div>
 
-                <div className='w-[47.6rem] max-[1200px]:w-full min-h-[25rem] bg-[#fff]/50 rounded-[2rem] p-[3rem]'>
+                <div className='healthTech w-[47.6rem] max-[1200px]:w-full min-h-[25rem] bg-[#fff]/50 rounded-[2rem] p-[3rem]'>
                     <h2 className='flex items-end gap-x-[8px] border border-b-[#933EFF26] border-t-0 border-x-0 pb-5'> 
                         <span className='text-[#933EFF5E] text-[3rem] leading-[3.9rem] font-[900] '>2.</span>
                         <span className='font-[700] text-[1.8rem] leading-[3.2rem]'>HealthTech Solutions</span>
@@ -157,14 +120,14 @@ const Programs = ({img }) => {
             </div>
 
             <div className=' mt-[5rem] max-small:mt-[3rem] flex flex-row max-[1200px]:flex-col justify-between gap-y-[3rem] max-small:flex-col justify-between relative programImage1'>
-                <div className='absolute w-[89.4rem] h-[58.3rem] top-[-22rem] left-[33rem] max-large:hidden'>
+                <div className='programImage absolute w-[89.4rem] h-[58.3rem] top-[-22rem] left-[33rem] max-large:hidden'>
                 <Image 
                 src="/v_3_images/program1.png"
                 fill
                 alt="slumtech programs"
                 />
                 </div>
-            <div className='relative w-[47.6rem] max-[1200px]:w-full min-h-[25rem] bg-[#fff]/50 rounded-[2rem] p-[3rem]'>
+                     <div className='entrepreneurship relative w-[47.6rem] max-[1200px]:w-full min-h-[25rem] bg-[#fff]/50 rounded-[2rem] p-[3rem]'>
                     <h2 className='flex items-end gap-x-[4px] border border-b-[#933EFF26] border-t-0 border-x-0 pb-5'> 
                         <span className='text-[#933EFF5E] text-[3rem] leading-[3.9rem] font-[900] '>3.</span>
                         <span className='font-[700] text-[1.8rem] leading-[3.2rem] text-left'>Entrepreneurship & Economic Development</span>
@@ -202,10 +165,10 @@ const Programs = ({img }) => {
 
                 </div>
 
-                <div className='relative w-[47.6rem] max-[1200px]:w-full min-h-[25rem] bg-[#fff]/50 rounded-[2rem] p-[3rem]'>
+                <div className='techEducation relative w-[47.6rem] max-[1200px]:w-full min-h-[25rem] bg-[#fff]/50 rounded-[2rem] p-[3rem]'>
                     <h2 className='flex items-end gap-x-[8px] border border-b-[#933EFF26] border-t-0 border-x-0 pb-5'> 
                         <span className='text-[#933EFF5E] text-[3rem] leading-[3.9rem] font-[900] '>4.</span>
-                        <span className='font-[700] text-[1.8rem] leading-[3.2rem]'>Tech Literacy and Education</span>
+                        <span className='font-[700] text-[1.8rem] leading-[3.2rem]'>Tech Education</span>
                     </h2>
 
                     <div className='flex flex-col gap-y-[2rem] mt-[2.7rem]'>
@@ -244,7 +207,7 @@ const Programs = ({img }) => {
 
 
             <div className='absolute max-small:relative bottom-[-26rem] max-small:bottom-0 max-small:mt-[5rem] w-full left-0 mx-auto bg-[#3A1667] rounded-[20px] p-[6.5rem] max-small:p-[2rem] gridStyle gap-x-[7.2rem] gap-y-[3rem] '>
-            <div className='relative max-w-[70rem] max-small:max-w-full h-[40rem]'>
+            <div className='globalImage relative max-w-[70rem] max-small:max-w-full h-[40rem]'>
                 <Image 
                 src="/v_3_images/program2.png"
                 fill
@@ -253,8 +216,8 @@ const Programs = ({img }) => {
             </div> 
 
             <div className='max-w-[56rem] max-small:max-w-full'>
-                <h2 className='font-[700] text-[4.8rem] max-small:text-[3.5rem] leading-[6.2rem] tracking-wide text-[#fff]'>Global Impact</h2>
-                <div className='mt-[5rem] flex flex-row max-small:flex-col max-small:gap-y-[3rem]'>
+                <h2 className='globalHeader font-[700] text-[4.8rem] max-small:text-[3.5rem] leading-[6.2rem] tracking-wide text-[#fff]'>Global Impact</h2>
+                <div className='countries mt-[5rem] flex flex-row max-small:flex-col max-small:gap-y-[3rem]'>
                     <div className='max-w-[24.7rem] max-small:max-w-full text-center flex flex-col gap-y-[1.5rem]'>
                         <div className='w-[6.2rem] h-[6.2rem] mx-auto flex items-center rounded-full bg-[#EEE8FF]'>
                         <div className='relative w-[3.3rem] h-[3.3rem] mx-auto'>
