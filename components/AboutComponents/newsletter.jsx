@@ -25,7 +25,7 @@ const Newsletter = () => {
           onComplete: () => {
             gsap.to(".whiteText",
               {
-                duration: 4,
+                duration: 6,
                 text: "Join our newsletter for the latest updates. Subscribe Here",
                 scrollTrigger: {
                   trigger: ".whiteText", 
