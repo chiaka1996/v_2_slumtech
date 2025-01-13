@@ -3,6 +3,7 @@ import {gsap} from "gsap";
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import {TextPlugin} from 'gsap/dist/TextPlugin';
+import {bottomToTopAnimation} from "../../utilis/animations";
 import Image from 'next/image';
 import Link from 'next/link';
 import { MainHeader } from '..';
@@ -13,55 +14,32 @@ gsap.registerPlugin(TextPlugin);
 
 const Newsletter = () => {
     useEffect(() => {
-        gsap.fromTo(".bigHeader",
-            {y: 100,
-              opacity: 0
-            },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 1,
-              onComplete: () => {
-                gsap.fromTo(".smallHeader",
-                    {y: 100,
-                    opacity: 0
-                    
-                    },
-                    {
-                      y: 0,
-                      opacity: 1,
-                      duration: 1,
-                      onComplete: () => {
-                        gsap.fromTo(".intro",
-                            {y: 100,
-                            opacity: 0
-                            
-                            },
-                            {
-                              y: 0,
-                              opacity: 1,
-                              duration: 1,
-                              onComplete: () => {
-                                gsap.fromTo(".btnLinks",
-                                    {y: 100,
-                                    opacity: 0
-                                    
-                                    },
-                                    {
-                                      y: 0,
-                                      opacity: 1,
-                                      duration: 1,
-                                      
-                
-                                    })        
-                              }
-                               
-                            })        
-                      }
-                      
-                    })        
+      gsap.to(".coloredText",
+        {
+          duration: 2,
+          text: "Stay informed!",
+          scrollTrigger: {
+            trigger: ".coloredText", 
+            start: "top 90%",       
+          },
+          onComplete: () => {
+            gsap.to(".whiteText",
+              {
+                duration: 4,
+                text: "Join our newsletter for the latest updates. Subscribe Here",
+                scrollTrigger: {
+                  trigger: ".whiteText", 
+                  start: "top 90%",       
+                },
+                onComplete: () => {
+                  bottomToTopAnimation(".newsletterEmail")
               }
-            })
+          }
+        )
+        }
+      }
+      );
+    
     }, [])
     
 
@@ -71,10 +49,10 @@ const Newsletter = () => {
        >
         <div className='text-[#fff] container text-center'>
             <p className='font-[700] text-[3.6rem] max-small:text-[2.4rem] leading-[4.6rem] max-small:leading-[3rem]'>
-                <span className='text-[#FFC700]'>Stay informed!</span> <span> Join our newsletter for the latest updates. Subscribe Here
-                </span>
+              {/* the text are handle with GSAP */}
+                <span className='text-[#FFC700] coloredText'></span> <span className='whiteText'> </span>
             </p>
-            <div className='mt-[3.3rem] flex max-small:flex-col gap-[2rem] justify-center'>
+            <div className='mt-[3.3rem] flex max-small:flex-col gap-[2rem] justify-center opacity-0 newsletterEmail'>
                 <input type="email" placeholder='Enter email address' 
                 className='placeholder-[#fff] outline-none w-[47.5rem] max-small:w-full h-[5.6rem] bg-[#FFFFFF45] rounded-[10px] text-[1.8rem] px-[2rem]' />
                 <button className='w-[181px] h-[56px] rounded-[10px] font-[700] text-[1.8rem] bg-[#0C9D69] max-small:mx-auto'>Subscribe</button>
