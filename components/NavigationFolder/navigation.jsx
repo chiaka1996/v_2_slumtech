@@ -23,7 +23,7 @@ const Navigation = () => {
   }, []);
 
     return(
-      <nav className={isScrolled ? "fixed top-0 left-0 w-full z-[500] h-[9rem] flex items-center bg-[#A9A9A9]" : "fixed top-0 left-0 w-full z-500 h-[9rem] flex items-center  bg-transparent"}>
+      <nav className={isScrolled ? "fixed top-0 left-0 w-full z-[500] h-[9rem] flex items-center bg-[#A9A9A9] " : "fixed top-0 left-0 w-full z-[500] h-[9rem] flex items-center bg-transparent"}>
         <div className="container flex flex-row justify-between items-center max-small:items-start">
          <Image 
             src="/v_3_logo/logo1.png"
@@ -32,7 +32,7 @@ const Navigation = () => {
             alt="logo"
             className='mt-[1rem]'
         />
-           <div className="w-[35rem] text-[1.6rem] font-[400] leading-[3rem] flex flex-row justify-between items-center max-[900px]:hidden">
+           <div className="w-[50rem] text-[1.6rem] font-[400] leading-[3rem] flex flex-row justify-between items-center max-[900px]:hidden">
            <span className={router.asPath == "/" ? style.activeLink : style.navLink}> 
            <Link href="/" className='no-underline'>
             HOME
@@ -45,15 +45,15 @@ const Navigation = () => {
             </Link>
             </span>
 
-            <span className={router.asPath == "/stem" ? style.activeLink : style.navLink}> 
+            {/* <span className={router.asPath == "/stem" ? style.activeLink : style.navLink}> 
            <Link href="/stem" className='no-underline'>
             STEM
             </Link>
-            </span>
+            </span> */}
 
-            {/* <Link href="/" className='no-underline max-[900px]:hidden'>
-              <Button text="Get Involved" />
-              </Link> */}
+            <Link href="/stem" className='no-underline max-[900px]:hidden'>
+              <Button text="STEM" />
+              </Link>
             </div>
 
            
