@@ -11,12 +11,16 @@ const SideBar = ({page}) => {
 
     const NavItems = [
       {
-        label: "HOME",
+        label: "Home",
         url: "/stem"
       },
       {
         label: "About us",
         url: "/stem/about"
+      },
+      {
+        label: "Foundation",
+        url: "/"
       }
     ]
   
