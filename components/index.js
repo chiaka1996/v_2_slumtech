@@ -1,4 +1,5 @@
 export {default as Navigation} from "./NavigationFolder/navigation"
+export {default as AboutNavigation} from "./NavigationFolder/aboutnavigation"
 export {default as Sidebar} from "./Sidebar/sidebar"
 export {default as Footer} from "./Footer/footer"
 export {default as Button} from "./Button/btn";

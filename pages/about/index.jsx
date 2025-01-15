@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
 import Link from "next/link";
 import { topToBottomAnimation, bottomToTopAnimation } from "../../utilis/animations";
-import {Navigation, Sidebar, MainHeader, CoreValue, Programs, Newsletter, Footer, GetInvolved, UpcomingEvent, Blog, ContactUs} from "../../components"
+import {AboutNavigation, Sidebar, MainHeader, CoreValue, Programs, Newsletter, Footer, GetInvolved, UpcomingEvent, Blog, ContactUs} from "../../components"
 import gsap from 'gsap'; 
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -77,8 +77,8 @@ useEffect(() => {
 }, [])
  
   return (
-   <main className="text-[1.6rem] max-small:text-[1.4rem] font-[400] text-[#000] leading-[2.6rem] max-small:leading-[1.8rem] relative">
-    <Navigation />
+   <main className="overflow-x-hidden text-[1.6rem] max-small:text-[1.4rem] font-[400] text-[#000] leading-[2.6rem] max-small:leading-[1.8rem] relative">
+    <AboutNavigation />
     <Sidebar /> 
     <section 
         className={`pt-[10rem] pb-0 w-full bg-[#EAE2FF] h-full`}
@@ -126,7 +126,7 @@ useEffect(() => {
            <div className="max-w-[56rem]">
             <h2 className="text-[#000] font-[700] text-[2rem] leading-[2.5rem] mb-[1.5rem]">History</h2>
             <div className="text-[1.6rem] font-[400] text-[#6D6D6D] leading-[2.4rem]">
-            Founded by Olanrewaju Ogunleye in [Year], 
+            Founded by Olanrewaju Ogunleye in 2024, 
             SlumTech Foundation has grown from a local initiative into a global movement. 
             Our work focuses on creating lasting impact through innovative technology solutions.
             </div>

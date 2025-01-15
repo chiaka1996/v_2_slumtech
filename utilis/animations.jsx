@@ -39,9 +39,14 @@ export const bottomToTopAnimation = (classname) => {
 
 export const rightToLeftAnimation = (classname) => {
   gsap.fromTo(classname,
-    { opacity: 0, x: -100 }, 
+    { 
+      opacity: 0, 
+      visibility: "hidden",
+      x: -100 
+    }, 
     {
       opacity: 1,
+      visibility: "visible",
       x: 0,
       duration: 1,
       scrollTrigger: {
@@ -54,9 +59,14 @@ export const rightToLeftAnimation = (classname) => {
 
 export const leftToRightAnimation = (classname) => {
   gsap.fromTo(classname,
-    { opacity: 0, x: 100 }, 
+    { 
+      opacity: 0,
+      visibility: "hidden",
+       x: 100 
+      }, 
     {
       opacity: 1,
+      visibility: "visible",
       x: 0,
       duration: 1,
       scrollTrigger: {
