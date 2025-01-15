@@ -1,21 +1,99 @@
+import { useState, useEffect } from 'react';
+import {gsap} from "gsap";
+import { useGSAP} from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import {TextPlugin} from 'gsap/dist/TextPlugin';
+import { topToBottomAnimation, bottomToTopAnimation } from "../../../utilis/animations";
 import Image from 'next/image';
 import Link from 'next/link';
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
+
 const WhyParticipate = () => {
+  useEffect(() => {
+    topToBottomAnimation(".gsap-header")
+    bottomToTopAnimation(".gsap-subheader")
+
+    gsap.fromTo(".gsap-grid1",
+      {y: 100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".gsap-grid1", 
+          start: "top 90%",       
+        },
+        onComplete: () => {
+          gsap.fromTo(".gsap-grid2",
+              {y: 100,
+              opacity: 0
+              
+              },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                scrollTrigger: {
+                  trigger: ".gsap-grid2", 
+                  start: "top 90%",       
+                },
+                onComplete: () => {
+                  gsap.fromTo(".gsap-grid3",
+                      {y: 100,
+                      opacity: 0
+                      
+                      },
+                      {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        scrollTrigger: {
+                          trigger: ".gsap-grid3", 
+                          start: "top 90%",       
+                        },
+                        onComplete: () => {
+                          gsap.fromTo(".gsap-grid4",
+                              {y: 100,
+                              opacity: 0
+                              
+                              },
+                              {
+                                y: 0,
+                                opacity: 1,
+                                duration: 1,
+                                scrollTrigger: {
+                                  trigger: ".gsap-grid4", 
+                                  start: "top 90%",       
+                                },
+                              })        
+                        }
+                         
+                      })        
+                }
+                
+              })        
+        }
+      })
+  },[])
  
     return(
       <section
       className="w-full font-[400] leading-[3rem] max-small:leading-[2.2rem] text-[#000] relative"
      >
         <div className='container py-[12rem] max-small:py-[5rem] text-center'>
-            <h1 className='text-[#004658] text-[54px] max-small:text-[3rem] font-[700] leading-[64px] max-small:leading-[3.2rem]'>Why Participate</h1>
-            <h3 className='max-w-[878px] text-[1.8rem] max-small:text-[1.4rem] mx-auto'>
+            <h1 className='gsap-header opacity-0 text-[#004658] text-[54px] max-small:text-[3rem] font-[700] leading-[64px] max-small:leading-[3.2rem]'>Why Participate</h1>
+            <h3 className='gsap-subheader opacity-0 max-w-[878px] text-[1.8rem] max-small:text-[1.4rem] mx-auto'>
             The SlumTech STEM Competition is an annual event dedicated to inspiring and 
             empowering young minds from underserved communities across the United States.
             </h3>
 
             <div className='gridStyle gap-[3rem] mt-[5rem] max-small:mt-[3rem]'>
-                <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF]'>
+                <div className='gsap-grid1 opacity-0 rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF]'>
                 <div className="relative h-[20rem] w-full rounded-[25px]">
                 <Image 
                 src="/v_3_images/participate1.png"
@@ -37,7 +115,7 @@ const WhyParticipate = () => {
                 </div>
                 </div>
 
-                <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF]'>
+                <div className='gsap-grid2 opacity-0 rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF]'>
                 <div className="relative h-[20rem] w-full rounded-[25px]">
                 <Image 
                 src="/v_3_images/participate2.png"
@@ -59,7 +137,7 @@ const WhyParticipate = () => {
                 </div>
                 </div>
 
-                <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF]'>
+                <div className='gsap-grid3 opacity-0 rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF]'>
                 <div className="relative h-[20rem] w-full rounded-[25px]">
                 <Image 
                 src="/v_3_images/participate3.png"
@@ -81,7 +159,7 @@ const WhyParticipate = () => {
                 </div>
                 </div>
 
-                <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF]'>
+                <div className='gsap-grid4 opacity-0 rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF]'>
                 <div className="relative h-[20rem] w-full rounded-[25px]">
                 <Image 
                 src="/v_3_images/participate4.png"

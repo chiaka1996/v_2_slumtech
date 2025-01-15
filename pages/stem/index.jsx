@@ -13,6 +13,27 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
+  useEffect(() => {
+    gsap.to(".text1", 
+      {
+        duration: 2,
+        text: "SLUM ",
+        scrollTrigger: {
+          trigger: ".text1", 
+          start: "top 90%",       
+        },
+        onComplete: () => {
+          gsap.to(".text2",
+              {
+                duration: 1,
+                text: " TECH"
+                
+              })        
+        }
+      }
+    );
+  
+  },[])
   return (
    <main className="text-[1.6rem] font-[400] text-[#000] leading-[2.6rem] relative overflow-x-hidden">
     <StemNavigation />
@@ -32,7 +53,7 @@ export default function About() {
             </video>
       {/* the slumtech gradient design is in the global css with classname of .slumtech */}
       <h1 
-      className="font-[800] text-[13.8rem] max-small:text-[6rem] leading-[207px] tracking-wider slumtech">SLUM  TECH</h1>
+      className="font-[800] text-[13.8rem] max-small:text-[6rem] leading-[207px] tracking-wider slumtech"><span className="text1"></span><span className="text2"> </span></h1>
     </div>
     <WhoCanEnter />
     <Resources />

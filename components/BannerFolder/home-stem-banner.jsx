@@ -14,6 +14,70 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
 const Banner = ({img }) => {
+    useEffect(() => {
+        gsap.fromTo(".complete",
+            {y: 100,
+              opacity: 0
+            },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              onComplete: () => {
+                gsap.fromTo(".stembigHeader",
+                    {y: 100,
+                    opacity: 0
+                    
+                    },
+                    {
+                      y: 0,
+                      opacity: 1,
+                      duration: 1,
+                      onComplete: () => {
+                        gsap.fromTo(".stemSmallHeader",
+                            {y: 100,
+                            opacity: 0
+                            
+                            },
+                            {
+                              y: 0,
+                              opacity: 1,
+                              duration: 1,
+                              onComplete: () => {
+                                gsap.fromTo(".learnBtn",
+                                    {y: 100,
+                                    opacity: 0
+                                    
+                                    },
+                                    {
+                                      y: 0,
+                                      opacity: 1,
+                                      duration: 1,
+                                      onComplete: () => {
+                                        gsap.fromTo(".registration",
+                                            {y: 100,
+                                            opacity: 0
+                                            
+                                            },
+                                            {
+                                              y: 0,
+                                              opacity: 1,
+                                              duration: 1,
+                                              
+                        
+                                            })        
+                                      }
+                
+                                    })        
+                              }
+                               
+                            })        
+                      }
+                      
+                    })        
+              }
+            })
+    }, [])
     return(
        <section 
         style={{borderImage: "fill 1 linear-gradient(#000000B2, #00000080)"}}
@@ -27,13 +91,14 @@ const Banner = ({img }) => {
             </video>
         <div className='container'>
         <div className='max-w-[876px] flex flex-col gap-y-[1.5rem]'>
-            <button className='w-[138px] h-[34px] rounded-[25px] bg-[#14CB8A80] text-[16px] max-small:text-[1.4rem] font-[600] leading-[24px]'>Completion</button>
-            <h1 className='font-[700] text-[48px] max-small:text-[3rem] leading-[6.4rem] max-small:leading-[4rem]'>
+            {/* the opacity-0 is so that gsap works properly. */}
+            <button className='complete opacity-0 w-[138px] h-[34px] rounded-[25px] bg-[#14CB8A80] text-[16px] max-small:text-[1.4rem] font-[600] leading-[24px]'>Completion</button>
+            <h1 className='stembigHeader opacity-0 font-[700] text-[48px] max-small:text-[3rem] leading-[6.4rem] max-small:leading-[4rem]'>
            <span>Your Innovation:</span> <br/>
             <span className='text-[#F5B021]'>Join</span> the <span className='text-[#F5B021]'>SlumTech STEM Competition</span>
             </h1>
-            <p className='max-w-[542px] text-[1.8rem] max-small:text-[1.6rem] leading-[3rem] max-small:leading-[2.5rem]'>Unleash your creativity, solve real-world problems, and compete for a chance to change your community.</p>
-             <button className='gap-x-[1.5rem] flex flex-row justify-center items-center w-[198px] max-small:w-[137px] h-[50px] max-small:h-[40px] rounded-[25px] bg-[#F5B021] text-[700] text-[#000] font-[500] text-[18px] max-small:text-[1.4rem] leading-[3rem]'>
+            <p className='stemSmallHeader opacity-0 max-w-[542px] text-[1.8rem] max-small:text-[1.6rem] leading-[3rem] max-small:leading-[2.5rem]'>Unleash your creativity, solve real-world problems, and compete for a chance to change your community.</p>
+             <button className='learnBtn opacity-0 gap-x-[1.5rem] flex flex-row justify-center items-center w-[198px] max-small:w-[137px] h-[50px] max-small:h-[40px] rounded-[25px] bg-[#F5B021] text-[700] text-[#000] font-[500] text-[18px] max-small:text-[1.4rem] leading-[3rem]'>
             <span>Learn more</span>
             <div className="relative h-[11px] w-[11px]">
             <Image 
@@ -47,7 +112,7 @@ const Banner = ({img }) => {
 
         <div 
          style={{backgroundImage: `url(/v_3_images/stem-home-banner3.png)`}}
-        className='mt-[9rem] max-small:mt-[3rem] relative w-full min-h-[25rem] rounded-[20px] p-[7rem] max-small:p-[2rem] max-small:px-[1rem] bg-center'>
+        className='registration opacity-0 mt-[9rem] max-small:mt-[3rem] relative w-full min-h-[25rem] rounded-[20px] p-[7rem] max-small:p-[2rem] max-small:px-[1rem] bg-center'>
             <div>
                 <div className='flex gap-[3rem] mb-[3.7rem] max-small:mb-[1.5rem]'>
                     <h3 className='font-[500] text-[30px] max-small:text-[1.8rem] leading-[32px]'>Registration Opens</h3>
@@ -74,10 +139,8 @@ const Banner = ({img }) => {
             />
             </div>
             </div>
-
         </div>
-        </div>
-       
+        </div>     
        </section>
     )
 }
