@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
 import Link from "next/link";
 import { topToBottomAnimation, bottomToTopAnimation } from "../../utilis/animations";
-import {AboutNavigation, Sidebar, MainHeader, CoreValue, Programs, Newsletter, Footer, GetInvolved, UpcomingEvent, Blog, ContactUs} from "../../components"
+import {AboutNavigation, Sidebar, MainHeader, CoreValue, OurPrograms, AboutJoinUs, OurResource, Newsletter, Footer, GetInvolved, UpcomingEvent, Blog, ContactUs} from "../../components"
 import gsap from 'gsap'; 
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -81,7 +81,7 @@ useEffect(() => {
     <AboutNavigation />
     <Sidebar /> 
     <section 
-        className={`pt-[10rem] pb-0 w-full bg-[#EAE2FF] h-full`}
+        className={`pt-[10rem] pb-0 w-full bg-[#02ADD51A] h-full`}
        >
         <div className="container gridStyle gap-x-[15rem] gap-y-[5rem]" >
            <div className="relative max-w-[80rem] min-h-[60.8rem] max-small:min-h-[40rem] aboutImage">
@@ -152,12 +152,15 @@ useEffect(() => {
             </div>
         </section>
         <CoreValue />
-       <Programs />
-         <GetInvolved />
+       {/* <Programs /> */}
+        <OurPrograms />
+        <AboutJoinUs />
+         {/* <GetInvolved />
          <UpcomingEvent />
          <Blog />
           <Newsletter />
-         <ContactUs />
+         <ContactUs /> */}
+         <OurResource />
          <Footer />
     </main>
   )
