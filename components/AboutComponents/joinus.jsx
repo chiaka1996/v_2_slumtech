@@ -13,12 +13,12 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
-const Programs = ({img }) => {
+const Join = ({img }) => {
 
     return(
        <section 
        style={{backgroundImage: `url(/v_3_images/aboutjoinus.png)`, borderImage: "fill 1 linear-gradient(#00000000, #000000BF)"}}
-        className={`font-[400] text-[#fff] text-[1.6rem] max-small:text-[1.4rem] max-small:leading-[2.4rem] mt-[12rem] min-h-[526px] w-full flex item-center`}
+        className={`font-[400] text-[#fff] text-[1.6rem] max-small:text-[1.4rem] max-small:leading-[2.4rem] mt-[12rem] min-h-[526px] w-full bg-cover bg-no-repeat flex item-center`}
        >
         <div className='container'>
             <div className='max-w-[676px]'>
@@ -40,4 +40,4 @@ const Programs = ({img }) => {
    ) 
 }
 
-export default Programs;
+export default Join;

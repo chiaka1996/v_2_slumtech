@@ -4,8 +4,8 @@ import { Carousel } from 'react-responsive-carousel';
 import Image from "next/image";
 import Link from "next/link";
 import { topToBottomAnimation, bottomToTopAnimation } from "../../utilis/animations";
-import {AboutNavigation, Sidebar, MainHeader, CoreValue, OurPrograms, AboutJoinUs, OurResource, Newsletter, Footer, GetInvolved, UpcomingEvent, Blog, ContactUs} from "../../components"
-import gsap from 'gsap'; 
+import {AboutNavigation, Sidebar, MainHeader, CoreValue, OurPrograms, AboutJoinUs, OurResource, GetInTouch, Newsletter, Footer, GetInvolved, UpcomingEvent, Blog, ContactUs} from "../../components"
+import gsap from 'gsap';  
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
@@ -161,6 +161,7 @@ useEffect(() => {
           <Newsletter />
          <ContactUs /> */}
          <OurResource />
+         <GetInTouch />
          <Footer />
     </main>
   )

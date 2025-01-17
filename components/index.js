@@ -15,6 +15,7 @@ export {default as Spinner} from "./Spinner/index";
 export {default as CoreValue} from "./AboutComponents/core-value";
 export {default as Programs} from "./AboutComponents/programs";
 export {default as OurPrograms} from "./AboutComponents/ourprograms";
+export {default as GetInTouch} from "./AboutComponents/getInTouch";
 export {default as OurResource} from "./AboutComponents/ourresources";
 export {default as GetInvolved} from "./AboutComponents/getInvolved";
 export {default as UpcomingEvent} from "./AboutComponents/upcoming-event";
