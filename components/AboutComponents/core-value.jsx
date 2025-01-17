@@ -16,7 +16,7 @@ gsap.registerPlugin(TextPlugin);
 const CoreValue = ({img }) => {
     useEffect(() => {
       topToBottomAnimation(".mainHeader")
-      bottomToTopAnimation(".subHeader")
+      // bottomToTopAnimation(".subHeader")
       bottomToTopAnimation(".valuesList")
 
     }, [])
@@ -29,10 +29,10 @@ const CoreValue = ({img }) => {
        >
         <div className="container text-center">
             <MainHeader text="Core Value" classname="mainHeader" />
-            <div className='subHeader text-[1.8rem] max-small:text-[1.6rem] max-small:leading-[2rem] max-small:mt-[1rem] font-[400] text-[#7E7E7E] max-w-[106rem] mx-auto'>
+            {/* <div className='subHeader text-[1.8rem] max-small:text-[1.6rem] max-small:leading-[2rem] max-small:mt-[1rem] font-[400] text-[#7E7E7E] max-w-[106rem] mx-auto'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
              et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            </div>
+            </div> */}
 
             <div className='mt-[5rem] max-small:mt-[3rem] gridStyle gap-[3rem] valuesList'>
              <div className='bg-[#fff] rounded-[20px] min-h-[27.8rem] pt-[4rem] px-[2.5rem] text-left'>
