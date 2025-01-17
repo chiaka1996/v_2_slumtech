@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useEffect(() => {
+    bottomToTopAnimation(".questions")
     gsap.to(".text1", 
       {
         duration: 2,
@@ -62,7 +63,7 @@ export default function About() {
      style={{backgroundImage: `url(/v_3_images/have-questions.png)`, borderImage: "fill 1 linear-gradient(#00000047, #00000033)"}}
      className="bg-center w-full h-[387px] flex items-center justify-center"
     >
-      <div className="font-[700] text-[4.2rem]  max-small:text-[3rem] leading-[54px] max-small:leading-[4rem] max-w-[141.4rem] text-center text-[#fff]">
+      <div className="questions font-[700] text-[4.2rem]  max-small:text-[3rem] leading-[54px] max-small:leading-[4rem] max-w-[141.4rem] text-center text-[#fff]">
       <span className="text-[#F5B021]">Have questions or need further assistance? </span>
       Don’t hesitate to reach out! Our support team is dedicated to 
       helping you navigate the competition and achieve your goals.
