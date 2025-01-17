@@ -70,7 +70,7 @@ const Banner = ({img }) => {
     return(
       <section 
         style={{backgroundImage:`url(/v_3_images/home-banner.png)`}}
-        className={`relative font-[400] pt-[19.5rem] max-small:pt-[17rem] max-small:pb-0 text-[#fff] min-h-[100vh] max-small:min-h-[100vh] w-full bg-cover max-small:bg-center bg-[#00000099]`}
+        className={`relative font-[400] pt-[19.5rem] max-small:pt-[13rem] max-small:pb-0 text-[#fff] min-h-[100vh] max-small:min-h-[100vh] w-full bg-cover max-small:bg-center bg-[#00000099]`}
        >
         <video muted loop autoPlay playsInline disablePictureInPicture
         className='absolute top-0 left-0 w-full h-[100vh] z-[-1] object-cover'
