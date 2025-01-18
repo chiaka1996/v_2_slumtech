@@ -1,13 +1,11 @@
 "use client"
 import {useEffect} from 'react'
-import { topToBottomAnimation, bottomToTopAnimation, rightToLeftAnimation, leftToRightAnimation, scaleUpAnimation} from "../../utilis/animations";
+import { bottomToTopAnimation} from "../../utilis/animations";
 import {gsap} from "gsap";
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import {TextPlugin} from 'gsap/dist/TextPlugin';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '..';
+
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);

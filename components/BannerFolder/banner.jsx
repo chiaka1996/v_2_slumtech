@@ -13,7 +13,7 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
-const Banner = ({img }) => {
+const Banner = () => {
     useEffect(() => {
         gsap.fromTo(".bigHeader",
             {y: 100,
