@@ -5,6 +5,7 @@ import {gsap} from "gsap";
 import { useGSAP} from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import {TextPlugin} from 'gsap/dist/TextPlugin';
+import { Button } from '..';
 
 
 gsap.registerPlugin(useGSAP);
