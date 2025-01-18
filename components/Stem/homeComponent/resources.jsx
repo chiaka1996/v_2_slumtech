@@ -1,24 +1,84 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import {gsap} from "gsap";
+import { useGSAP} from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import {TextPlugin} from 'gsap/dist/TextPlugin';
+import { topToBottomAnimation, bottomToTopAnimation } from "../../../utilis/animations";
 import Link from 'next/link';
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
+
 const Resources = () => {
+    useEffect(() => {
+        topToBottomAnimation(".resourceHeader")
+        bottomToTopAnimation(".resourceSubHeader")
+    
+        gsap.fromTo(".gsap-resource-grid1",
+          {y: 100,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+              trigger: ".gsap-resource-grid1", 
+              start: "top 90%",       
+            },
+            onComplete: () => {
+              gsap.fromTo(".gsap-resource-grid2",
+                  {y: 100,
+                  opacity: 0
+                  
+                  },
+                  {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                      trigger: ".gsap-resource-grid2", 
+                      start: "top 90%",       
+                    },
+                    onComplete: () => {
+                      gsap.fromTo(".gsap-resource-grid3",
+                          {y: 100,
+                          opacity: 0
+                          
+                          },
+                          {
+                            y: 0,
+                            opacity: 1,
+                            duration: 1,
+                            scrollTrigger: {
+                              trigger: ".gsap-resource-grid3", 
+                              start: "top 90%",       
+                            }        
+                          })        
+                    }
+                    
+                  })        
+            }
+          })
+      },[])
  
     return(
       <section
       className="w-full font-[400] leading-[3rem] max-small:leading-[2.2rem] text-[#000] relative"
      >
          <div className='shadow-2xl shadow-[#FFEA7B66] blur-2xl w-[616px] h-[616px] rounded-full bg-[#6FFFCB80] z-10 absolute top-[-5rem] right-[-10rem] opacity-60'></div>
-       <div className='container py-[12rem] max-small:py-[5rem]'>
+       <div className='container pt-[12rem] max-small:pt-[5rem]'>
           <div className=''>
-            <h1 className='font-[700] text-[54px] max-small:text-[3rem] leading-[64px] max-small:leading-[3.2rem] text-[#004658]'>Resources</h1>
-            <h3 className='text-[1.8rem] mb-[1.5rem] max-w-[85.8rem]'>
+            <h1 className='font-[700] text-[54px] max-small:text-[3rem] leading-[64px] max-small:leading-[3.2rem] text-[#004658] resourceHeader'>Resources</h1>
+            <h3 className='text-[1.8rem] mb-[1.5rem] max-w-[85.8rem] resourceSubHeader'>
             Join our workshops and webinars designed to help you develop your project idea. 
             Access resources, mentorship, and guidance from experienced professionals in the STEM field.
             </h3>
 
            <div className='gridStyle gap-[3rem] mt-[5rem] max-small:mt-[3rem]'>
-            <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF] relative pb-[9rem]'>
+            <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF] relative pb-[9rem] opacity-0 gsap-resource-grid1'>
             <div className="relative h-[20rem] w-full rounded-[25px]">
             <Image 
             src="/v_3_images/resource1.png"
@@ -57,7 +117,7 @@ const Resources = () => {
             </div>
             </div>
 
-            <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF] relative pb-[9rem]'>
+            <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF] relative pb-[9rem] opacity-0 gsap-resource-grid2'>
             <div className="relative h-[20rem] w-full rounded-[25px]">
             <Image 
             src="/v_3_images/resource2.png"
@@ -96,7 +156,7 @@ const Resources = () => {
             </div>
             </div>
 
-            <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF] relative pb-[9rem]'>
+            <div className='rounded-[25px] flex flex-col gap-y-[2rem] border border-[#EFEFEF] relative pb-[9rem] opacity-0 gsap-resource-grid3'>
             <div className="relative h-[20rem] w-full rounded-[25px]">
             <Image 
             src="/v_3_images/resource3.png"

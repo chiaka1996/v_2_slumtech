@@ -1,8 +1,84 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import {gsap} from "gsap";
+import { useGSAP} from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import {TextPlugin} from 'gsap/dist/TextPlugin';
+import { topToBottomAnimation, bottomToTopAnimation } from "../../../utilis/animations";
 import Link from 'next/link';
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
+
 const Support = () => {
+    useEffect(() => {
+        topToBottomAnimation(".supportHeader")
+        bottomToTopAnimation(".supportSubHeader")
+    
+        gsap.fromTo(".gsap-support-grid1",
+          {y: 100,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+              trigger: ".gsap-support-grid1", 
+              start: "top 90%",       
+            },
+            onComplete: () => {
+              gsap.fromTo(".gsap-support-grid2",
+                  {y: 100,
+                  opacity: 0
+                  
+                  },
+                  {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                      trigger: ".gsap-support-grid2", 
+                      start: "top 90%",       
+                    },
+                    onComplete: () => {
+                      gsap.fromTo(".gsap-support-grid3",
+                          {y: 100,
+                          opacity: 0
+                          
+                          },
+                          {
+                            y: 0,
+                            opacity: 1,
+                            duration: 1,
+                            scrollTrigger: {
+                              trigger: ".gsap-support-grid3", 
+                              start: "top 90%",       
+                            },
+                            onComplete: () => {
+                                gsap.fromTo(".gsap-support-grid4",
+                                    {y: 100,
+                                    opacity: 0
+                                    
+                                    },
+                                    {
+                                      y: 0,
+                                      opacity: 1,
+                                      duration: 1,
+                                      scrollTrigger: {
+                                        trigger: ".gsap-support-grid4", 
+                                        start: "top 90%",       
+                                      }        
+                                    })        
+                              }        
+                          })        
+                    }
+                    
+                  })        
+            }
+          })
+      },[])
  
     return(
       <section
@@ -12,7 +88,7 @@ const Support = () => {
        <h1 className='font-[700] text-[54px] max-small:text-[3rem] leading-[64px] max-small:leading-[3.2rem] text-[#004658] text-center'>Support</h1>
 
        <div className='gridStyle gap-[3rem] mt-[5rem] max-small:mt-[3rem]'>
-        <div className='bg-[#fff] rounded-[2rem] pt-[3.4rem] pb-[5rem] px-[2rem] flex flex-col gap-y-[1.5rem] relative min-h-[400px] max-small:min-h-[350px]'>
+        <div className='gsap-support-grid4 opacity-0 bg-[#fff] rounded-[2rem] pt-[3.4rem] pb-[5rem] px-[2rem] flex flex-col gap-y-[1.5rem] relative min-h-[400px] max-small:min-h-[350px]'>
              <Image 
             src="/v_3_icons/support1.png"
             width={58}
@@ -36,7 +112,7 @@ const Support = () => {
         </div>
         </div>
 
-        <div className='bg-[#fff] rounded-[2rem] pt-[3.4rem] pb-[5rem] px-[2rem] flex flex-col gap-y-[1.5rem] relative min-h-[400px] max-small:min-h-[350px]'>
+        <div className='gsap-support-grid3 opacity-0 bg-[#fff] rounded-[2rem] pt-[3.4rem] pb-[5rem] px-[2rem] flex flex-col gap-y-[1.5rem] relative min-h-[400px] max-small:min-h-[350px]'>
              <Image 
             src="/v_3_icons/support2.png"
             width={48}
@@ -60,7 +136,7 @@ const Support = () => {
         </div>
         </div>
 
-        <div className='bg-[#fff] rounded-[2rem] pt-[3.4rem] pb-[5rem] px-[2rem] flex flex-col gap-y-[1.5rem] relative min-h-[400px] max-small:min-h-[350px]'>
+        <div className='gsap-support-grid2 opacity-0 bg-[#fff] rounded-[2rem] pt-[3.4rem] pb-[5rem] px-[2rem] flex flex-col gap-y-[1.5rem] relative min-h-[400px] max-small:min-h-[350px]'>
              <Image 
             src="/v_3_icons/support3.png"
             width={40}
@@ -84,7 +160,7 @@ const Support = () => {
         </div>
         </div>
 
-        <div className='bg-[#fff] rounded-[2rem] pt-[3.4rem] pb-[5rem] px-[2rem] flex flex-col gap-y-[1.5rem] relative min-h-[400px] max-small:min-h-[350px]'>
+        <div className='gsap-support-grid1 opacity-0 bg-[#fff] rounded-[2rem] pt-[3.4rem] pb-[5rem] px-[2rem] flex flex-col gap-y-[1.5rem] relative min-h-[400px] max-small:min-h-[350px]'>
              <Image 
             src="/v_3_icons/support4.png"
             width={47}

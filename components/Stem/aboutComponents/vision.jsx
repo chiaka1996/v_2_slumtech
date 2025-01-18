@@ -5,8 +5,25 @@ import { BarState } from '../../../context/context';
 import style from './index.module.css';
 import { useRouter } from "next/router";
 import {Button} from "../../index"
+import {gsap} from "gsap";
+import { useGSAP} from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import {TextPlugin} from 'gsap/dist/TextPlugin';
+import { topToBottomAnimation, bottomToTopAnimation} from "../../../utilis/animations";
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 
 const Vision = () => {
+    useEffect(() => {
+          topToBottomAnimation(".visionHeader")
+          bottomToTopAnimation(".visionText")
+          bottomToTopAnimation(".visionImage")
+          topToBottomAnimation(".what-we-do-Header")
+          bottomToTopAnimation(".what-we-do-Texts")
+          topToBottomAnimation(".what-we-do-Image")
+      }, [])
  
     return(
       <div className='w-full'>
@@ -15,8 +32,8 @@ const Vision = () => {
             <div className='gridStyle gap-x-[10rem] max-small:gap-y-[2rem] mb-[10rem] max-small:mb-[5rem]'>
                 <div className='text-left max-w-[69.1rem] flex items-center '>
                     <div>
-                    <h2 className='text-[#004658] font-[700] text-[5.4rem] max-small:text-[2.5rem] max-small:leading-[3.5rem] leading-[6.4rem]'>Our Vision</h2>
-                    <p className=''>We envision a world where every child, regardless of their socioeconomic background, 
+                    <h2 className='text-[#004658] font-[700] text-[5.4rem] max-small:text-[2.5rem] max-small:leading-[3.5rem] leading-[6.4rem] visionHeader'>Our Vision</h2>
+                    <p className='visionText'>We envision a world where every child, regardless of their socioeconomic background, 
                         has access to quality education and resources in STEM fields. Our competition not only
                          showcases potential talent but also promotes critical thinking, 
                         creativity, and collaboration among participants, pushing them to innovate for their communities.
@@ -27,7 +44,7 @@ const Vision = () => {
                 </div>
                 </div>
 
-                 <div className="relative h-[63.6rem] max-small:h-[30rem] max-w-[73.5rem] rounded-b-[25px]">
+                 <div className="relative h-[63.6rem] max-small:h-[30rem] max-w-[73.5rem] rounded-b-[25px] visionImage">
                 <Image 
                 src="/v_3_images/vision.png"
                 fill
@@ -39,7 +56,7 @@ const Vision = () => {
 
             {/* what we do */}
             <div className='gridStyle gap-x-[10rem]'>
-                 <div className="relative h-[63.6rem] max-small:h-[30rem] max-w-[73.5rem] rounded-t-[25px] max-small:order-last">
+                 <div className="relative h-[63.6rem] max-small:h-[30rem] max-w-[73.5rem] rounded-t-[25px] max-small:order-last what-we-do-Image">
                 <Image 
                 src="/v_3_images/what-we-do.png"
                 fill
@@ -50,8 +67,8 @@ const Vision = () => {
 
             <div className='text-left max-w-[69.1rem] flex items-center '>
                     <div>
-                    <h2 className='text-[#004658] font-[700] text-[5.4rem] max-small:text-[2.5rem] leading-[6.4rem] max-small:leading-[3.5rem]'>What We Do</h2>
-                    <p className='mb-[2rem]'>We envision a world where every child, regardless of their socioeconomic background, 
+                    <h2 className='text-[#004658] font-[700] text-[5.4rem] max-small:text-[2.5rem] leading-[6.4rem] max-small:leading-[3.5rem] what-we-do-Header'>What We Do</h2>
+                    <p className='mb-[2rem] what-we-do-Texts'>We envision a world where every child, regardless of their socioeconomic background, 
                         has access to quality education and resources in STEM fields. Our competition not only
                          showcases potential talent but also promotes critical thinking, 
                         creativity, and collaboration among participants, pushing them to innovate for their communities.
