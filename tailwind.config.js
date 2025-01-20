@@ -11,9 +11,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-       approacIconBackgroundColor: 'rgba(253, 178, 26, 0.1)'
-    },
+      boxShadow: {
+        'custom': '0 4px 15px  #11CE8A80', // Custom shadow
+      },
+
     screens: {
       "xsmall": "349px",
       "small": "769px",
