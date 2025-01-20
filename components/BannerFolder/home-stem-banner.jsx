@@ -98,6 +98,7 @@ const Banner = ({img }) => {
             <span className='text-[#F5B021]'>Join</span> the <span className='text-[#F5B021]'>SlumTech STEM Competition</span>
             </h1>
             <p className='stemSmallHeader opacity-0 max-w-[542px] text-[1.8rem] max-small:text-[1.6rem] leading-[3rem] max-small:leading-[2.5rem]'>Unleash your creativity, solve real-world problems, and compete for a chance to change your community.</p>
+            <Link href="/stem/about" className='no-underline'>
              <button className='learnBtn opacity-0 gap-x-[1.5rem] flex flex-row justify-center items-center w-[198px] max-small:w-[137px] h-[50px] max-small:h-[40px] rounded-[25px] bg-[#F5B021] text-[700] text-[#000] font-[500] text-[18px] max-small:text-[1.4rem] leading-[3rem]'>
             <span>Learn more</span>
             <div className="relative h-[11px] w-[11px]">
@@ -108,6 +109,7 @@ const Banner = ({img }) => {
             />
             </div>
         </button>
+        </Link>
         </div>
 
         <div 

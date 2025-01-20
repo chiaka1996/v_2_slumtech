@@ -25,7 +25,7 @@ const CoreValue = ({img }) => {
     return(
       // bg-[#ede6f8]/40
        <section 
-        className={`pt-[12rem] max-small:py-[5rem] flex items-center justify-center w-full`}
+        className={`relative py-[12rem] max-small:py-[5rem] flex items-center justify-center w-full bg-[#e9f5f1]/50`}
        >
         <div className="container text-center">
             <MainHeader text="Core Value" classname="mainHeader" />
